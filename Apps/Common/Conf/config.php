@@ -16,11 +16,20 @@ return array(
     'TMPL_R_DELIM'=>'}>', 
     //数据库设置（云端）
     'DB_TYPE'=>'mysql',
-    'DB_HOST'=>'yikv6hh5.2296.dnstoo.com',
-    'DB_NAME'=>'xinda123',
-    'DB_USER'=>'xinda123_f',
-    'DB_PWD'=>'xinda123',
-    'DB_PORT'=>'5510', 
+    //线上数据库
+    'DB_HOST'=>'2lbrknae.2248.dnstoo.com',
+    'DB_NAME'=>'xiuli',
+    'DB_USER'=>'xiuli_f',
+    'DB_PWD'=>'yaolihui0506',
+    'DB_PORT'=>'5503',
+
+    //公司本地数据库
+//    'DB_HOST'       =>  '192.168.155.54',
+//    'DB_NAME'       =>  'zentao',
+//    'DB_USER'       =>  'root',
+//    'DB_PWD'        =>  'chexian',
+//    'DB_PORT'       =>  '3306',
+
     'DB_PREFIX'=>'zt_',
     'DB_CHARSET'=> 'utf8', // 字符集
 
