@@ -1,37 +1,44 @@
 <?php
+
 namespace Record\Controller;
+
 use Think\Controller;
-class LoginController extends Controller {
-    public function index(){
+
+class LoginController extends Controller
+{
+    public function index()
+    {
         layout(false); // 临时关闭当前模板的布局功能
         $this->display();
     }
 
-    public function login(){
-        $where=array('account'=>$_POST['username'],'password'=>md5($_POST['password']));
+    public function login()
+    {
+        $where = array('account' => $_POST['username'], 'password' => md5($_POST['password']));
         $user = D('user')->where($where)->field("id,dept,account,realname")->find();
-        if ($user){
+        if ($user) {
             session('[start]');
-            $_SESSION=$user;
-            $_SESSION['isLogin']=C(PRODUCT);
+            $_SESSION = $user;
+            $_SESSION['isLogin'] = C(PRODUCT);
 
             $this->redirect('Record/Index/index');
-        }else{
+        } else {
             $this->error('用户或密码错误，请重新登陆！', "index");
         }
 
     }
 
-    public function logout(){
-        $username =$_SESSION['realname'];
+    public function logout()
+    {
+        $username = $_SESSION['realname'];
         $_SESSION = array();
 
         if (isset($_COOKIE[session_name()])) {
-            setcookie(session_name(),'',time()-3600,'/');
+            setcookie(session_name(), '', time() - 3600, '/');
         }
         // 销毁sesstion
         session_destroy();
-        $this->success($username.",再见!", "index");
+        $this->success($username . ",再见!", "index");
 
     }
 

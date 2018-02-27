@@ -2,10 +2,92 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="caab6aa4-488f-492f-b4e0-fb0cc4ee5682" name="默认的" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/Apps/Common/Conf/config.php" afterPath="$PROJECT_DIR$/Apps/Common/Conf/config.php" />
-      <change beforePath="$PROJECT_DIR$/Apps/Common/Conf/config.tencentyun.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Apps/Record/Common/function.php" afterPath="$PROJECT_DIR$/Apps/Record/Common/function.php" />
       <change beforePath="$PROJECT_DIR$/Apps/Record/Conf/config.php" afterPath="$PROJECT_DIR$/Apps/Record/Conf/config.php" />
+      <change beforePath="$PROJECT_DIR$/Apps/Record/Controller/ApiController.class.php" afterPath="$PROJECT_DIR$/Apps/Record/Controller/ApiController.class.php" />
+      <change beforePath="$PROJECT_DIR$/Apps/Record/Controller/CommonController.class.php" afterPath="$PROJECT_DIR$/Apps/Record/Controller/CommonController.class.php" />
+      <change beforePath="$PROJECT_DIR$/Apps/Record/Controller/EmptyController.class.php" afterPath="$PROJECT_DIR$/Apps/Record/Controller/EmptyController.class.php" />
+      <change beforePath="$PROJECT_DIR$/Apps/Record/Controller/FuncController.class.php" afterPath="$PROJECT_DIR$/Apps/Record/Controller/FuncController.class.php" />
+      <change beforePath="$PROJECT_DIR$/Apps/Record/Controller/IndexController.class.php" afterPath="$PROJECT_DIR$/Apps/Record/Controller/IndexController.class.php" />
+      <change beforePath="$PROJECT_DIR$/Apps/Record/Controller/LoginController.class.php" afterPath="$PROJECT_DIR$/Apps/Record/Controller/LoginController.class.php" />
+      <change beforePath="$PROJECT_DIR$/Apps/Record/Controller/OvertimeController.class.php" afterPath="$PROJECT_DIR$/Apps/Record/Controller/OvertimeController.class.php" />
+      <change beforePath="$PROJECT_DIR$/Apps/Record/Controller/PublicController.class.php" afterPath="$PROJECT_DIR$/Apps/Record/Controller/PublicController.class.php" />
+      <change beforePath="$PROJECT_DIR$/Apps/Record/Controller/PunishController.class.php" afterPath="$PROJECT_DIR$/Apps/Record/Controller/PunishController.class.php" />
+      <change beforePath="$PROJECT_DIR$/Apps/Record/Controller/RiskController.class.php" afterPath="$PROJECT_DIR$/Apps/Record/Controller/RiskController.class.php" />
+      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Api/details.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Api/details.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Api/index.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Api/index.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Api/mod.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Api/mod.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Api/modparameter.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Api/modparameter.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Api/modscene.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Api/modscene.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Api/modversion.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Api/modversion.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Func/index.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Func/index.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Func/mod.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Func/mod.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Func/module.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Func/module.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Index/index.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Index/index.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Login/index.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Login/index.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Overtime/index.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Overtime/index.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Public/404.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Public/404.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Public/footer.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Public/footer.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Public/header.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Public/header.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Punish/index.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Punish/index.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Risk/index.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Risk/index.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Risk/mod.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Risk/mod.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/layout.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/layout.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/Common/function.php" afterPath="$PROJECT_DIR$/Apps/Report/Common/function.php" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/Conf/config.php" afterPath="$PROJECT_DIR$/Apps/Report/Conf/config.php" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/Controller/ApiController.class.php" afterPath="$PROJECT_DIR$/Apps/Report/Controller/ApiController.class.php" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/Controller/BugController.class.php" afterPath="$PROJECT_DIR$/Apps/Report/Controller/BugController.class.php" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/Controller/BuildController.class.php" afterPath="$PROJECT_DIR$/Apps/Report/Controller/BuildController.class.php" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/Controller/CaseController.class.php" afterPath="$PROJECT_DIR$/Apps/Report/Controller/CaseController.class.php" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/Controller/EmptyController.class.php" afterPath="$PROJECT_DIR$/Apps/Report/Controller/EmptyController.class.php" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/Controller/ExesceneController.class.php" afterPath="$PROJECT_DIR$/Apps/Report/Controller/ExesceneController.class.php" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/Controller/FuncController.class.php" afterPath="$PROJECT_DIR$/Apps/Report/Controller/FuncController.class.php" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/Controller/IndexController.class.php" afterPath="$PROJECT_DIR$/Apps/Report/Controller/IndexController.class.php" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/Controller/RiskController.class.php" afterPath="$PROJECT_DIR$/Apps/Report/Controller/RiskController.class.php" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/Controller/RulesController.class.php" afterPath="$PROJECT_DIR$/Apps/Report/Controller/RulesController.class.php" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/Controller/SceneController.class.php" afterPath="$PROJECT_DIR$/Apps/Report/Controller/SceneController.class.php" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/Controller/StageController.class.php" afterPath="$PROJECT_DIR$/Apps/Report/Controller/StageController.class.php" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/Controller/TaskController.class.php" afterPath="$PROJECT_DIR$/Apps/Report/Controller/TaskController.class.php" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/Controller/TaskestimateController.class.php" afterPath="$PROJECT_DIR$/Apps/Report/Controller/TaskestimateController.class.php" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/Controller/WebInfoController.class.php" afterPath="$PROJECT_DIR$/Apps/Report/Controller/WebInfoController.class.php" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Api/details.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Api/details.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Api/index.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Api/index.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Bug/activated.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Bug/activated.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Bug/fault.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Bug/fault.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Bug/index.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Bug/index.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Bug/noregress.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Bug/noregress.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Bug/punish.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Bug/punish.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Bug/unconfirmed.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Bug/unconfirmed.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Build/index.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Build/index.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Case/index.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Case/index.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Case/procase.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Case/procase.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Case/smoke.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Case/smoke.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Index/index.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Index/index.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Index/link.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Index/link.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Index/online.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Index/online.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Index/release.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Index/release.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Public/404.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Public/404.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Public/footer.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Public/footer.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Public/header.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Public/header.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Risk/index.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Risk/index.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Rules/prorules.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Rules/prorules.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Scene/index.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Scene/index.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Stage/index.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Stage/index.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Task/index.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Task/index.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Task/personLoad.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Task/personLoad.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Task/protask.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Task/protask.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Taskestimate/dailyTaskAssignment.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Taskestimate/dailyTaskAssignment.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Taskestimate/index.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Taskestimate/index.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Taskestimate/personnelDailyTask.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Taskestimate/personnelDailyTask.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Taskestimate/personnelStageInput.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Taskestimate/personnelStageInput.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/index.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/index.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/layout.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/layout.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/default/index.html" afterPath="$PROJECT_DIR$/Apps/Report/View/default/index.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/default/layout.html" afterPath="$PROJECT_DIR$/Apps/Report/View/default/layout.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/layout.html" afterPath="$PROJECT_DIR$/Apps/Report/View/layout.html" />
+      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,28 +97,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="config.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Apps/Record/Conf/config.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Apps/Common/Conf/config.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="28" column="33" lean-forward="true" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -44,6 +105,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/Apps/Report/Conf/config.php" />
         <option value="$PROJECT_DIR$/Apps/Common/Conf/config.php" />
         <option value="$PROJECT_DIR$/Apps/Record/Conf/config.php" />
       </list>
@@ -77,42 +140,23 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="yxqc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yxqc" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="isc_qc_test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="isc_qc_test" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="yxqc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yxqc" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="isc_qc_test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="isc_qc_test" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Apps" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="yxqc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yxqc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Apps" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Common" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="yxqc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yxqc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Apps" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Common" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Conf" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="yxqc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yxqc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Apps" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Record" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -148,33 +192,34 @@
       <option name="presentableId" value="Default" />
       <updated>1519693920679</updated>
       <workItem from="1519693921973" duration="864000" />
+      <workItem from="1519695671121" duration="1369000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="864000" />
+    <option name="totallyTimeSpent" value="2233000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -190,18 +235,53 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Apps/Record/Conf/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Apps/Common/Conf/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
+        <state relative-caret-position="616">
           <caret line="28" column="33" lean-forward="true" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="88">
+            <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Report/Conf/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="2" lean-forward="true" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Common/Conf/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="24" column="28" lean-forward="false" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Apps/Record/Conf/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="308">
+          <caret line="14" column="2" lean-forward="true" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
           <folding />
         </state>
       </provider>
