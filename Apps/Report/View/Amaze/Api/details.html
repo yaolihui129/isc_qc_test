@@ -30,7 +30,7 @@
                 <th class="table-type" bgcolor="#ccc">平台-业务端</th>
                 <th class="table-title" bgcolor="#ccc">接口名称<span class="badge pull-right">作者</span></th>
                 <th class="table-type" bgcolor="#ccc">线上版本</th>
-                <th class="table-date" bgcolor="#ccc">线上时间</th>
+                <th class="table-date" bgcolor="#ccc">上线时间</th>
             </tr>
             </thead>
             <tbody>
@@ -41,7 +41,7 @@
                     <span class="badge pull-right"><{$data.author}></span>
                 </td>
                 <td><{$data.online}></td>
-                <td><{$data.cdate}></td>
+                <td><{$data.otime}></td>
             </tr>
             </tbody>
         </table>
@@ -49,7 +49,7 @@
 
 
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <h3>参数 <span class="badge"><{$data.id|countApiParameter=###}></span></h3>
 
             <empty name="parameter">
@@ -59,20 +59,16 @@
                     <table class="am-table am-table-striped am-table-hover table-main table-bordered">
                         <thead>
                         <tr>
-                            <th class="table-type" bgcolor="#ccc">分组</th>
-                            <th class="table-type" bgcolor="#ccc">参数名</th>
-                            <th class="table-type" bgcolor="#ccc">类型</th>
-                            <th class="table-type" bgcolor="#ccc">必填</th>
+                            <th class="table-type" bgcolor="#ccc">参数名<span class="badge pull-right">分组</span></th>
+                            <th class="table-type" bgcolor="#ccc">类型-必填</th>
                             <th class="table-title" bgcolor="#ccc">说明</th>
                         </tr>
                         </thead>
                         <tbody>
                         <volist name='parameter' id='param'>
                             <tr>
-                                <td><{$param.group}></td>
-                                <td><{$param.parameter}></td>
-                                <td><{$param.type}></td>
-                                <td><{$param.required}></td>
+                                <td><{$param.parameter}><span class="badge pull-right"><{$param.group}></span></td>
+                                <td><{$param.type}>-<{$param.required}></td>
                                 <td><{$param.desc}></td>
                             </tr>
                         </volist>
@@ -81,7 +77,7 @@
                 </div>
             </empty>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-12">
             <h3>场景 <span class="badge"><{$data.id|countApiScene=###}></span></h3>
             <empty name="scene">
                 还没有规划测试场景
@@ -90,8 +86,11 @@
                     <table class="am-table am-table-striped am-table-hover table-main table-bordered">
                         <thead>
                         <tr>
-                            <th class="table-title" bgcolor="#ccc">测试场景<span class="badge pull-right">作者</span></th>
-                            <th class="table-type" bgcolor="#ccc">状态</th>
+                            <th class="table-title" bgcolor="#ccc">
+                                【级别】测试场景
+                                <span class="badge pull-right">作者</span>
+                            </th>
+                            <th class="table-title" bgcolor="#ccc">状态</th>
                             <th class="table-title" bgcolor="#ccc">说明</th>
                         </tr>
                         </thead>
@@ -99,11 +98,12 @@
                         <volist name='scene' id='sc'>
                             <tr>
                                 <td>
-                                    <{$sc.sn}>.<a href="__URL__/details/id/<{$sc.id}>"><{$sc.scene}>
-                                    <span class="badge pull-right"><{$sc.author}></span>
-                                </a>
+                                    <a href="__URL__/details/id/<{$sc.id}>">
+                                        【<{$sc.level}>】<{$sc.scene}>
+                                        <span class="badge pull-right"><{$sc.author}></span>
+                                    </a>
                                 </td>
-                                <td><{$sc.status}></td>
+                                <td><span class="badge"><{$sc.status|getApiSceneStatus=###}></span></td>
                                 <td><{$sc.desc}></td>
                             </tr>
                         </volist>
@@ -123,24 +123,26 @@
             <table class="am-table am-table-striped am-table-hover table-main table-bordered">
                 <thead>
                 <tr>
-                    <th class="table-type" bgcolor="#ccc">版本号</th>
-                    <th class="table-date" bgcolor="#ccc">日期</th>
-                    <th class="table-type" bgcolor="#ccc">作者</th>
-                    <th class="table-date" bgcolor="#ccc">上线</th>
-                    <th class="table-title" bgcolor="#ccc">说明</th>
-                    <th class="table-date" bgcolor="#ccc">最后更新时间</th>
+                    <th width=15% align="center" bgcolor="#ccc">版本号<span class="badge pull-right">状态</span></th>
+                    <th width=5% align="center" bgcolor="#ccc">作者</th>
+                    <th width=10% align="center" bgcolor="#ccc">提测</th>
+                    <th width=10% align="center" bgcolor="#ccc">预发</th>
+                    <th width=10% align="center" bgcolor="#ccc">上线</th>
+                    <th width=30% align="center" bgcolor="#ccc">说明</th>
+
 
                 </tr>
                 </thead>
                 <tbody>
                 <volist name='version' id='ver'>
                     <tr>
-                        <td><{$ver.version}></td>
-                        <td><{$ver.ctime}></td>
+                        <td><{$ver.version}> <span class="badge pull-right"><{$ver.status|getApiVersionStatus=###}></span></td>
                         <td><{$ver.author}></td>
-                        <td><{$ver.atime}></td>
+                        <td><{$ver.develop}></td>
+                        <td><{$ver.release}></td>
+                        <td><{$ver.online}></td>
                         <td><{$ver.desc}></td>
-                        <td><{$ver.utime}></td>
+
                     </tr>
                 </volist>
 
@@ -148,7 +150,21 @@
             </table>
         </div>
     </empty>
-
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h3>请求示例</h3></div>
+                <{$data.request}>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h3>响应</h3></div>
+                <{$data.response}>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 </div>
 <footer>

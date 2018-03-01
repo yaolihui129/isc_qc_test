@@ -45,7 +45,7 @@ class ApiController extends WebInfoController
         $this->assign('data', $data);
 
         $where = array('api' => $id, 'deleted' => '0');
-        $version = M('tp_apiversion')->where($where)->order('atime desc')->select();
+        $version = M('tp_apiversion')->where($where)->order('version desc')->select();
         $this->assign('version', $version);
 
         $parameter = M('tp_api_parameter')->where($where)->order('sn,id')->select();
