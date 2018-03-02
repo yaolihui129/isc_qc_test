@@ -704,6 +704,29 @@ function getApiVersionStatus($value){
         return $count;
     }
 
+    //状态选择控件,@param $name 控件name;@param $value 选中值
+    function formselect($value="正常",$name="state",$type="state") {
+        $where=array("type"=>$type,"state"=>"正常");
+        $cats = M('dict')->where($where)->order('k')->select();
+        $html = '<select name="'.$name.'" class="form-control">';
+        foreach($cats as $v) {
+            $selected = ($v['v']==$value) ? "selected" : "";
+            $html .= '<option '.$selected.' value="'.$v['v'].'">'.$v['v'].'</option>';
+        }
+        $html .='</select>';
+        return $html;
+    }
+
+function countOwnerProject($user){
+        $where['testgp'] = 'YX';
+        $where['deleted']='0';
+        $status = array('wait', 'doing');
+        $where['status'] = array('in', $status);
+        $where['QD']=$user;
+        $count =M('project')->where($where)->count();
+        return $count;
+    }
+
     //根据$proid获取里程碑数
     function countStage($proid){
         $where=array("proid"=>$proid);

@@ -5,11 +5,58 @@ class IndexController extends WebInfoController
 {
     public function index()
     {
-        $where = array('testgp' => 'YX', 'deleted' => '0');
+        $where['testgp'] = 'YX';
+        $where['deleted']='0';
+        $status = array('wait', 'doing');//只看这些人员
+        $where['status'] = array('in', $status);
         $data = M('project')->where($where)
-            ->field("id,name,code,begin,end,status,pri,acl,deleted,desc,PO,PM,QD,RD,order,deleted")
-            ->order("end desc")->limit(20)->select();
+            ->order("end desc,id")->select();
         $this->assign('data', $data);
+
+        $this->theme('')->display();
+    }
+
+    public function owner(){
+
+        $m=M('project');
+        $where['testgp'] = 'YX';
+        $where['deleted']='0';
+        $status = array('wait', 'doing');
+        $where['status'] = array('in', $status);
+        $data = $m->where($where)->field("id,name,code,begin,end,status,QD,order")->order("end desc,id")->select();
+        $user=array();
+        foreach ($data as $k=>$da){
+            if(in_array($da['qd'],$user)){
+
+            }else{
+                $user[$k]=$da['qd'];
+            }
+        }
+        $this->assign('user', $user);
+        $where['QD']=I('QD',$user[0]);
+        $owner=$where['QD'];
+        $this->assign('owner', $owner);
+        $data = $m->where($where)->field("id,name,code,begin,end,status,QD,order")->order("end desc,id")->select();
+        $this->assign('data', $data);
+
+
+
+
+        $this->theme('')->display();
+    }
+
+    public function history(){
+
+        $where['testgp'] = 'YX';
+        $where['deleted']='0';
+        $status = array('done', 'cancel');
+        $where['status'] = array('in', $status);
+        $data = M('project')->where($where)
+            ->field("id,name,code,begin,end,status,QD,order")
+            ->order("end desc,id")->select();
+        $this->assign('data', $data);
+
+
 
         $this->theme('')->display();
     }

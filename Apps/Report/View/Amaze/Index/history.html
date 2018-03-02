@@ -1,0 +1,34 @@
+<layout name="layout"/>
+<div class="admin-content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-info">
+                <div class="panel-body">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" ><a href="__URL__/index">进行中</a></li>
+                        <li role="presentation"><a href="__URL__/owner">迭代分派</a></li>
+                        <li role="presentation" class="active"><a href="__URL__/history">历史迭代</a></li>
+                    </ul>
+                    <div class="starter-template">
+                        <table class="am-table am-table-striped am-table-hover table-main table-bordered">
+                            <thead>
+                            <tr>
+                                <th class="table-title" bgcolor="#ccc">测试迭代信息<span class="badge pull-right">状态</span></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <volist name='data' id='pro' empty="没有数据">
+                                <tr>
+                                    <td><a href="__APP__/<{$Think.config.PRODUCT}>/Rules/prorules/proid/<{$pro.id}>">
+                                        【<{$pro.qd|getZTUserName=###}>】<{$pro.id|getPro=###}>
+                                        <span class="badge pull-right"><{$pro.status|getProst=###}></span></a></td>
+                                </tr>
+                            </volist>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

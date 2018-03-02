@@ -1,0 +1,87 @@
+<layout name="layout"/>
+<div class="admin-content">
+    <div class="panel panel-default">
+        <div class="panel-heading">API信息<span class="pull-right"><a href="__URL__/index">返回</a></span></div>
+        <div class="starter-template">
+            <table class="am-table am-table-striped am-table-hover table-main table-bordered">
+                <thead>
+                <tr>
+                    <th class="table-type" bgcolor="#ccc">平台-业务端</th>
+                    <th class="table-title" bgcolor="#ccc">接口名称<span class="badge pull-right">作者</span></th>
+                    <th class="table-type" bgcolor="#ccc">线上版本</th>
+                    <th class="table-date" bgcolor="#ccc">上线时间</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><{$data.branch}>-<{$data.client}></td>
+                    <td>
+                        <{$data.apiname}>【<{$data.way}>】<{$data.agreement}>://<{$data.domain}><{$data.adress}>
+                        <span class="badge pull-right"><{$data.author}></span>
+                    </td>
+                    <td><{$data.online}></td>
+                    <td><{$data.otime}></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-info">
+                <div class="panel-body">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation"  class="active"><a href="__URL__/info/id/<{$id}>">版本信息</a></li>
+                        <li role="presentation"><a href="__URL__/parameter/id/<{$id}>">参数信息<span class="badge"><{$data.id|countApiParameter=###}></span></a></li>
+                        <li role="presentation"><a href="__URL__/scene/id/<{$id}>">测试场景 <span class="badge"><{$data.id|countApiScene=###}></span></a></li>
+                    </ul>
+                    <empty name="version">
+                        没有维护版本信息
+                        <else/>
+                        <div class="starter-template">
+                            <table class="am-table am-table-striped am-table-hover table-main table-bordered">
+                                <thead>
+                                <tr>
+                                    <th width=15% align="center" bgcolor="#ccc">版本号<span class="badge pull-right">状态</span></th>
+                                    <th width=5% align="center" bgcolor="#ccc">作者</th>
+                                    <th width=10% align="center" bgcolor="#ccc">提测</th>
+                                    <th width=10% align="center" bgcolor="#ccc">预发</th>
+                                    <th width=10% align="center" bgcolor="#ccc">上线</th>
+                                    <th width=30% align="center" bgcolor="#ccc">说明</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <volist name='version' id='ver'>
+                                        <tr>
+                                            <td><{$ver.version}> <span class="badge pull-right"><{$ver.status|getApiVersionStatus=###}></span></td>
+                                            <td><{$ver.author}></td>
+                                            <td><{$ver.develop}></td>
+                                            <td><{$ver.release}></td>
+                                            <td><{$ver.online}></td>
+                                            <td><{$ver.desc}></td>
+                                        </tr>
+                                    </volist>
+                                </tbody>
+                            </table>
+                        </div>
+                    </empty>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">请求示例</div>
+                                <{$data.request}>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">响应</div>
+                                <{$data.response}>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -16,7 +16,6 @@ class ApiController extends WebInfoController
         //接收传递参数
         $_SESSION['branch'] = I('branch');
         $search = trim(I('search'));
-//        dump($_POST);
         $this->assign('branch', $branch);
         $this->assign('search', $search);
         if ($_SESSION['branch'] == '全部') {
@@ -38,6 +37,45 @@ class ApiController extends WebInfoController
     }
 
 
+    public function info(){
+        $id = I(id);
+        $this->assign('id', $id);
+        $data = M("tp_apitest")->find($id);
+        $this->assign('data', $data);
+        $where = array('api' => $id, 'deleted' => '0');
+
+        $version = M('tp_apiversion')->where($where)->order('version desc')->select();
+        $this->assign('version', $version);
+
+        $this->display();
+    }
+
+    public function parameter(){
+        $id = I(id);
+        $this->assign('id', $id);
+        $data = M("tp_apitest")->find($id);
+        $this->assign('data', $data);
+        $where = array('api' => $id, 'deleted' => '0');
+
+        $parameter = M('tp_api_parameter')->where($where)->order('sn,id')->select();
+        $this->assign('parameter', $parameter);
+
+        $this->display();
+    }
+
+    public function scene(){
+        $id = I(id);
+        $this->assign('id', $id);
+        $data = M("tp_apitest")->find($id);
+        $this->assign('data', $data);
+        $where = array('api' => $id, 'deleted' => '0');
+
+        $scene = M('tp_api_scene')->where($where)->order('sn,id')->select();
+        $this->assign('scene', $scene);
+
+        $this->display();
+    }
+
     public function details()
     {
         $id = I(id);
@@ -53,7 +91,6 @@ class ApiController extends WebInfoController
 
         $scene = M('tp_api_scene')->where($where)->order('sn,id')->select();
         $this->assign('scene', $scene);
-//        dump($scene);
 
         $this->display();
     }
