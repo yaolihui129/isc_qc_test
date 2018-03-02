@@ -10,6 +10,10 @@ return array(
     ),
     'DEFAULT_THEME'     => 'default',//开启模板
     'PRODUCT'           => 'Record',//定义产品编号
-
+    'DB_HOST' => '192.168.155.54',
+    'DB_NAME' => 'zentao171226',
+    'DB_USER' => 'root',
+    'DB_PWD' => 'chexian',
+    'DB_PORT' => '3306',
 
 );

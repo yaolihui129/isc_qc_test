@@ -73,6 +73,23 @@ class FuncController extends CommonController
 
         $this->display();
     }
+    public function func(){
+        //迭代涉及的功能点
+
+        $this->display();
+    }
+
+    public function range(){
+        //迭代测试（含影响范围）
+
+        $this->display();
+    }
+
+    public function musttest(){
+        //迭代必测点
+
+        $this->display();
+    }
 
 
 }
