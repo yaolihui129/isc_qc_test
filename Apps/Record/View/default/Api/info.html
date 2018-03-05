@@ -1,0 +1,174 @@
+<layout name="layout"/>
+<div class="admin-content">
+    <div class="panel panel-default">
+        <div class="panel-heading">API信息<span class="pull-right"><a href="__URL__/index">返回</a></span></div>
+        <div class="starter-template">
+            <table class="am-table am-table-striped am-table-hover table-main table-bordered">
+                <thead>
+                <tr>
+                    <th class="table-type" bgcolor="#ccc">平台-业务端</th>
+                    <th class="table-title" bgcolor="#ccc">接口名称<span class="badge pull-right">作者</span></th>
+                    <th class="table-type" bgcolor="#ccc">线上版本</th>
+                    <th class="table-date" bgcolor="#ccc">上线时间</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><{$data.branch}>-<{$data.client}></td>
+                    <td>
+                        <{$data.apiname}>【<{$data.way}>】<{$data.agreement}>://<{$data.domain}><{$data.adress}>
+                        <span class="badge pull-right"><{$data.author}></span>
+                    </td>
+                    <td><{$data.online}></td>
+                    <td><{$data.otime}></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="starter-template">
+            <table class="am-table am-table-striped am-table-hover table-main table-bordered">
+                <thead>
+                <tr>
+                    <th class="table-title" bgcolor="#ccc">逻辑说明
+                        <span class="pull-right">
+                                <a href="__URL__/mod/id/<{$data.id}>">编辑</a>
+                            </span>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><{$data.desc}></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="panel panel-info">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation"  class="active"><a href="__URL__/info/id/<{$data.id}>">版本信息</a></li>
+            <li role="presentation"><a href="__URL__/parameter/id/<{$data.id}>">参数信息<span class="badge"><{$data.id|countApiParameter=###}></span></a></li>
+            <li role="presentation"><a href="__URL__/scene/id/<{$data.id}>">测试场景 <span class="badge"><{$data.id|countApiScene=###}></span></a></li>
+        </ul>
+        <div class="starter-template">
+            <table class="am-table am-table-striped am-table-hover table-main table-bordered">
+                <thead>
+                <tr>
+                    <th width=15% align="center" bgcolor="#ccc">版本号<span class="badge pull-right">状态</span></th>
+                    <th width=10% align="center" bgcolor="#ccc">作者</th>
+                    <th width=15% align="center" bgcolor="#ccc">提测</th>
+                    <th width=15% align="center" bgcolor="#ccc">预发</th>
+                    <th width=15% align="center" bgcolor="#ccc">上线</th>
+                    <th width=20% align="center" bgcolor="#ccc">说明</th>
+                    <th width=10% align="center" bgcolor="#ccc">操作 <a data-toggle="modal" href="#tianjbanb">添加</a></th>
+
+                </tr>
+                </thead>
+                <empty name="version">
+                        <tr><td colspan="7">没有维护版本信息</td></tr>
+                    <else/>
+                    <tbody>
+                        <volist name='version' id='ver'>
+                            <tr>
+                                <td><{$ver.version}> <span class="badge pull-right"><{$ver.status|getApiVersionStatus=###}></span></td>
+                                <td><{$ver.author}></td>
+                                <td><{$ver.develop}></td>
+                                <td><{$ver.release}></td>
+                                <td><{$ver.online}></td>
+                                <td><{$ver.desc}></td>
+                                <td>
+
+                                    <switch name="ver.status">
+                                        <case value="1">
+                                            <a href="__URL__/modversion/id/<{$ver.id}>/api/<{$ver.api}>">编辑</a>
+                                            <a href="__URL__/develop/id/<{$ver.id}>/api/<{$ver.api}>">提测</a>
+                                            <a href="__URL__/del/id/<{$ver.id}>/table/tp_apiversion"
+                                               onclick="return confirm('你确定要删除场景：<{$ver.version}>？')">删除</a>
+                                        </case>
+                                        <case value="2">
+                                            <a href="__URL__/reject/id/<{$ver.id}>/api/<{$ver.api}>">驳回</a>
+                                            <a href="__URL__/pass/id/<{$ver.id}>/api/<{$ver.api}>">通过</a>
+                                        </case>
+                                        <case value="3">
+                                            <a href="__URL__/modversion/id/<{$ver.id}>/api/<{$ver.api}>">编辑</a>
+                                            <a href="__URL__/develop/id/<{$ver.id}>/api/<{$ver.api}>">提测</a>
+                                            <a href="__URL__/del/id/<{$ver.id}>/table/tp_apiversion"
+                                               onclick="return confirm('你确定要删除场景：<{$ver.version}>？')">删除</a>
+                                        </case>
+                                        <case value="4">
+                                            <a href="__URL__/release/id/<{$ver.id}>/api/<{$ver.api}>">预发</a>
+                                            <a href="__URL__/cancel/id/<{$ver.id}>/api/<{$ver.api}>">取消</a>
+                                        </case>
+                                        <case value="5">
+                                            <a href="__URL__/online/id/<{$ver.id}>/api/<{$ver.api}>">上线</a>
+                                            <a href="__URL__/cancel/id/<{$ver.id}>/api/<{$ver.api}>">取消</a>
+                                        </case>
+                                        <default />
+                                    </switch>
+                                </td>
+                            </tr>
+                        </volist>
+                    </tbody>
+                </empty>
+            </table>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        请求示例<span class="pull-right"><a href="__URL__/mod/id/<{$data.id}>">编辑</a></span>
+                    </div>
+                    <{$data.request}>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        响应<span class="pull-right"><a href="__URL__/mod/id/<{$data.id}>">编辑</a></span>
+                    </div>
+                    <{$data.response}>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- 添加-版本 -->
+<div class="modal fade " id="tianjbanb" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="banbModalLabel">版本-添加</h4>
+            </div>
+            <div class="modal-body">
+                <form action="__URL__/tianjbanb" method="post" class="form-horizontal" role="form">
+                    <input type="hidden" name="api" value="<{$data.id}>"/>
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label">版本:</label>
+                        <div class="col-sm-4"><input type="text" class="form-control" name="version" value=""
+                                                     placeholder="版本"></div>
+                        <label  class="col-sm-1 control-label">作者:</label>
+                        <div class="col-sm-2"><input type="text" class="form-control" name="author"
+                                                     value="<{$_SESSION['realname']}>" placeholder="作者"></div>
+                        <label  class="col-sm-1 control-label">顺序:</label>
+                        <div class="col-sm-2"><input type="text" class="form-control" name="sn" value="<{$c}>"
+                                                     placeholder="顺序"></div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label">说明:</label>
+                        <div class="col-sm-10"><input type="text" class="form-control" name="desc" value=""
+                                                      placeholder="版本说明"></div>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="submit" class="btn btn-primary">提交</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

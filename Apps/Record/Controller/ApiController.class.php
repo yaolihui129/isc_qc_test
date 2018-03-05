@@ -406,7 +406,6 @@ class ApiController extends CommonController
         $this->assign("required", $required);
 
         $ways= $this->select($info['dict']['ways'], 'ways', $_SESSION['parameter']['ways']);
-//        dump($info['dict']);
         $this->assign("ways", $ways);
 
         //封装富文本编辑器
@@ -416,6 +415,75 @@ class ApiController extends CommonController
         $this->display();
     }
 
+
+    public function info(){
+        $info = $this->init();
+        $id = I(id);
+        $this->assign('id', $id);
+        $where = array('api' => $id, 'deleted' => '0');
+        $data = M($info['name'][1])->find($id);
+        $this->assign('data', $data);
+
+        $version = M($info['name'][2])->where($where)->order('version desc')->select();
+        $this->assign('version', $version);
+
+        //参数添加
+        $c = M($info['name'][2])->where($where)->count() + 1;
+        $this->assign('c', $c);
+
+
+
+
+        $this->display();
+
+    }
+    public function parameter(){
+        $info = $this->init();
+        $id = I(id);
+        $this->assign('id', $id);
+        $where = array('api' => $id, 'deleted' => '0');
+        $data = M($info['name'][1])->find($id);
+        $this->assign('data', $data);
+
+        $parameter = M($info['name'][3])->where($where)->order('sn,id')->select();
+        $this->assign('parameter', $parameter);
+
+        $c = M($info['name'][3])->where($where)->count() + 1;
+        $this->assign('c', $c);
+
+        $type = $this->select($info['dict']['type'], 'type', 1);
+        $this->assign("type", $type);
+
+        $required = $this->select($info['dict']['required'], 'required', 1);
+        $this->assign("required", $required);
+
+        $ways= $this->select($info['dict']['ways'], 'ways', $_SESSION['parameter']['ways']);
+        $this->assign("ways", $ways);
+
+        //封装富文本编辑器
+        $this->assign("parameterDesc", PublicController::editor("desc"));
+
+
+        $this->display();
+
+    }
+
+    public function scene(){
+        $info = $this->init();
+        $id = I(id);
+        $this->assign('id', $id);
+        $where = array('api' => $id, 'deleted' => '0');
+        $data = M($info['name'][1])->find($id);
+        $this->assign('data', $data);
+
+        $scene = M($info['name'][4])->where($where)->order('sn,id')->select();
+        $this->assign('scene', $scene);
+
+        $c = M($info['name'][4])->where($where)->count() + 1;
+        $this->assign('c', $c);
+
+        $this->display();
+    }
     public function modparameter()
     {
         $info = $this->init();
@@ -430,7 +498,10 @@ class ApiController extends CommonController
         $where = array('api' => I('api'), 'deleted' => '0');
         $parameter = M($info['name'][3])->where($where)->order('sn,id')->select();
         $this->assign('parameter', $parameter);
-//        dump($parameter);
+
+        $ways = $this->select($info['dict']['ways'], 'ways', $arr['ways']);
+        $this->assign("ways", $ways);
+
         $this->display();
     }
 

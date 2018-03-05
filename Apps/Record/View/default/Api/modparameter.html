@@ -3,7 +3,7 @@
 <div class="admin-content">
     <div class="am-cf am-padding">
         <div class="am-fl am-cf">
-            <strong class="am-text-primary am-text-lg"><a href="__URL__/details/id/<{$arr.api}>">API详情</a></strong> /
+            <strong class="am-text-primary am-text-lg"><a href="__URL__/parameter/id/<{$arr.api}>">API参数</a></strong> /
             <small>编辑参数</small>
         </div>
     </div>
@@ -15,33 +15,34 @@
                     <input type="hidden" name="table" value="tp_api_parameter"/>
                     <div class="form-group">
                         <div class="col-sm-2 control-label"></div>
-                        <div class="col-sm-10">
-                            <{$arr.moder|getZTUserName=###}> 更新于: <{$arr.utime}>
-                        </div>
+                        <div class="col-sm-10"> <{$arr.moder|getZTUserName=###}> 更新于: <{$arr.utime}></div>
                     </div>
                     <div class="form-group">
-                        <label for="state" class="col-sm-2 control-label">分组:</label>
-                        <div class="col-sm-6">
+                        <label  class="col-sm-2 control-label">分组:</label>
+                        <div class="col-sm-3">
                             <input type="text" class="form-control" name="group" value="<{$arr.group}>" placeholder="分组">
                         </div>
-                        <label for="state" class="col-sm-2 control-label">类型:</label>
+                        <div class="col-sm-3">
+                           <{$ways}>
+                        </div>
+                        <label  class="col-sm-2 control-label">类型:</label>
                         <div class="col-sm-2">
                             <input type="text" class="form-control" name="type" value="<{$arr.type}>" placeholder="类型">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="product" class="col-sm-2 control-label">参数:</label>
+                        <label class="col-sm-2 control-label">参数:</label>
                         <div class="col-sm-6">
                             <input type="text" class="form-control" name="parameter"
                                                      value="<{$arr.parameter}>" placeholder="参数"></div>
-                        <label for="state" class="col-sm-2 control-label">必填:</label>
+                        <label  class="col-sm-2 control-label">必填:</label>
                         <div class="col-sm-2"><{$required}>
 
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="desc" class="col-sm-2 control-label">说明:</label>
+                        <label  class="col-sm-2 control-label">说明:</label>
                         <div class="col-sm-10"><{$desc}></div>
                     </div>
 
@@ -54,7 +55,7 @@
                         <div class="col-sm-5">
                             <button type="submit" class="btn btn-info btn-block ">提 交</button>
                         </div>
-                        <div class="col-sm-5"><a href="__URL__/details/id/<{$arr.api}>" class="btn btn-warning btn-block">返回详情</a>
+                        <div class="col-sm-5"><a href="__URL__/parameter/id/<{$arr.api}>" class="btn btn-warning btn-block">返回参数</a>
                         </div>
                     </div>
 

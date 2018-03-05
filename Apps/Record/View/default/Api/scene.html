@@ -1,0 +1,156 @@
+<layout name="layout"/>
+<div class="admin-content">
+    <div class="panel panel-default">
+        <div class="panel-heading">API信息<span class="pull-right"><a href="__URL__/index">返回</a></span></div>
+        <div class="starter-template">
+            <table class="am-table am-table-striped am-table-hover table-main table-bordered">
+                <thead>
+                <tr>
+                    <th class="table-type" bgcolor="#ccc">平台-业务端</th>
+                    <th class="table-title" bgcolor="#ccc">接口名称<span class="badge pull-right">作者</span></th>
+                    <th class="table-type" bgcolor="#ccc">线上版本</th>
+                    <th class="table-date" bgcolor="#ccc">上线时间</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><{$data.branch}>-<{$data.client}></td>
+                    <td>
+                        <{$data.apiname}>【<{$data.way}>】<{$data.agreement}>://<{$data.domain}><{$data.adress}>
+                        <span class="badge pull-right"><{$data.author}></span>
+                    </td>
+                    <td><{$data.online}></td>
+                    <td><{$data.otime}></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="starter-template">
+            <table class="am-table am-table-striped am-table-hover table-main table-bordered">
+                <thead>
+                <tr>
+                    <th class="table-title" bgcolor="#ccc">逻辑说明
+                        <span class="pull-right">
+                                <a href="__URL__/mod/id/<{$data.id}>">编辑</a>
+                            </span>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><{$data.desc}></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="panel panel-info">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation"  ><a href="__URL__/info/id/<{$data.id}>">版本信息</a></li>
+            <li role="presentation"><a href="__URL__/parameter/id/<{$data.id}>">参数信息<span class="badge"><{$data.id|countApiParameter=###}></span></a></li>
+            <li role="presentation" class="active"><a href="__URL__/scene/id/<{$data.id}>">测试场景 <span class="badge"><{$data.id|countApiScene=###}></span></a></li>
+        </ul>
+
+            <div class="starter-template">
+                <table class="am-table am-table-striped am-table-hover table-main table-bordered">
+                    <thead>
+                    <tr>
+                        <th class="table-type" bgcolor="#ccc">顺序</th>
+                        <th class="table-title" bgcolor="#ccc">【级别】测试场景<span class="badge pull-right">作者</span></th>
+                        <th class="table-type" bgcolor="#ccc">状态</th>
+                        <th class="table-title" bgcolor="#ccc">说明</th>
+                        <th class="table-type" bgcolor="#ccc">操作: <a data-toggle="modal" href="#tianjchangj">添加</a></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <empty name="scene">
+                            <tr><td colspan="5">还没有规划测试场景</td></tr>
+                        <else/>
+                            <form action="__URL__/order" method="post">
+                            <input type="hidden" name="table" value="tp_api_scene"/>
+                            <volist name='scene' id='sc'>
+                                <tr>
+                                    <td>
+                                        <input type="text" name="sn[<{$sc.id}>]" value="<{$sc.sn}>" class="input40"/>
+                                    </td>
+                                    <td>
+                                        <a href="__URL__/details/id/<{$sc.id}>">【<{$sc.level}>】<{$sc.scene}>
+                                            <span class="badge pull-right"><{$sc.author}></span>
+                                        </a>
+                                    </td>
+                                    <td><{$sc.status|getApiSceneStatus=###}></td>
+                                    <td><{$sc.desc}></td>
+                                    <td>
+                                        <a href="#">测试</a>
+                                        <a href="__URL__/modscene/id/<{$sc.id}>/api/<{$sc.api}>">编辑</a>
+                                        <a href="__URL__/del/id/<{$sc.id}>/table/tp_api_scene"
+                                           onclick="return confirm('你确定要删除场景：<{$sc.scene}>？')">删除</a>
+                                    </td>
+                                </tr>
+                            </volist>
+                            <tr>
+                                <td colspan="10"><input type="submit" name="do_submit" value="批量排序" class="btn"></td>
+                            </tr>
+                        </form>
+                    </empty>
+
+
+                    </tbody>
+                </table>
+            </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- 添加-场景 -->
+<div class="modal fade " id="tianjchangj" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="changjModalLabel">场景-添加</h4>
+            </div>
+            <div class="modal-body">
+                <form action="__URL__/insert" method="post" class="form-horizontal" role="form">
+                    <input type="hidden" name="api" value="<{$data.id}>"/>
+                    <input type="hidden" name="table" value="tp_api_scene"/>
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label">场景:</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="scene" value=""  placeholder="场景">
+                        </div>
+                        <label  class="col-sm-2 control-label">顺序:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" name="sn" value="<{$c}>" placeholder="顺序">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label">级别:</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="level" value="3" placeholder="级别">
+                        </div>
+                        <label  class="col-sm-2 control-label">作者:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" name="author" value="<{$_SESSION['realname']}>" placeholder="作者" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label">说明:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="desc" value=""  placeholder="场景说明">
+                        </div>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="submit" class="btn btn-primary">提交</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

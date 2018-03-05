@@ -1,0 +1,155 @@
+<layout name="layout"/>
+<div class="admin-content">
+    <div class="panel panel-default">
+        <div class="panel-heading">API信息<span class="pull-right"><a href="__URL__/index">返回</a></span></div>
+        <div class="starter-template">
+            <table class="am-table am-table-striped am-table-hover table-main table-bordered">
+                <thead>
+                <tr>
+                    <th class="table-type" bgcolor="#ccc">平台-业务端</th>
+                    <th class="table-title" bgcolor="#ccc">接口名称<span class="badge pull-right">作者</span></th>
+                    <th class="table-type" bgcolor="#ccc">线上版本</th>
+                    <th class="table-date" bgcolor="#ccc">上线时间</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><{$data.branch}>-<{$data.client}></td>
+                    <td>
+                        <{$data.apiname}>【<{$data.way}>】<{$data.agreement}>://<{$data.domain}><{$data.adress}>
+                        <span class="badge pull-right"><{$data.author}></span>
+                    </td>
+                    <td><{$data.online}></td>
+                    <td><{$data.otime}></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="starter-template">
+            <table class="am-table am-table-striped am-table-hover table-main table-bordered">
+                <thead>
+                <tr>
+                    <th class="table-title" bgcolor="#ccc">逻辑说明
+                        <span class="pull-right">
+                                <a href="__URL__/mod/id/<{$data.id}>">编辑</a>
+                            </span>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><{$data.desc}></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="panel panel-info">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" ><a href="__URL__/info/id/<{$data.id}>">版本信息</a></li>
+            <li role="presentation" class="active"><a href="__URL__/parameter/id/<{$data.id}>">参数信息 <span class="badge"><{$data.id|countApiParameter=###}></span></a></li>
+            <li role="presentation"><a href="__URL__/scene/id/<{$data.id}>">测试场景  <span class="badge"><{$data.id|countApiScene=###}></span></a></li>
+        </ul>
+        <div class="starter-template">
+            <table class="am-table am-table-striped am-table-hover table-main table-bordered">
+                <thead>
+                <tr>
+                    <th class="table-type" bgcolor="#ccc">顺序</th>
+                    <th class="table-type" bgcolor="#ccc">【方式】参数名<span class="badge pull-right">分组</span></th>
+                    <th class="table-type" bgcolor="#ccc">类型-必填</th>
+                    <th class="table-type" bgcolor="#ccc">说明</th>
+                    <th class="table-type" bgcolor="#ccc">操作:<a data-toggle="modal" href="#tianjcans">添加</a></th>
+                </tr>
+                </thead>
+                <tbody>
+                <empty name="parameter">
+                    <tr>
+                        <td colspan="5">无需传递参数&还没有维护参数信息</td>
+                    </tr>
+                    <else/>
+                    <form action="__URL__/order" method="post">
+                        <input type="hidden" name="table" value="tp_api_parameter"/>
+                        <volist name='parameter' id='param'>
+                            <tr>
+                                <td>
+                                    <input type="text" name="sn[<{$param.id}>]" value="<{$param.sn}>" class="input40"/>
+                                </td>
+                                <td>【<{$param.ways}>】<{$param.parameter}><span class="badge pull-right"><{$param.group}></span></td>
+                                <td><{$param.type}>-<{$param.required}></td>
+                                <td><{$param.desc}></td>
+                                <td>
+                                    <a href="__URL__/modparameter/id/<{$param.id}>/api/<{$param.api}>">编辑</a>
+                                    <a href="__URL__/del/id/<{$param.id}>/table/tp_api_parameter"
+                                       onclick="return confirm('你确定要删除参数：<{$param.parameter}>？')">删除</a>
+                                </td>
+                            </tr>
+                        </volist>
+                        <tr>
+                            <td colspan="10"><input type="submit" name="do_submit" value="批量排序" class="btn"></td>
+                        </tr>
+                    </form>
+                </empty>
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- 添加-参数 -->
+<div class="modal fade " id="tianjcans" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="cansModalLabel">参数-添加</h4>
+            </div>
+            <div class="modal-body">
+                <form action="__URL__/tianjcs" method="post" class="form-horizontal" role="form">
+                    <input type="hidden" name="api" value="<{$data.id}>"/>
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label">参数:</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" name="parameter" value="" placeholder="参数">
+                        </div>
+                        <label  class="col-sm-1 control-label">方式:</label>
+                        <div class="col-sm-2"><{$ways}></div>
+                        <label class="col-sm-1 control-label">顺序:</label>
+                        <div class="col-sm-2"><input type="text" class="form-control" name="sn" value="<{$c}>"
+                                                     placeholder="顺序"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">分组:</label>
+                        <div class="col-sm-4">
+                            <empty name="Think.session.parameter.group">
+                                <input type="text" class="form-control" name="group" value="私有请求参数" placeholder="分组">
+                                <else />
+                                <input type="text" class="form-control" name="group" value="<{$Think.session.parameter.group}>"  placeholder="分组">
+                            </empty>
+                        </div>
+                        <label  class="col-sm-1 control-label">类型:</label>
+                        <div class="col-sm-2"><{$type}></div>
+                        <label  class="col-sm-1 control-label">必填:</label>
+                        <div class="col-sm-2"><{$required}></div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label">说明:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="desc" value=""  placeholder="参数说明">
+                        </div>
+                    </div>
+                </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="submit" class="btn btn-primary">提交</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
