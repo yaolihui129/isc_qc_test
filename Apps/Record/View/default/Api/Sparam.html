@@ -1,0 +1,163 @@
+<layout name="layout"/>
+<div class="admin-content">
+    <div class="panel panel-default">
+        <div class="panel-heading">API测试场景<span class="pull-right"><a href="__URL__/scene/id/<{$data.api}>">返回</a></span></div>
+        <div class="starter-template">
+            <table class="am-table am-table-striped am-table-hover table-main table-bordered">
+                <thead>
+                <tr>
+                    <th class="table-type" bgcolor="#ccc">平台-业务端</th>
+                    <th class="table-title" bgcolor="#ccc">接口名称</th>
+                    <th class="table-type" bgcolor="#ccc">【级别】测试场景<span class="badge pull-right">作者</span></th>
+                    <th class="table-date" bgcolor="#ccc">状态</th>
+                    <th class="table-date" bgcolor="#ccc">更新时间</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><{$data.api}></td>
+                        <td><{$data.api}></td>
+                        <td>【<{$data.level}>】<{$data.scene}><span class="badge pull-right"><{$data.author}></span></td>
+                        <td><{$data.status}></td>
+                        <td><{$data.utime}></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <div class="starter-template">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        请求参数
+                        <span class="pull-right">
+                            <a href="__URL__/addSparam/scene/<{$data.id}>/api/<{$data.api}>">生成</a>
+                            <a href="__URL__/copySparam/scene/<{$data.id}>">复制</a>
+                            <a href="__URL__/showSparam/scene/<{$data.id}>" target="_blank">预览</a>
+                            <a href="__URL__/clearSparam/scene/<{$data.id}>">清除</a>
+                        </span>
+                    </div>
+                    <table class="am-table am-table-striped am-table-hover table-main table-bordered">
+                        <thead>
+                        <tr>
+                            <th width="10%" bgcolor="#ccc">顺序</th>
+                            <th width="15%" bgcolor="#ccc">类型-必填</th>
+                            <th width="25%" bgcolor="#ccc">参数</th>
+                            <th width="25%" bgcolor="#ccc">参数值</th>
+                            <th width="25%" bgcolor="#ccc">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <form action="__URL__/order" method="post">
+                                <input type="hidden" name="table" value="tp_api_scene_parameter"/>
+                                <volist name='sparam' id='sc'>
+                                    <tr>
+                                        <td><input type="text" name="sn[<{$sc.id}>]" value="<{$sc.sn}>" class="input40"/></td>
+                                        <td><{$sc.type}>-<{$sc.required}></td>
+                                        <td><div title="<{$sc.desc}>"><{$sc.parameter}></div></td>
+                                        <td><{$sc.value}></td>
+                                        <td>
+                                            <a href="__URL__/copyOneSparam/id/<{$sc.id}>">复制</a>
+                                            <a href="__URL__/modSparam/id/<{$sc.id}>">编辑</a>
+                                            <a href="__URL__/del/id/<{$sc.id}>/table/tp_api_scene_parameter">删除</a>
+                                        </td>
+                                    </tr>
+                                </volist>
+                                <tr>
+                                    <td colspan="10"><input type="submit" name="do_submit" value="批量排序" class="btn"></td>
+                                </tr>
+                            </form>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        剪切板
+                        <span class="pull-right">
+                            <a href="__URL__/pasteShear/scene/<{$data.id}>">覆盖</a>
+                            <a href="__URL__/clearShear/api/<{$data.api}>">清空</a>
+                        </span>
+                    </div>
+                    <table class="am-table am-table-striped am-table-hover table-main table-bordered">
+                        <thead>
+                        <tr>
+                            <th width="10%" bgcolor="#ccc">顺序</th>
+                            <th width="15%" bgcolor="#ccc">类型-必填</th>
+                            <th width="25%" bgcolor="#ccc">参数</th>
+                            <th width="25%" bgcolor="#ccc">参数值</th>
+                            <th width="25%" bgcolor="#ccc">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <form action="__URL__/order" method="post">
+                            <input type="hidden" name="table" value="tp_api_shear_parameter"/>
+                            <volist name='shear' id='sc'>
+                                <tr>
+                                    <td><input type="text" name="sn[<{$sc.id}>]" value="<{$sc.sn}>" class="input40"/></td>
+                                    <td><{$sc.type}>-<{$sc.required}></td>
+                                    <td><div title="<{$sc.desc}>"><{$sc.parameter}></div></td>
+                                    <td><{$sc.value}></td>
+                                    <td>
+                                        <a href="__URL__/pasteOneShear/id/<{$sc.id}>">粘贴</a>
+                                        <a href="__URL__/modShear/id/<{$sc.id}>">编辑</a>
+                                        <a href="__URL__/del/id/<{$sc.id}>/table/tp_api_shear_parameter">删除</a>
+                                    </td>
+                                </tr>
+                            </volist>
+                            <tr>
+                                <td colspan="10"><input type="submit" name="do_submit" value="批量排序" class="btn"></td>
+                            </tr>
+                        </form>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">最近10次的测试情况</div>
+        <div class="starter-template">
+            <table class="am-table am-table-striped am-table-hover table-main table-bordered">
+                <thead>
+                <tr>
+                    <th width="5%" bgcolor="#ccc">顺序</th>
+                    <th width="5%" bgcolor="#ccc">执行者</th>
+                    <th width="10%" bgcolor="#ccc">测试时间</th>
+                    <th width="20%" bgcolor="#ccc">请求</th>
+                    <th width="60%" bgcolor="#ccc">响应</th>
+
+                </tr>
+                </thead>
+                <tbody>
+
+                    <volist name='result' id='sc' key="k">
+                        <tr>
+                            <td><{$k}></td>
+                            <td><{$sc.adder}></td>
+                            <td><{$sc.utime}></td>
+                            <td><{$sc.req}></td>
+                            <td><{$sc.res}></td>
+
+                        </tr>
+                    </volist>
+
+                </tbody>
+            </table>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+</div>

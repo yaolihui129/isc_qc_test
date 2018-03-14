@@ -54,11 +54,12 @@
             <table class="am-table am-table-striped am-table-hover table-main table-bordered">
                 <thead>
                 <tr>
-                    <th class="table-type" bgcolor="#ccc">顺序</th>
-                    <th class="table-type" bgcolor="#ccc">【方式】参数名<span class="badge pull-right">分组</span></th>
-                    <th class="table-type" bgcolor="#ccc">类型-必填</th>
-                    <th class="table-type" bgcolor="#ccc">说明</th>
-                    <th class="table-type" bgcolor="#ccc">操作:<a data-toggle="modal" href="#tianjcans">添加</a></th>
+                    <th  width="5%"  bgcolor="#ccc">顺序</th>
+                    <th  width="20%" bgcolor="#ccc">【方式】参数名<span class="badge pull-right">分组</span></th>
+                    <th  width="10%" bgcolor="#ccc">示例值</th>
+                    <th  width="10%" bgcolor="#ccc">类型-必填</th>
+                    <th  width="45%" bgcolor="#ccc">说明</th>
+                    <th  width="10%" bgcolor="#ccc">操作:<a data-toggle="modal" href="#tianjcans">添加</a></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -75,6 +76,7 @@
                                     <input type="text" name="sn[<{$param.id}>]" value="<{$param.sn}>" class="input40"/>
                                 </td>
                                 <td>【<{$param.ways}>】<{$param.parameter}><span class="badge pull-right"><{$param.group}></span></td>
+                                <td><{$param.value}></td>
                                 <td><{$param.type}>-<{$param.required}></td>
                                 <td><{$param.desc}></td>
                                 <td>

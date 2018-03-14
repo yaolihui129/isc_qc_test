@@ -12,11 +12,12 @@ class ApiController extends CommonController
     function init()
     {
         $dict = array(
-            'name' => ['Api', 'tp_apitest', 'tp_apiversion', 'tp_api_parameter', 'tp_api_scene'],
+            'name' => ['Api', 'tp_apitest', 'tp_apiversion', 'tp_api_parameter',
+                'tp_api_scene','tp_api_scene_parameter','tp_api_test_result','tp_api_shear_parameter'],
             'branch' => ['全部', '保险服务', '安鑫保', '车险APP', '易鑫车服', '微信', '第三方'],
             'agreement' => ['http', 'https'],
-            'domain' => ['127.0.0.1', 'service.axb.chexian.com', 'cfw.taoche.com', 'axb.chexian.com'],
-            'way' => ['GET', 'POST', 'HEAD'],
+            'domain' => ['127.0.0.1', 'service.axb.chexian.com', 'cfw.taoche.com', 'axb.chexian.com','open.chexian.com/bxfw'],
+            'way' => ['GET', 'POST', 'HEAD','MQ'],
             'ways'=>['request','response'],
             'authority' => ['无', 'Auth', '签名'],
             'required' => ['是', '否'],
@@ -537,5 +538,231 @@ class ApiController extends CommonController
 
         $this->display();
     }
+
+
+    public function Sparam(){
+
+        $info = $this->init();
+        $id = I(id);
+        $this->assign('id', $id);
+        $where = array('scene' => $id, 'deleted' => '0');
+        $data = M($info['name'][4])->find($id);
+        $this->assign('data', $data);
+
+        $sparam = M($info['name'][5])->where($where)->order('sn,id')->select();
+        $this->assign('sparam', $sparam);
+
+        $result = M($info['name'][6])->where($where)->order('ctime desc')->select();
+        $this->assign('result', $result);
+
+        $map['moder']=$_SESSION['account'];
+        $map['api']=$data['api'];
+        $map['deleted']='0';
+        $shear = M($info['name'][7])->where($map)->order('sn,id')->select();
+        $this->assign('shear', $shear);
+
+        $this->display();
+    }
+
+    function addSparam(){
+        $scene = I('scene');
+        $api   = I('api');
+        $info = $this->init();
+        $where = array('scene' => $scene,'api'=>$api,'ways'=>'request', 'deleted' => '0');
+        $parameter = M($info['name'][3])->where($where)->order('sn,id')->field('sn,parameter,value,type,required,desc')->select();
+
+        $m = D($info['name'][5]);
+        $m->create($_GET);
+        $_GET['scene'] = $scene;
+        $_GET['api']   = $api;
+        $_GET['adder'] = $_SESSION['account'];
+        $_GET['moder'] = $_SESSION['account'];
+        foreach ($parameter as $pa){
+            $_GET['sn']        = $pa['sn'];
+            $_GET['parameter'] = $pa['parameter'];
+            $_GET['value']     = $pa['value'];
+            $_GET['type']      = $pa['type'];
+            $_GET['required']  = $pa['required'];
+            $_GET['desc']      = $pa['desc'];
+            $_GET['ctime']     = time();
+            $m->add($_GET);
+        }
+        $this->success("添加成功");
+    }
+
+    function copySparam(){
+        $scene=I('scene');
+        $info = $this->init();
+        $where = array('scene' => $scene, 'deleted' => '0');
+        $parameter = M($info['name'][5])->where($where)->order('sn,id')->select();
+//        dump($parameter);
+        $m = D($info['name'][7]);
+        $m->create($_GET);
+        $_GET['scene']=$scene;
+        $_GET['moder'] = $_SESSION['account'];
+        foreach ($parameter as $pa){
+            $_GET['sn']        = $pa['sn'];
+            $_GET['type']      = $pa['type'];
+            $_GET['required']  = $pa['required'];
+            $_GET['parameter'] = $pa['parameter'];
+            $_GET['value']     = $pa['value'];
+            $_GET['api']       = $pa['api'];
+            $_GET['status']    = $pa['status'];
+            $_GET['desc']      = $pa['desc'];
+            $_GET['adder']     = $pa['adder'];
+            $_GET['ctime']     = time();
+            $m->add($_GET);
+        }
+        $this->success("复制到剪切板成功");
+    }
+
+
+    function pasteShear(){
+        $scene=I('scene');
+        $info = $this->init();
+        $where = array('scene' => $scene, 'moder'=>$_SESSION['account'],'deleted' => '0');
+        $parameter = M($info['name'][7])->where($where)->order('sn,id')->select();
+//        dump($parameter);
+        $m = D($info['name'][5]);
+        $m->create($_GET);
+        $_GET['scene']=$scene;
+        $_GET['moder'] = $_SESSION['account'];
+        foreach ($parameter as $pa){
+            $_GET['sn']        = $pa['sn'];
+            $_GET['type']      = $pa['type'];
+            $_GET['required']  = $pa['required'];
+            $_GET['parameter'] = $pa['parameter'];
+            $_GET['value']     = $pa['value'];
+            $_GET['api']       = $pa['api'];
+            $_GET['status']    = $pa['status'];
+            $_GET['desc']      = $pa['desc'];
+            $_GET['adder']     = $pa['adder'];
+            $_GET['ctime']     = time();
+            $m->add($_GET);
+        }
+        $this->success("覆盖回场景参数");
+    }
+
+
+    function clearSparam(){
+        $info = $this->init();
+        $where = array('scene' => I('scene'), 'deleted' => '0');
+        $m= D($info['name'][5]);
+        $parameter = $m->where($where)->select();
+        foreach ($parameter as $item=>$value){
+            $_POST[id] = $value['id'];
+            $_POST['moder'] = $_SESSION['account'];
+            $_POST['deleted'] = 1;
+            $m->save($_POST);
+        }
+        $this->success("清除场景参数成功！");
+    }
+
+    function clearShear(){
+        $info = $this->init();
+        $where = array('api' => I('api'), 'moder'=>$_SESSION['account'],'deleted' => '0');
+        $m= D($info['name'][7]);
+        $parameter = $m->where($where)->select();
+        foreach ($parameter as $item=>$value){
+            $_POST[id] = $value['id'];
+            $_POST['moder'] = $_SESSION['account'];
+            $_POST['deleted'] = 1;
+            $m->save($_POST);
+        }
+        $this->success("清空参数剪切板成功！");
+
+    }
+
+    function pasteOneShear(){
+        $info = $this->init();
+        $pa = M($info['name'][7])->find(I('id'));
+        $m = D($info['name'][5]);
+        $m->create();
+        $var['scene']     = $pa['scene'];
+        $var['moder']     = $_SESSION['account'];
+        $var['sn']        = $pa['sn'];
+        $var['type']      = $pa['type'];
+        $var['required']  = $pa['required'];
+        $var['parameter'] = $pa['parameter'];
+        $var['value']     = $pa['value'];
+        $var['api']       = $pa['api'];
+        $var['status']    = $pa['status'];
+        $var['desc']      = $pa['desc'];
+        $var['adder']     = $pa['adder'];
+        $var['ctime']     = time();
+        $m->add($var);
+        $this->success("粘贴回场景参数");
+    }
+
+
+    function copyOneSparam(){
+        $info = $this->init();
+        $pa = M($info['name'][5])->find(I('id'));
+        $m = D($info['name'][7]);
+        $m->create();
+        $var['scene']     = $pa['scene'];
+        $var['moder']     = $_SESSION['account'];
+        $var['sn']        = $pa['sn'];
+        $var['type']      = $pa['type'];
+        $var['required']  = $pa['required'];
+        $var['parameter'] = $pa['parameter'];
+        $var['value']     = $pa['value'];
+        $var['api']       = $pa['api'];
+        $var['status']    = $pa['status'];
+        $var['desc']      = $pa['desc'];
+        $var['adder']     = $pa['adder'];
+        $var['ctime']     = time();
+
+        $m->add($var);
+        $this->success("复制参数到剪切板");
+    }
+
+    function showSparam(){
+        $scene=I('scene');
+        $info = $this->init();
+        $where = array('scene' => $scene, 'deleted' => '0');
+        $parameter = M($info['name'][5])->field('parameter,value')->where($where)->order('sn,id')->select();
+        $var=array();
+        foreach ($parameter as $v){
+            $var[$v['parameter']]=$v['value'];
+        }
+
+
+        $arr=array(
+            "appId"=>"TOB",
+            "requestId"=> "123",
+            "content"=>$var
+        );
+        $arr=json_encode($arr,JSON_PRETTY_PRINT);
+        header('Content-type:text/json');
+        echo $arr;
+    }
+
+    public function modSparam(){
+        $info=$this->init();
+        $m=M($info['name'][5]);
+        $arr=$m->find(I('id'));
+        $this->assign('arr', $arr);
+//dump($arr);
+        $where = array('scene' => $arr['scene'], 'deleted' => '0');
+        $sparam = $m->where($where)->order('sn,id')->select();
+        $this->assign('sparam', $sparam);
+//        dump($sparam);
+        $this->display();
+    }
+
+    public function modShear(){
+        $info=$this->init();
+        $m=M($info['name'][7]);
+        $arr=$m->find(I('id'));
+        $this->assign('arr', $arr);
+        dump($arr);
+        $where = array('api' => $arr['api'], 'moder'=>$_SESSION['account'],'deleted' => '0');
+        $sparam = $m->where($where)->order('sn,id')->select();
+        $this->assign('sparam', $sparam);
+
+        $this->display();
+    }
+
 
 }
