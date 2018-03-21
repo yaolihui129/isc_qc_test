@@ -1,0 +1,102 @@
+<layout name="layout"/>
+<!-- content start -->
+<div class="admin-content">
+    <div class="row">
+        <div class="col-md-9">
+            <ul class="nav nav-pills" role="tablist">
+                <li role="presentation"  >
+                    <a href="__APP__/<{$Think.config.PRODUCT}>/Index/func/proid/<{$_SESSION['proid']}>">涉及功能点
+                        <span class="badge"><{$arr.id|countId='tp_risk','proid',###}></span>
+                    </a>
+                </li>
+                <li role="presentation" class="active">
+                    <a href="__APP__/<{$Think.config.PRODUCT}>/Index/range/proid/<{$_SESSION['proid']}>">影响范围
+                        <span class="badge"><{$arr.id|countId='tp_risk','proid',###}></span>
+                    </a>
+                </li>
+                <li role="presentation" >
+                    <a href="__APP__/<{$Think.config.PRODUCT}>/Index/musttest/proid/<{$_SESSION['proid']}>">必测点
+                        <span class="badge"><{$arr.id|countId='tp_risk','proid',###}></span>
+                    </a>
+                </li>
+                <li role="presentation">
+                    <a href="__APP__/<{$Think.config.PRODUCT}>/Risk/index/proid/<{$_SESSION['proid']}>">迭代风险
+                        <span class="badge"><{$arr.id|countId='tp_risk','proid',###}></span>
+                    </a>
+                </li>
+            </ul>
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><small><{$_SESSION['proid']|getProname=###}></small>
+                        <div class="btn-group pull-right">
+                            <a href="__URL__/modRange" class=" btn btn-info btn-xs"><span class="glyphicon glyphicon-cog"> 维护</span></a>
+                            <a href="__APP__/<{$Think.config.PRODUCT}>" class=" btn btn-warning btn-xs"><span class="glyphicon glyphicon-chevron-left"> 返回</span></a>
+                        </div>
+                    </h3>
+                </div>
+                <table class="table table-striped table-bordered table-hover table-condensed ">
+                    <tr>
+                        <th width=10% align="center" bgcolor="#ccc">顺序</th>
+                        <th width=80% align="left" bgcolor="#ccc">
+                            <span class="label label-default">平台</span>
+                            <span class="label label-primary">模块</span>
+                            功能点
+                        </th>
+                        <th width=10% align="left" bgcolor="#ccc">操作</th>
+                    </tr>
+                    <form action="__URL__/order" method="post">
+                        <input type="hidden" name="table" value="tp_func_range"/>
+                        <volist name='data' id='st'>
+                            <switch name="st.type">
+                                <case value="1">
+                                    <tr class="danger">
+                                </case>
+                                <case value="2">
+                                    <tr class="success">
+                                </case>
+                                <default /><tr class="info">
+                            </switch>
+
+                                <td align="center"><input type="text" name="sn[<{$st.id}>]" value="<{$st.sn}>" class="input40"/></td>
+                                <td>
+                                    <span class="label label-default"><{$st.branch|getName=branch,###}></span>
+                                    <span class="label label-primary"><{$st.module|getModuleName=###}></span>
+                                    <{$st.func|getName=tp_func,###,func}>
+                                </td>
+                                <td>
+                                    <div class="btn-group">
+                                        <a href="__URL__/del/id/<{$st.id}>/table/tp_func_range" class="btn btn-danger "
+                                           onclick="return confirm('你确定要移除功能点：<{$st.func|getName=tp_func,###,func}>？')"><span class="glyphicon glyphicon-trash"> 移除</span></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </volist>
+                        <tr>
+                            <td colspan="10"><input type="submit" name="do_submit" value="批量排序" class="btn"></td>
+                        </tr>
+                    </form>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h3 class="panel-title">迭代列表</h3></div>
+                <ul class="list-group">
+                    <volist name='pros' id='pro' empty="没有数据">
+                        <switch name="pro.id">
+                            <case value="$_SESSION['proid']">
+                                <li class="list-group-item list-group-item-warning">
+                            </case>
+                            <default/>
+                            <li class="list-group-item ">
+                        </switch>
+                            <a href="__URL__/range/proid/<{$pro.id}>"><{$pro.name}></a>
+                        </li>
+                    </volist>
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>

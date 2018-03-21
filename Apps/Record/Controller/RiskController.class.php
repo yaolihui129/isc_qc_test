@@ -9,7 +9,7 @@ class RiskController extends CommonController
         $_SESSION['proid'] = I('proid');
         $m = M("project");
         $where = array("testgp" => 'YX', "deleted" => '0');
-        $pros = $m->where($where)->order("code desc")->select();
+        $pros = $m->where($where)->order("end desc")->select();
         $this->assign("pros", $pros);
 
         $arr = $m->find($_SESSION['proid']);

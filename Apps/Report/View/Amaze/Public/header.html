@@ -29,8 +29,9 @@
     </button>
     <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
         <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
+            <li><a href="http://qc.zhidaoauto.com/zentao" target=_blank><span class="glyphicon glyphicon-link"></span> 访问禅道</a></li>
             <empty name="_SESSION['isCLogin']">
-                <li><a href="__APP__/Record" target=_blank><span class="glyphicon glyphicon-file"></span> 登录后台</a></li>
+                <li><a href="__APP__/Record" target=_blank><span class="glyphicon glyphicon-log-in"></span> 记录平台</a></li>
 
                 <else/>
                 <li><span class="am-icon-user"></span> <{$_SESSION['realname']}> <span
@@ -44,19 +45,14 @@
     <!-- sidebar start -->
     <div class="admin-sidebar">
         <ul class="am-list admin-sidebar-list">
-            <li><a href="__APP__/<{$Think.config.PRODUCT}>/Index"><span
-                    class="glyphicon glyphicon-home"> 测试迭代</span></a></li>
-            <li><a href="__APP__/<{$Think.config.PRODUCT}>/Index/link"><span
-                    class="glyphicon glyphicon-link"> 常用链接</span></a></li>
-            <li><a href="__APP__/<{$Think.config.PRODUCT}>/Api"><span
-                    class="glyphicon glyphicon-compressed"> 待测接口</span></a></li>
-            <li><a href="__APP__/<{$Think.config.PRODUCT}>/Bug/unconfirmed"><span class="glyphicon glyphicon-bell"> 待处理BUG</span></a>
-            </li>
-            <li><a href="__APP__/<{$Think.config.PRODUCT}>/Task/personLoad"><span
-                    class="glyphicon glyphicon-user"> 测试投入</span></a></li>
+            <li><a href="__APP__/<{$Think.config.PRODUCT}>/Index"><span class="glyphicon glyphicon-home"> 测试迭代</span></a></li>
+            <li><a href="__APP__/<{$Think.config.PRODUCT}>/Index/link"><span class="glyphicon glyphicon-link"> 常用链接</span></a></li>
+            <li><a href="__APP__/<{$Think.config.PRODUCT}>/Api"><span class="glyphicon glyphicon-compressed"> 待测接口</span></a></li>
+            <li><a href="__APP__/<{$Think.config.PRODUCT}>/Bug/unconfirmed"><span class="glyphicon glyphicon-bell"> 待处理BUG</span></a></li>
+            <li><a href="__APP__/<{$Think.config.PRODUCT}>/Task/personLoad"><span class="glyphicon glyphicon-user"> 测试投入</span></a></li>
             <li class="admin-parent">
               <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}">
-                  <span class="am-icon-file">  测试规范</span>
+                  <span class="am-icon-file">  &nbsp; &nbsp;测试规范</span>
                   <span class="am-icon-angle-right am-fr am-margin-right"></span>
               </a>
               <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">

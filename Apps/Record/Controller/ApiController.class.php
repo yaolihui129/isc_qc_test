@@ -743,11 +743,10 @@ class ApiController extends CommonController
         $m=M($info['name'][5]);
         $arr=$m->find(I('id'));
         $this->assign('arr', $arr);
-//dump($arr);
         $where = array('scene' => $arr['scene'], 'deleted' => '0');
         $sparam = $m->where($where)->order('sn,id')->select();
         $this->assign('sparam', $sparam);
-//        dump($sparam);
+
         $this->display();
     }
 
