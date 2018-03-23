@@ -17,7 +17,7 @@
                                 class="badge">
 					  <{$Think.session.proid|countPRules=###}></span></a></li>
                         <li role="presentation"><a
-                                href="__APP__/<{$Think.config.PRODUCT}>/Task/protask/proid/<{$Think.session.proid}>">测试任务
+                                href="__APP__/<{$Think.config.PRODUCT}>/Task/protask/proid/<{$Think.session.proid}>">任务
                             <span class="badge"><{$Think.session.proid|countProTask=###}></span></a></li>
                         <li role="presentation"><a
                                 href="__APP__/<{$Think.config.PRODUCT}>/Risk/index/proid/<{$Think.session.proid}>">风险
@@ -29,14 +29,17 @@
                                 href="__APP__/<{$Think.config.PRODUCT}>/Case/procase/proid/<{$Think.session.proid}>">用例
                             <span class="badge"><{$Think.session.proid|countProCase=###}></span></a></li>
                         <li role="presentation"><a
-                                href="__APP__/<{$Think.config.PRODUCT}>/Build/index/proid/<{$Think.session.proid}>">版本
-                            <span class="badge"><{$Think.session.proid|countProBuild=###}></span></a>
+                                href="__APP__/<{$Think.config.PRODUCT}>/Func/func/proid/<{$Think.session.proid}>">功能点
+                            <span class="badge"><{$Think.session.proid}></span></a>
                         </li>
                         <li role="presentation"><a
-                                href="__APP__/<{$Think.config.PRODUCT}>/Stage/index/proid/<{$Think.session.proid}>">测试单
-                            <span class="badge"><{$Think.session.proid|countTesttask=###}></span></a>
+                                href="__APP__/<{$Think.config.PRODUCT}>/Func/range/proid/<{$Think.session.proid}>">影响
+                            <span class="badge"><{$Think.session.proid}></span></a>
                         </li>
-
+                        <li role="presentation"><a
+                                href="__APP__/<{$Think.config.PRODUCT}>/Scene/index/proid/<{$Think.session.proid}>">必测点
+                            <span class="badge"><{$Think.session.proid}></span></a>
+                        </li>
                         <li role="presentation"><a
                                 href="__APP__/<{$Think.config.PRODUCT}>/Bug/index/proid/<{$Think.session.proid}>">BUG
                             <span class="badge"><{$Think.session.proid|countBug=###}></span></a></li>

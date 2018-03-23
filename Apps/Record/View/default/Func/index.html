@@ -14,7 +14,7 @@
                         </switch>
                         <{$arr.name}>
                         <div class="btn-group pull-right">
-                            <button data-toggle="modal" href="#tianjfunc" class=" btn btn-info btn-xs">
+                            <button data-toggle="modal" href="#tianjfunc" class=" btn btn-success btn-xs">
                                 <span class="glyphicon glyphicon-plus"> 添加</span></button>
                             <a href="__URL__/module/id/<{$arr.branch}>" class=" btn btn-warning btn-xs ">返回</a>
                         </div>
@@ -26,8 +26,10 @@
                     <table class="table table-striped table-bordered table-hover table-condensed ">
                         <tr>
                             <th width=10% align="center" bgcolor="#ccc">顺序</th>
-                            <th width=70% align="left" bgcolor="#ccc">功能点</th>
-                            <th width=20% align="left" bgcolor="#ccc">操作</th>
+                            <th width=75% align="left" bgcolor="#ccc">功能点
+                                <span class="badge pull-right">迭代代码</span>
+                            </th>
+                            <th width=15% align="left" bgcolor="#ccc">操作</th>
                         </tr>
                         <form action="__URL__/order" method="post">
                             <input type="hidden" name="table" value="tp_func"/>
@@ -35,14 +37,15 @@
                                 <tr>
                                     <td align="center"><input type="text" name="sn[<{$st.id}>]" value="<{$st.sn}>"
                                                               class="input40"/></td>
-                                    <td><{$st.id}>【<{$st.result}>】<{$st.func}>
-                                        <a href="#"><span
-                                                class="badge pull-right"><{$st.project|getProNo=###}></span></a>
+                                    <td><small><{$st.id}>【<{$st.result}>】<{$st.func}></small>
+                                        <a href="#">
+                                            <span class="badge pull-right"><{$st.project|getProNo=###}></span>
+                                        </a>
                                     </td>
                                     <td>
                                         <div class="btn-group">
-                                            <a href="__URL__/mod/id/<{$st.id}>" class="btn btn-info ">修改</a>
-                                            <a href="__URL__/del/id/<{$st.id}>/table/tp_func" class="btn btn-info "
+                                            <a href="__URL__/mod/id/<{$st.id}>" class="btn btn-info btn-xs">修改</a>
+                                            <a href="__URL__/del/id/<{$st.id}>/table/tp_func" class="btn btn-danger btn-xs"
                                                onclick="return confirm('你确定要删除功能点：<{$st.func}>？')">删除</a>
                                         </div>
                                     </td>
@@ -60,9 +63,9 @@
             </div>
         </div>
 
-        <div class="col-md-4 hidden-xs">
+        <div class="col-md-5 hidden-xs">
             <div class="panel panel-info">
-                <div class="panel-heading"><h3 class="panel-title">模块</h3></div>
+                <div class="panel-heading"><h3 class="panel-title">【层级】模块</h3></div>
                 <ul class="list-group">
                     <volist name='data' id='vo' empty="没有数据">
                         <switch name="vo.id">
@@ -73,13 +76,13 @@
                             <li class="list-group-item ">
                         </switch>
                         <a href="__URL__/index/id/<{$vo.id}>">
-                            【<{$vo.grade}>】
+                            <small>【<{$vo.grade}>】
                             <switch name="vo.parent">
                                 <case value="0"></case>
                                 <default/>
                                 <{$vo.id|getParentModule=###}>
                             </switch>
-                            <{$vo.name}>
+                                <{$vo.name}></small>
                         </a>
                         <span class="badge"><{$vo.id|countFunc=###}></span>
                         </li>
@@ -104,6 +107,7 @@
                 <form action="__URL__/insert" method="post" class="form-horizontal" role="form">
                     <input type="hidden" name="module" value="<{$arr.id}>"/>
                     <input type="hidden" name="branch" value="<{$arr.branch}>"/>
+                    <input type="hidden" name="path" value="<{$arr.path}>"/>
                     <input type="hidden" name="table" value="tp_func"/>
                     <div class="form-group">
                         <label for="product" class="col-sm-2 control-label">功能:</label>

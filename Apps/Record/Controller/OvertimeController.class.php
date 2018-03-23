@@ -5,7 +5,6 @@ class OvertimeController extends CommonController
 {
     public function index()
     {
-
         $m = M('tp_overtime');
         $where = array('userid' => $_SESSION['id']);
         $arr = $m->where($where)->select();

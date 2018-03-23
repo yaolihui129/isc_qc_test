@@ -4,7 +4,7 @@ return array(
 	'SHOW_PAGE_TRACE'       =>false,//显示页面Trace信息false
     'SESSION_AUTO_START'    => true,//开启SESSION
     'URL_MODEL'             => '1',//URL模式
-    'MODULE_ALLOW_LIST'     => array('Report','Record','Api'),//设置允许模块
+    'MODULE_ALLOW_LIST'     => array('Report','Record','Api','Xiuli','Xinda'),//设置允许模块
     'DEFAULT_MODULE'        => 'Report',//设置默认模块设置
     'MODULE_DENY_LIST'      => array('Common','Runtime'), // 禁止访问的模块列表
 //     'LAYOUT_ON'            =>true,//开启模板布局
@@ -16,13 +16,20 @@ return array(
     'TMPL_R_DELIM'          =>'}>',
     //数据库设置（云端）
     'DB_TYPE'               =>'mysql',
-    'DB_HOST'               =>'2lbrknae.2248.dnstoo.com',
-    'DB_NAME'               =>'xiuli',
-    'DB_USER'               =>'xiuli_f',
-    'DB_PWD'                =>'yaolihui0506',
-    'DB_PORT'               =>'5503',
+//    'DB_HOST'               =>'2lbrknae.2248.dnstoo.com',
+//    'DB_NAME'               =>'xiuli',
+//    'DB_USER'               =>'xiuli_f',
+//    'DB_PWD'                =>'yaolihui0506',
+//    'DB_PORT'               =>'5503',
     'DB_PREFIX'             =>'zt_',
     'DB_CHARSET'            => 'utf8', // 字符集
+
+    //本地数据库
+    'DB_HOST' => '127.0.0.1',
+    'DB_NAME' => 'xiuli123',
+    'DB_USER' => 'root',
+    'DB_PWD' => 'root',
+    'DB_PORT' => '3306',
 
     //错误设置
     'ERROR_MESSAGE'         =>  '页面错误！请稍后再试～',//错误显示信息,非调试模式有效

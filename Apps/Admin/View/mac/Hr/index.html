@@ -1,0 +1,52 @@
+<layout name="layout" />
+<!-- Page heading -->
+<div class="page-head">
+	<h2 class="bread-crumb">
+		<a href="#"><i class="icon-group"></i> 人员管理</a> 
+		<span class="divider">/</span> 
+		<a href="__URL__" class="bread-current">招聘信息</a> 
+		<form class="form-inline pull-right" action="__URL__/index" method="post">
+			<div class="form-group">
+				<input type="text" class="form-control" name="search" value="<{$search}>" placeholder="查询">
+			</div>
+			<button type="submit" class="btn btn-info "><i class="icon-search"> 查询</i></button>
+			<a href="__URL__/add" type="button" class="btn"><i class="icon-plus"> 添加</i></a>
+		</form>  
+	</h2>
+	<div class="clearfix"></div>
+</div>
+<!-- Page heading ends -->
+
+<!-- Matter -->
+<div class="matter">
+        <div class="container">                   
+              <div class="widget">
+                <div class="widget-content medias">                  
+                  <ul class="list-group">
+						<volist name='data' id='vo' empty="没有数据">
+							<li class="list-group-item">
+								<div class="row">								  
+									<div class="col-md-3"><{$vo.title}>(ID:<{$vo.id}>)</div>
+									<div class="col-md-1"><{$vo.num}>人</div>
+									<div class="col-md-2"><{$vo.salary}>/人月</div>
+									<div class="col-md-3"><{$vo.rtime}></div>								  
+									<div class="col-md-2">【<{$vo.state}>】</div>							
+									<div class="col-md-1">
+										<div class="btn-group pull-right">
+											<a type="button" href="__URL__/mod/id/<{$vo.id}>" class="btn btn-info btn-sm " >修改 </a>										
+										</div>
+									</div>
+								</div>					  		
+							</li>
+						</volist>					
+					</ul>
+
+                    <div class="widget-foot">
+                        <ul class="pagination pull-right"><{$page}></ul>                     
+                      <div class="clearfix"></div> 
+                    </div>
+                </div>
+              </div>                
+        </div>
+	</div>
+	<!-- Matter ends -->

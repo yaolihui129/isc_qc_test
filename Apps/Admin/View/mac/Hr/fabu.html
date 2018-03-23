@@ -1,0 +1,73 @@
+<layout name="layout" />
+<!-- Page heading -->
+	    <div class="page-head">
+	      <h2 >
+		      <!-- Breadcrumb -->
+		      <div class="bread-crumb">
+		      	<div class="row">
+		      		<div class="col-md-4">
+		      			<a href="#"><i class="icon-user"></i> 人员招聘</a> 
+			          	<span class="divider">/</span> 
+			          	<a href="__URL__" class="bread-current">招聘信息</a> 
+		      		</div>
+		      		<div class="col-md-8">
+		      			<form class="form-inline pull-right" action="__URL__/fabu" method="post">
+							<div class="form-group">
+								<input type="text" class="form-control" name="search" value="<{$search}>" placeholder="查询">
+							</div>
+								<button type="submit" class="btn btn-info "><i class="icon-search"> 查询</i></button>
+				       </form>  
+		      		</div>
+		      		
+		      	</div>				       	       
+       		  </div>       				                 
+	      </h2>
+        <div class="clearfix"></div>
+	    </div>
+<!-- Page heading ends -->
+
+<!-- Matter -->
+	  <div class="matter">
+        <div class="container">        
+          <div class="row">        
+            <div class="col-md-12">            
+              <div class="widget">
+                <div class="widget-content medias">                  
+                  <ul class="list-group">
+						<volist name='data' id='vo' empty="没有数据">
+							<li class="list-group-item">
+								<div class="row">								  
+									<div class="col-md-3"><{$vo.title}>(ID:<{$vo.id}>)</div>
+									<div class="col-md-1"><{$vo.num}>人</div>
+									<div class="col-md-2"><{$vo.salary}>/人月</div>
+									<div class="col-md-3"><{$vo.rtime}></div>								  
+									<div class="col-md-2">【<{$vo.state}>】</div>							
+									<div class="col-md-1">
+										<div class="btn-group pull-right">
+											<a type="button" href="__URL__/set/id/<{$vo.id}>/state/招聘中" class="btn btn-info btn-sm " >发布 </a>
+											<a type="button" href="__URL__/set/id/<{$vo.id}>/state/已拒绝" class="btn btn-info btn-sm " >拒绝 </a>										
+										</div>
+									</div>
+								</div>					  		
+							</li>
+						</volist>					
+					</ul>
+
+                    <div class="widget-foot">
+                        <ul class="pagination pull-right">
+                          <li><a href="#">Prev</a></li>
+                          <li><a href="#">1</a></li>
+                          <li><a href="#">2</a></li>
+                          <li><a href="#">3</a></li>
+                          <li><a href="#">4</a></li>
+                          <li><a href="#">Next</a></li>
+                        </ul>                     
+                      <div class="clearfix"></div> 
+                    </div>
+                </div>
+              </div>                
+            </div>
+          </div>
+        </div>
+	</div>
+	<!-- Matter ends -->

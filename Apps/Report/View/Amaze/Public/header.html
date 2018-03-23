@@ -46,6 +46,7 @@
     <div class="admin-sidebar">
         <ul class="am-list admin-sidebar-list">
             <li><a href="__APP__/<{$Think.config.PRODUCT}>/Index"><span class="glyphicon glyphicon-home"> 测试迭代</span></a></li>
+            <li><a href="__APP__/<{$Think.config.PRODUCT}>/Func" ><span class="glyphicon glyphicon-globe"> 功能地图</span></a></li>
             <li><a href="__APP__/<{$Think.config.PRODUCT}>/Index/link"><span class="glyphicon glyphicon-link"> 常用链接</span></a></li>
             <li><a href="__APP__/<{$Think.config.PRODUCT}>/Api"><span class="glyphicon glyphicon-compressed"> 待测接口</span></a></li>
             <li><a href="__APP__/<{$Think.config.PRODUCT}>/Bug/unconfirmed"><span class="glyphicon glyphicon-bell"> 待处理BUG</span></a></li>
@@ -87,10 +88,10 @@
             <div class="am-panel am-panel-default admin-sidebar-panel">
                 <div class="am-panel-bd">
                     <p><span class="am-icon-tag"></span> 项目详情</p>
-                    <b> 产品：</b><{$arr.po|getRealname=###}>
-                    <b> 项目：</b><{$arr.pm|getRealname=###}><br>
-                    <b> 研发：</b><{$arr.rd|getRealname=###}>
-                    <b> 测试：</b><{$arr.qd|getRealname=###}><br>
+                    <b> 产品：</b><{$arr.po|getZTUserName=###}>
+                    <b> 项目：</b><{$arr.pm|getZTUserName=###}><br>
+                    <b> 研发：</b><{$arr.rd|getZTUserName=###}>
+                    <b> 测试：</b><{$arr.qd|getZTUserName=###}><br>
                     <p><{$arr.desc}></p>
                 </div>
             </div>

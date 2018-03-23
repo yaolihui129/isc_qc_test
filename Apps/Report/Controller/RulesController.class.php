@@ -6,7 +6,6 @@ class RulesController extends WebInfoController
     public function prorules()
     {
         $_SESSION['proid'] = I('proid');
-
         $where = array("zt_projectstory.project" => $_SESSION['proid'], 'zt_story.deleted' => '0');
         $data = D('module')->where($where)->join('zt_story ON zt_story.module =zt_module.id')
             ->join('zt_projectstory ON zt_projectstory.story =zt_story.id')

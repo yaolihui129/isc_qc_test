@@ -2,13 +2,16 @@
 <!-- content start -->
 <div class="admin-content">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-7">
             <div class="panel panel-info">
                 <div class="panel-heading">
                     <h3 class="panel-title">
-                        <small><{$_SESSION['proid']|getProname=###}></small>
+                        <small><{$_SESSION['proid']|getProname=###}></small>影响范围
+                        <span class="badge"><{$_SESSION['proid']|countId='tp_func_range','project',###}></span>
                         <div class="btn-group pull-right">
-                            <a href="__URL__/func/proid/<{$_SESSION['proid']}>" class=" btn btn-warning btn-xs"><span class="glyphicon glyphicon-chevron-left"> 返回</span></a>
+                            <a href="__URL__/range/proid/<{$_SESSION['proid']}>" class=" btn btn-warning btn-xs">
+                                <span class="glyphicon glyphicon-chevron-left"> 返回</span>
+                            </a>
                         </div>
                     </h3>
                 </div>
@@ -25,7 +28,15 @@
                     <form action="__URL__/order" method="post">
                         <input type="hidden" name="table" value="tp_func_range"/>
                         <volist name='data' id='st'>
-                            <tr>
+                            <switch name="st.type">
+                                <case value="1">
+                                    <tr class="danger">
+                                </case>
+                                <case value="2">
+                                    <tr class="success">
+                                </case>
+                                <default /><tr class="info">
+                            </switch>
                                 <td align="center"><input type="text" name="sn[<{$st.id}>]" value="<{$st.sn}>" class="input40"/></td>
                                 <td>
                                     <span class="label label-default"><{$st.branch|getName=branch,###}></span>
@@ -34,8 +45,9 @@
                                 </td>
                                 <td>
                                     <div class="btn-group">
-                                        <a href="__URL__/del/id/<{$st.id}>/table/tp_func_range" class="btn btn-danger "
-                                           onclick="return confirm('你确定要移除功能点：<{$st.func|getName=tp_func,###,func}>？')"><span class="glyphicon glyphicon-trash"> 移除</span></a>
+                                        <a href="__URL__/del/id/<{$st.id}>/table/tp_func_range" class="btn btn-danger btn-xs"
+                                           onclick="return confirm('你确定要从本期影响范围中移除：<{$st.func|getName=tp_func,###,func}>？')">
+                                            <span class="glyphicon glyphicon-trash"> 移除</span></a>
                                     </div>
                                 </td>
                             </tr>
@@ -47,7 +59,7 @@
                 </table>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-5">
             <div class="panel panel-warning">
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
@@ -72,7 +84,6 @@
                     <tr>
 
                         <th width=80% align="left" bgcolor="#ccc">
-                            <span class="label label-default">平台</span>
                             <span class="label label-primary">模块</span>
                             功能点
                         </th>
@@ -80,14 +91,12 @@
                     </tr>
                     <volist name='func' id='st'>
                         <tr>
-                            <td>
-                                <span class="label label-default"><{$st.branch|getName=branch,###}></span>
-                                <span class="label label-primary"><{$st.module|getModuleName=###}></span>
-                                <{$st.func}>
-                            </td>
+                            <td><span class="label label-primary"><{$st.module|getModuleName=###}></span><{$st.func}></td>
                             <td>
                                 <div class="btn-group">
-                                    <a href="#" class="btn btn-success "><span class="glyphicon glyphicon-plus"> 添加</span></a>
+                                    <a href="__URL__/add/funcid/<{$st.id}>/type/2" class="btn btn-success btn-xs">
+                                        <span class="glyphicon glyphicon-plus"> 添加</span>
+                                    </a>
                                 </div>
                             </td>
                         </tr>

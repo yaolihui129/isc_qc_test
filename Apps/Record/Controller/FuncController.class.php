@@ -33,7 +33,6 @@ class FuncController extends CommonController
 
         $where = array('branch' => $arr['branch'], 'deleted' => "0");
         $data = $m->where($where)->order('path,`order`')->select();
-//        dump($data);
         $this->assign("data", $data);
         /* 实例化模型*/
         $m = D("tp_func");
@@ -66,7 +65,7 @@ class FuncController extends CommonController
         $this->assign("data", $data);
 
 
-        $a = $this->projectDict();
+        $a = $this->projectDict(50);
         $project = $this->select($a, 'project', $func['project']);
         $this->assign("project", $project);
 

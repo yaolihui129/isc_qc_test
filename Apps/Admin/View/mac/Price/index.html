@@ -1,0 +1,65 @@
+<layout name="layout" />
+<!-- Page heading -->
+<div class="page-head">
+	<h2 class="bread-crumb">	      	
+	    <a href="__APP__/<{$Think.config.PRODUCT}>"><i class="icon-home"></i> 商品服务</a> 
+		<span class="divider">/</span> 
+		<a href="__APP__/<{$Think.config.PRODUCT}>/Product" class="bread-current"> <{$_SESSION['product']|getName='tp_product',###}></a> 
+		<span class="divider">/</span>  
+		<a href="__APP__/<{$Think.config.PRODUCT}>/Guige/index/product/<{$_SESSION['product']}>" class="bread-current"> <{$_SESSION['normsid']|getNorms=###}></a>
+		<span class="divider">/</span>  
+		<a href="__URL__" class="bread-current"> 价格</a>         		        	
+		<form class="form-inline pull-right" action="__URL__/index" method="post">
+			<div class="form-group">
+				<input type="text" class="form-control" name="search" value="<{$search}>" placeholder="查询">
+			</div>
+				<button type="submit" class="btn btn-info "><i class="icon-search"> 查询</i></button>
+				<a href="__URL__/add" type="button" class="btn btn-default"><i class="icon-plus"> 报价</i></a>
+		</form>    	
+	</h2>	      		        
+	<div class="clearfix"></div>
+</div>
+<!-- Page heading ends -->
+
+
+	
+<!-- Matter -->
+<div class="matter">
+   <div class="container">         
+      <div class="widget">               
+	     <div class="widget-content referrer">                  
+	        <table class="table table-striped table-bordered table-hover">
+	               <thead>
+		              <tr>
+		                <th width=5% align="center" bgcolor="#ccc">顺序</th>
+		                <th width=10% align="center" bgcolor="#ccc">成本价</th>
+		                <th width=10% align="center" bgcolor="#ccc">零售价</th>		                                                          
+	                    <th width=10% align="center" bgcolor="#ccc">批发价</th>
+	                    <th width=10% align="center" bgcolor="#ccc">市场价</th>
+	                    <th width=10% align="center" bgcolor="#ccc">有效时间</th>                                                                               
+	                    <th width=10% align="center" bgcolor="#ccc">更新时间</th>
+	                   
+		               </tr>
+	               </thead>
+	               <tbody>               
+					<volist name='data' id='st'>
+		               <tr>                          
+		                 <td><{$st.sn}></td>
+		                 <td>￥<{$st.cmoney}></td>
+		                 <td>￥<{$st.money}></td>
+		                 <td>￥<{$st.pmoney}></td>
+		                 <td>￥<{$st.smoney}></td>
+		                 <td><{$st.etime}></td>		                 	                          
+		                 <td><{$st.utime}></td>                         
+		                </tr>
+					</volist>				
+                  </tbody>                                                                                        
+	            </table>
+	            <div class="widget-foot">               
+                     <ul class="pagination pull-right"><{$page}></ul>
+                     <div class="clearfix"></div> 
+               </div>
+	         </div>
+         </div>
+     </div>
+</div>

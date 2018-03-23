@@ -1,0 +1,78 @@
+<layout name="layout"/>
+<div class="admin-content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><{$Think.session.proid|getPro=###}>
+                        <div class="btn-group pull-right">
+                            <a href="__APP__/<{$Think.config.PRODUCT}>" class="btn btn-warning btn-xs">返回</a>
+                        </div>
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" ><a
+                                href="__APP__/<{$Think.config.PRODUCT}>/Rules/prorules/proid/<{$Think.session.proid}>">需求
+                            <span class="badge"><{$Think.session.proid|countPRules=###}></span></a></li>
+                        <li role="presentation"><a
+                                href="__APP__/<{$Think.config.PRODUCT}>/Task/protask/proid/<{$Think.session.proid}>">任务
+                            <span class="badge"><{$Think.session.proid|countProTask=###}></span></a></li>
+                        <li role="presentation"><a
+                                href="__APP__/<{$Think.config.PRODUCT}>/Risk/index/proid/<{$Think.session.proid}>">风险
+                            <span class="badge"><{$Think.session.proid|countRisk=###}></span></a></li>
+                        <li role="presentation"><a
+                                href="__APP__/<{$Think.config.PRODUCT}>/Case/smoke/proid/<{$Think.session.proid}>">冒烟
+                            <span class="badge"><{$Think.session.proid|countSmokeCase=###}></span></a></li>
+                        <li role="presentation"><a
+                                href="__APP__/<{$Think.config.PRODUCT}>/Case/procase/proid/<{$Think.session.proid}>">用例
+                            <span class="badge"><{$Think.session.proid|countProCase=###}></span></a></li>
+                        <li role="presentation"><a
+                                href="__APP__/<{$Think.config.PRODUCT}>/Func/func/proid/<{$Think.session.proid}>">功能点
+                            <span class="badge"><{$Think.session.proid}></span></a>
+                        </li>
+                        <li role="presentation" class="active">
+                            <a href="__APP__/<{$Think.config.PRODUCT}>/Func/range/proid/<{$Think.session.proid}>">影响
+                            <span class="badge"><{$Think.session.proid}></span>
+                            </a>
+                        </li>
+                        <li role="presentation"><a
+                                href="__APP__/<{$Think.config.PRODUCT}>/Scene/index/proid/<{$Think.session.proid}>">必测点
+                            <span class="badge"><{$Think.session.proid}></span></a>
+                        </li>
+                        <li role="presentation"><a
+                                href="__APP__/<{$Think.config.PRODUCT}>/Bug/index/proid/<{$Think.session.proid}>">BUG
+                            <span class="badge"><{$Think.session.proid|countBug=###}></span></a></li>
+                    </ul>
+                    <div class="starter-template">
+                        <table class="table table-striped table-bordered table-hover table-condensed ">
+                            <tr>
+
+                                <th  align="left" bgcolor="#ccc">
+                                    <span class="label label-default">平台</span>
+                                    <span class="label label-primary">模块</span>
+                                    功能点
+                                </th>
+                            </tr>
+
+                            <volist name='data' id='st'>
+                                <tr>
+                                    <td>
+                                        <{$st.sn}>
+                                        <span class="label label-default"><{$st.branch|getName=branch,###}></span>
+                                        <span class="label label-primary"><{$st.module|getModuleName=###}></span>
+                                        <{$st.func|getName=tp_func,###,func}>
+                                    </td>
+
+                                </tr>
+                            </volist>
+
+
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

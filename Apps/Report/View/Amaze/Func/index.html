@@ -1,0 +1,40 @@
+<layout name="layout"/>
+<div class="admin-content">
+    <div class="row">
+        <div class="col-md-11">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><small>功能地图</small></h3>
+                </div>
+                <table class="table table-striped table-bordered table-hover table-condensed ">
+                    <tr>
+                        <th align="left" bgcolor="#ccc">
+                            <small>ID</small>
+                            <span class="label label-default">平台</span>
+                            <span class="label label-primary">模块</span>
+                            <small>功能点</small>
+                        </th>
+                    </tr>
+                        <volist name='data' id='st'>
+                            <switch name="st.result">
+                                <case value="未测试"><tr class="warning"></case>
+                                <case value="通过"><tr class="success"></case>
+                                <case value="失败"><tr class="danger"></case>
+                                <case value="阻塞"><tr class="danger"></case>
+                                <default /><tr >
+                            </switch>
+
+                                <td>
+                                   <small> 【<{$st.result}>】<{$st.id}></small>
+                                    <span class="label label-default"><{$st.branch|getName=branch,###}></span>
+                                    <span class="label label-primary"><{$st.module|getModuleName=###}></span>
+                                    <small><{$st.func}></small>
+                                    <span class="badge pull-right" title="<{$st.moder|getZTUserName=###}>:<{$st.utime}>"><{$st.project|getName='project',###}></span>
+                                </td>
+                            </tr>
+                        </volist>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -6,22 +6,22 @@
             <ul class="nav nav-pills" role="tablist">
                 <li role="presentation">
                     <a href="__APP__/<{$Think.config.PRODUCT}>/Index/func/proid/<{$_SESSION['proid']}>">涉及功能点
-                        <span class="badge"><{$arr.id|countId='tp_risk','proid',###}></span>
+                        <span class="badge"><{$_SESSION['proid']|countFuncRangeId='tp_func_range','project',###}></span>
                     </a>
                 </li>
                 <li role="presentation" >
                     <a href="__APP__/<{$Think.config.PRODUCT}>/Index/range/proid/<{$_SESSION['proid']}>">影响范围
-                        <span class="badge"><{$arr.id|countId='tp_risk','proid',###}></span>
+                        <span class="badge"><{$_SESSION['proid']|countId='tp_func_range','project',###}></span>
                     </a>
                 </li>
                 <li role="presentation" >
                     <a href="__APP__/<{$Think.config.PRODUCT}>/Index/musttest/proid/<{$_SESSION['proid']}>">必测点
-                        <span class="badge"><{$arr.id|countId='tp_risk','proid',###}></span>
+                        <span class="badge"><{$_SESSION['proid']|countId='tp_scene','project',###}></span>
                     </a>
                 </li>
                 <li role="presentation" class="active">
                     <a href="__APP__/<{$Think.config.PRODUCT}>/Risk/index/proid/<{$_SESSION['proid']}>">迭代风险
-                        <span class="badge"><{$arr.id|countId='tp_risk','proid',###}></span>
+                        <span class="badge"><{$_SESSION['proid']|countId='tp_risk','proid',###}></span>
                     </a>
                 </li>
             </ul>
@@ -79,7 +79,7 @@
                             <default/>
                             <li class="list-group-item ">
                         </switch>
-                        <a href="__URL__/index/proid/<{$pro.id}>"><{$pro.name}></a>
+                        <a href="__URL__/index/proid/<{$pro.id}>"><small><{$pro.name}></small></a>
                         </li>
                     </volist>
 

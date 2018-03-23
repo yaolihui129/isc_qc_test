@@ -21,24 +21,24 @@
         <tbody>
         <volist name='arr' id='pro' empty="没有数据">
             <tr>
-                <td width=65%>
+                <td width=75%>
                     <a href="__APP__/<{$Think.config.PRODUCT}>/Risk/index/proid/<{$pro.id}>">
                         <span class="badge"><{$pro.status|getProst=###}></span>【<{$pro.qd|getZTUserName=###}>】<{$pro.name}>(<{$pro.end}>)
                     </a>
                 </td>
-                <td width=35%>
+                <td width=25%>
                     <div class="btn-group am-btn-group-sm" role="group" aria-label="...">
-                        <a href="__APP__/<{$Think.config.PRODUCT}>/Risk/index/proid/<{$pro.id}>" class="btn btn-warning">
+                        <a href="__APP__/<{$Think.config.PRODUCT}>/Index/func/proid/<{$pro.id}>" class="btn btn-success btn-xs">
+                            功能点 <span class="badge"> <{$pro.id|countFuncRangeId='tp_func_range','project',###}></span>
+                        </a>
+                        <a href="__APP__/<{$Think.config.PRODUCT}>/Index/range/proid/<{$pro.id}>" class="btn btn-info btn-xs">
+                            范围 <span class="badge"> <{$pro.id|countId='tp_func_range','project',###}></span>
+                        </a>
+                        <a href="__APP__/<{$Think.config.PRODUCT}>/Index/musttest/proid/<{$pro.id}>/copy/<{$pro.id}>" class="btn am-btn-danger btn-xs">
+                            必测点 <span class="badge" ><{$pro.id|countId='tp_scene','project',###}></span>
+                        </a>
+                        <a href="__APP__/<{$Think.config.PRODUCT}>/Risk/index/proid/<{$pro.id}>" class="btn btn-warning btn-xs">
                             风险 <span class="badge"> <{$pro.id|countId='tp_risk','proid',###}></span>
-                        </a>
-                        <a href="__APP__/<{$Think.config.PRODUCT}>/Index/func/proid/<{$pro.id}>" class="btn btn-success">
-                            功能点 <span class="badge"> <{$pro.id|countId='tp_risk','proid',###}></span>
-                        </a>
-                        <a href="__APP__/<{$Think.config.PRODUCT}>/Index/range/proid/<{$pro.id}>" class="btn btn-info">
-                            范围 <span class="badge"> <{$pro.id|countId='tp_risk','proid',###}></span>
-                        </a>
-                        <a href="__APP__/<{$Think.config.PRODUCT}>/Index/musttest/proid/<{$pro.id}>" class="btn am-btn-danger">
-                            必测点 <span class="badge" ><{$pro.id|countId='tp_risk','proid',###}></span>
                         </a>
                     </div>
 

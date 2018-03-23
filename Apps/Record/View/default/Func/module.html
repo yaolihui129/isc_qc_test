@@ -13,13 +13,14 @@
                         <tr>
                             <td>
                                 <a href="__URL__/index/id/<{$st.id}>">
-                                    【<{$st.grade}>】
-                                    <switch name="st.parent">
-                                        <case value="0"></case>
-                                        <default/>
-                                        <{$st.id|getParentModule=###}>
-                                    </switch>
-                                    <{$st.name}>
+                                    <small>【<{$st.grade}>】
+                                        <switch name="st.parent">
+                                            <case value="0"></case>
+                                            <default/>
+                                            <{$st.id|getParentModule=###}>
+                                        </switch>
+                                            <{$st.name}>
+                                    </small>
                                     <span class="badge pull-right"><{$st.id|countFunc=###}></span>
                                 </a>
                             </td>

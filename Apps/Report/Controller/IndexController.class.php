@@ -7,7 +7,7 @@ class IndexController extends WebInfoController
     {
         $where['testgp'] = 'YX';
         $where['deleted']='0';
-        $status = array('wait', 'doing');//只看这些人员
+        $status = array('wait', 'doing');//只看这些
         $where['status'] = array('in', $status);
         $data = M('project')->where($where)
             ->order("end desc,id")->select();
@@ -39,9 +39,6 @@ class IndexController extends WebInfoController
         $data = $m->where($where)->field("id,name,code,begin,end,status,QD,order")->order("end desc,id")->select();
         $this->assign('data', $data);
 
-
-
-
         $this->theme('')->display();
     }
 
@@ -55,8 +52,6 @@ class IndexController extends WebInfoController
             ->field("id,name,code,begin,end,status,QD,order")
             ->order("end desc,id")->select();
         $this->assign('data', $data);
-
-
 
         $this->theme('')->display();
     }

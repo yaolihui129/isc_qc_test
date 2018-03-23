@@ -30,7 +30,6 @@ class RiskController extends CommonController
         $this->display();
     }
 
-
     public function mod()
     {
         $m = D("tp_risk");

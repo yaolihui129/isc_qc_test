@@ -78,11 +78,7 @@
         return $str;
     }
 
-    //获取征信姓名
-    function getCreditName($creditId){
-        $data=M('tp_credit')->find($creditId);
-        return $data['realname'];
-    }
+
     //登录
     function login($phone,$password){
         $where=array('phone'=>$phone,['password']=>md5($password));
@@ -675,12 +671,7 @@ function getApiVersionStatus($value){
         return $count;
     }
 
-    //获取真实姓名
-    function getRealname($username){
-        $where=array('account'=>$username);
-        $data=M('user')->where($where)->find();
-        return $data['realname'];
-    }
+
 
 
     function countId($table,$name,$value){
@@ -717,22 +708,17 @@ function getApiVersionStatus($value){
         return $html;
     }
 
-function countOwnerProject($user){
-        $where['testgp'] = 'YX';
-        $where['deleted']='0';
-        $status = array('wait', 'doing');
-        $where['status'] = array('in', $status);
-        $where['QD']=$user;
-        $count =M('project')->where($where)->count();
-        return $count;
-    }
+    function countOwnerProject($user){
+            $where['testgp'] = 'YX';
+            $where['deleted']='0';
+            $status = array('wait', 'doing');
+            $where['status'] = array('in', $status);
+            $where['QD']=$user;
+            $count =M('project')->where($where)->count();
+            return $count;
+        }
 
-    //根据$proid获取里程碑数
-    function countStage($proid){
-        $where=array("proid"=>$proid);
-        $count=M("tp_stage")->where($where)->count();
-        return $count;
-    }
+
     //获取禅道用户名
     function getZTUserName($account){
         if($account){

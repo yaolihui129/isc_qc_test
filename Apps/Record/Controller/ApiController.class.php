@@ -177,6 +177,7 @@ class ApiController extends CommonController
             $this->error("添加失败");
         }
     }
+
     function tianjcs(){
         $info = $this->init();
         //缓存上一次的分组
@@ -185,6 +186,7 @@ class ApiController extends CommonController
         $_POST['table']=$info['name'][3];
         $this->insert();
     }
+
     function tianjbanb(){
         /*
          * 1.添加一条版本信息
@@ -273,6 +275,7 @@ class ApiController extends CommonController
         }
 
     }
+
     function reject(){
         $info = $this->init();
         $m=D($info['name'][2]);
@@ -291,6 +294,7 @@ class ApiController extends CommonController
 
 
     }
+
     function pass(){
         $info = $this->init();
         $m=D($info['name'][2]);
@@ -307,6 +311,7 @@ class ApiController extends CommonController
             $this->error("版本不在提测状态，标记通过！");
         }
     }
+
     public function release()
     {
         $info = $this->init();
@@ -345,6 +350,7 @@ class ApiController extends CommonController
             $this->error("取消失败");
         }
     }
+
     function online()
     {
         $info = $this->init();
@@ -432,12 +438,10 @@ class ApiController extends CommonController
         $c = M($info['name'][2])->where($where)->count() + 1;
         $this->assign('c', $c);
 
-
-
-
         $this->display();
 
     }
+
     public function parameter(){
         $info = $this->init();
         $id = I(id);
@@ -485,6 +489,7 @@ class ApiController extends CommonController
 
         $this->display();
     }
+
     public function modparameter()
     {
         $info = $this->init();
@@ -520,7 +525,7 @@ class ApiController extends CommonController
         $where = array('api' => I('api'), 'deleted' => '0');
         $scene = M($info['name'][4])->where($where)->order('sn,id')->select();
         $this->assign('scene', $scene);
-//        dump($arr);
+
         $this->display();
     }
 
@@ -595,7 +600,6 @@ class ApiController extends CommonController
         $info = $this->init();
         $where = array('scene' => $scene, 'deleted' => '0');
         $parameter = M($info['name'][5])->where($where)->order('sn,id')->select();
-//        dump($parameter);
         $m = D($info['name'][7]);
         $m->create($_GET);
         $_GET['scene']=$scene;

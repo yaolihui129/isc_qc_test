@@ -1,0 +1,44 @@
+<layout name="layout" />
+<!-- Page heading -->
+<div class="page-head">
+	<h2 class="bread-crumb">					     
+		<a href="#"><i class="icon-group"></i> 人员管理</a> 
+		<span class="divider">/</span> 
+		<a href="__URL__" class="bread-current">客户管理</a> 
+		<span class="divider">/</span> 新增
+		<a href="__URL__"  class="btn pull-right" >返 回</a>			  
+	</h2>       
+  	<div class="clearfix"></div>
+</div>
+<!-- Page heading ends -->
+<!-- Matter -->
+<div class="matter">
+    <div class="container">
+        <div class="widget-content">
+			<form action="__URL__/insert" method="post" enctype='multipart/form-data' class="form-horizontal" role="form">                                                        
+               <div class="form-group">
+                   <label class="col-lg-4 control-label">电话:</label>
+                   <div class="col-lg-4">
+                       <input type="tel" class="form-control" name="phone" value="" placeholder="电话" >
+                   </div>
+                   <label class="col-lg-2 control-label">姓名:</label>
+                   <div class="col-lg-2">
+                       <input type="text" class="form-control" name="name" value="" placeholder="姓名" >
+                   </div>
+                </div>                               
+                <div class="form-group">
+	                <label class="col-lg-4 control-label">描述:</label>
+	                <div class="col-lg-8">
+	                    <textarea class="cleditor" name="remark"><{$arr.remark}></textarea>		                                   
+	                </div>
+	            </div><hr />
+                <div class="form-group">
+                     <div class="col-lg-offset-1 col-lg-8">
+                          <button type="submit" class="btn btn-primary btn-lg btn-block">提交</button>                       
+                     </div>
+                </div>
+           </form>
+       </div>                
+   </div>
+</div>
+<!-- Matter ends -->

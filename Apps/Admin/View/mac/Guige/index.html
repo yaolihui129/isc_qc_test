@@ -1,0 +1,108 @@
+<layout name="layout" />
+<!-- Page heading -->
+<div class="page-head">
+	<h2 class="bread-crumb">	      	
+	    <a href="__APP__/<{$Think.config.PRODUCT}>"><i class="icon-home"></i> 商品服务</a> 
+		<span class="divider">/</span> 
+		<a href="__APP__/<{$Think.config.PRODUCT}>/Product" class="bread-current"> 【<{$arr.brand|getName='tp_brand',###}>】<{$arr.name}></a> 
+		<span class="divider">/</span>  
+		<a href="__URL__" class="bread-current"> 规格管理</a>         		        	
+		<form class="form-inline pull-right" action="__URL__/index" method="post">
+			<div class="form-group">
+				<input type="text" class="form-control" name="search" value="<{$search}>" placeholder="查询">
+			</div>
+				<button type="submit" class="btn btn-info "><i class="icon-search"> 查询</i></button>
+				<a href="__URL__/add/product/<{$_SESSION['product']}>" type="button" class="btn btn-default"><i class="icon-plus"> 添加</i></a>
+		</form>    	
+	</h2>	      		        
+	<div class="clearfix"></div>
+</div>
+<!-- Page heading ends -->
+
+
+	
+<!-- Matter -->
+<div class="matter">
+   <div class="container">         
+      <div class="widget">               
+	     <div class="widget-content referrer">                  
+	        <table class="table table-striped table-bordered table-hover">
+	               <thead>
+		              <tr>
+		                <th width=5% align="center" bgcolor="#ccc">顺序</th>
+		                <th width=10% align="center" bgcolor="#ccc">图片</th>
+						<th width=5% align="center" bgcolor="#ccc"><{$arr.guig1}></th>
+						<notempty name="arr.guig2">
+							<th width=5% align="center" bgcolor="#ccc"><{$arr.guig2}></th>
+						</notempty>
+						<notempty name="arr.guig3">
+							<th width=5% align="center" bgcolor="#ccc"><{$arr.guig3}></th>
+						</notempty>
+						<notempty name="arr.guig4">
+							<th width=5% align="center" bgcolor="#ccc"><{$arr.guig4}></th>
+						</notempty>
+						<notempty name="arr.guig5">
+							<th width=5% align="center" bgcolor="#ccc"><{$arr.guig5}></th>
+						</notempty>		                                                          
+	                    <th width=5% align="center" bgcolor="#ccc">库存</th>
+	                    <th width=5% align="center" bgcolor="#ccc">价格</th>                                                                             
+	                    <th width=20% align="center" bgcolor="#ccc">操作</th>
+		               </tr>
+	               </thead>
+	               <tbody>  
+	               <form action="__URL__/order" method="post" >             
+					<volist name='data' id='st'>
+		               <tr>                          
+		                 <td><input type="text" name="sn[<{$st.id}>]" value="<{$st.sn}>"  class="input40"/></td>
+		                 <td>
+			                 <empty name="st.img">
+								<img src="__UPLOAD__/<{$arr.img}>"  style="width:80px;max-width: 80px;"/>
+							<else /> 
+								<img src="__UPLOAD__/<{$st.img}>"  style="width:80px;max-width: 80px;"/>
+							</empty> 
+		                 
+		                 
+		                 </td>
+		                 <td><{$st.norm1}></td>
+						 <notempty name="arr.guig2"><td><{$st.norm2}></td></notempty>
+						 <notempty name="arr.guig3"><td><{$st.norm3}></td></notempty>
+						 <notempty name="arr.guig4"><td><{$st.norm4}></td></notempty>
+						 <notempty name="arr.guig5"><td><{$st.norm5}></td></notempty>	
+		                 <td><a href="__APP__/<{$Think.config.PRODUCT}>/Repertory/index/id/<{$st.id}>"><{$st.id|getRepertory=###}></a></td>                	                          
+		                 <td><a href="__APP__/<{$Think.config.PRODUCT}>/Price/index/id/<{$st.id}>"><{$st.id|getPrice=###}></a></td>		                                         
+		                 <td>                              
+		                    <a href="__URL__/mod/id/<{$st.id}>" class="btn  btn-default btn-lg"><i class="glyphicon glyphicon-pencil"> 编辑</i></a>
+		                    <a href="__URL__/copy/id/<{$st.id}>" class="btn  btn-default btn-lg"><i class="glyphicon glyphicon-copy"> 复制</i></a>
+		                    <switch name="st.state">
+							    <case value="5">
+							    	<a href="__URL__/fabu/id/<{$st.id}>/state/<{$st.state}>" class="btn  btn-warning btn-lg">
+							    		<span class="glyphicon glyphicon-save"> 下线</span>
+							    	</a>
+							    </case>							    
+							    <default />
+							    	<a href="__URL__/fabu/id/<{$st.id}>/state/<{$st.state}>" class="btn  btn-primary btn-lg">
+							    		<span class="glyphicon glyphicon-open"> 发布</span>
+							    	</a>
+							</switch>		                   	                    
+		                    <a href="__URL__/del/id/<{$st.id}>" class="btn  btn-danger btn-lg" onclick="return confirm('你确定要删除？')">
+		                       <i class="glyphicon glyphicon-trash"> 删除</i>
+		                    </a>
+		                  </td>
+		                </tr>
+					</volist>				
+                  </tbody>                                                                                        
+	            </table>
+	            <div class="widget-foot">
+                      	<div class="uni pull-left">
+                      		<input type="submit" name="do_submit" value="批量排序" class="btn btn-info">                      		
+                      	</div> 
+                      	</form>                
+                        <ul class="pagination pull-right"><{$page}></ul>
+                      
+                      <div class="clearfix"></div> 
+
+                    </div>
+	         </div>
+         </div>
+     </div>
+</div>

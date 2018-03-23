@@ -11,5 +11,4 @@ class EmptyController extends Controller
         //错误网页重新定向到首页
         $this->redirect('public/404');
     }
-
 }

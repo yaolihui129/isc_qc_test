@@ -1,0 +1,92 @@
+<layout name="layout"/>
+<!-- content start -->
+<div class="admin-content">
+    <div class="am-cf am-padding">
+        <div class="am-fl am-cf">
+            <strong class="am-text-primary am-text-lg"><a href="__URL__/musttest/proid/<{$_SESSION['proid']}>">必测点</a></strong> /
+            <small>编辑</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="panel-body">
+                <form action="__URL__/update" method="post" class="form-horizontal" role="form">
+                    <input type="hidden" name="id" value="<{$scene.id}>"/>
+                    <input type="hidden" name="table" value="tp_scene"/>
+                    <div class="form-group">
+                        <div class="col-sm-2 control-label"></div>
+                        <div class="col-sm-10"><b><{$scene.moder|getZTUserName=###}></b> 更新于:<{$scene.utime}></div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label">节点:</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="swhen" value="<{$scene.swhen}>" placeholder="节点">
+                        </div>
+                        <label  class="col-sm-2 control-label">角色:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" name="swho" value="<{$scene.swho}>" placeholder="角色">
+                        </div>
+
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">场景:</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="scene" value="<{$scene.scene}>" placeholder="场景名称">
+                        </div>
+                        <label  class="col-sm-2 control-label">级别:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" name="level" value="<{$scene.level}>" placeholder="级别">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label">流程:</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="flow" value="<{$scene.flow}>" placeholder="流程">
+                        </div>
+                        <label  class="col-sm-2 control-label">顺序:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" name="sn" value="<{$scene.sn}>" placeholder="顺序">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label"></label>
+                        <div class="col-sm-10"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label"></label>
+                        <div class="col-sm-6">
+                            <button type="submit" class="btn btn-info btn-block ">提 交</button>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="__URL__/musttest/proid/<{$_SESSION['proid']}>" type="button" class="btn btn-warning btn-block ">返回</a>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+        <div class="col-md-4 hidden-xs hidden-sm">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><small><{$_SESSION['proid']|getProname=###}></small></h3>
+                </div>
+                <ul class="list-group">
+                    <volist name='data' id='vo' empty="没有数据">
+                        <li class="list-group-item">
+                            <a href="__URL__/modMust/id/<{$vo.id}>">
+                                <span class="label label-danger"><{$vo.level}></span>
+                                <span class="label label-default"><{$vo.swho}></span>
+                                <span class="label label-primary"><{$vo.swhen}></span>
+                                <small><{$vo.scene}></small>
+                                <span class="label label-warning pull-right"><{$vo.status}></span>
+                            </a>
+                        </li>
+                    </volist>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
