@@ -1,0 +1,159 @@
+<layout name="layout"/>
+<!-- content start -->
+<div class="admin-content">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-info">
+                <nav class="navbar navbar-default">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">本期的必测点:</a>
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <small><{$owner|getZTUserName=###}></small>
+                                    <span class="badge"><{$owner|countUserProjectScene=###}></span>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <volist name='users' id='user'>
+                                        <li>
+                                            <a href="__URL__/assignment/user/<{$user}>">
+                                                <{$user|getZTUserName=###}>
+                                                <span class="badge pull-right"><{$user|countUserProjectScene=###}></span>
+                                            </a>
+
+                                        </li>
+                                    </volist>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li >
+                                <a href="__URL__/musttest/proid/<{$_SESSION['proid']}>" class=" btn btn-default">
+                                    <span class="glyphicon glyphicon-chevron-left"> 返回</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <table class="table table-striped table-bordered table-hover table-condensed ">
+                    <tr>
+                        <th width=10% align="center" bgcolor="#ccc">顺序</th>
+                        <th width=80% align="left" bgcolor="#ccc">
+                            <span class="label label-danger">级别</span>
+                            <span class="label label-default">角色</span>
+                            <span class="label label-primary">节点</span>
+                            场景<span class="badge">功能数</span>
+                            <span class="label label-warning pull-right">状态</span>
+                        </th>
+                        <th width=10% align="left" bgcolor="#ccc">操作</th>
+                    </tr>
+                    <form action="__URL__/order" method="post">
+                        <input type="hidden" name="table" value="tp_my_scene"/>
+                        <volist name='myScene' id='st'>
+                            <switch name="st.result">
+                                <case value="1"><tr class="success"></case>
+                                <case value="2"><tr class="danger"></case>
+                                <case value="3"><tr class="warning"></case>
+                                <case value="4"><tr class="default"></case>
+                                <default/>
+                                <tr class="info">
+                            </switch>
+                                <td align="center"><input type="text" name="sn[<{$st.id}>]" value="<{$st.sn}>" class="input40"/></td>
+                                <td>
+                                    <a href="__URL__/runMyTest/myScene/<{$st.id}>/project/<{$st.project}>"><{$st.scene|getMySceneInfo=###}></a>
+                                    <switch name="st.result">
+                                        <case value="1"><span class="label label-success pull-right"></case>
+                                        <case value="2"><span class="label label-danger pull-right"></case>
+                                        <case value="3"><span class="label label-warning pull-right"></case>
+                                        <case value="4"><span class="label label-default pull-right"></case>
+                                        <default/><span class="label label-info pull-right">
+                                    </switch>
+                                    <{$st.result|getSceneResult=###}>
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="btn-group">
+                                        <a href="__URL__/del/id/<{$st.id}>/table/tp_my_scene" class="btn btn-danger btn-xs"
+                                           onclick="return confirm('你确定要移除已分派的场景：<{$st.scene|getName=tp_scene,###,scene}>？')">
+                                            <span class="glyphicon glyphicon-trash"> 移除</span>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </volist>
+                        <tr>
+                            <td colspan="10"><input type="submit" name="do_submit" value="批量排序" class="btn"></td>
+                        </tr>
+                    </form>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-warning">
+                <nav class="navbar navbar-default">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#"><{$_SESSION['proid']|getProname=###}></a>
+                    </div>
+                </nav>
+                <table class="table table-striped table-bordered table-hover table-condensed ">
+                    <tr>
+                        <th width=90% align="left" bgcolor="#ccc">
+                            <span class="label label-danger">级别</span>
+                            <span class="label label-default">角色</span>
+                            <span class="label label-primary">节点</span>
+                            场景<span class="badge">功能数</span>
+                            <span class="label label-warning pull-right">状态</span>
+                        </th>
+                        <th width=10% align="left" bgcolor="#ccc">操作</th>
+                    </tr>
+                    <volist name='data' id='st'>
+                        <switch name="st.result">
+                            <case value="1"><tr class="success"></case>
+                            <case value="2"><tr class="danger"></case>
+                            <case value="3"><tr class="warning"></case>
+                            <case value="4"><tr class="default"></case>
+                            <default/>
+                            <tr class="info">
+                        </switch>
+                        <td>
+                            <a href="__URL__/runMyTest/myScene/<{$st.id}>/project/<{$st.project}>"><{$st.id|getSceneInfo=###}></a>
+                            <switch name="st.result">
+                                <case value="1"><span class="label label-success pull-right"></case>
+                                <case value="2"><span class="label label-danger pull-right"></case>
+                                <case value="3"><span class="label label-warning pull-right"></case>
+                                <case value="4"><span class="label label-default pull-right"></case>
+                                <default/><span class="label label-info pull-right">
+                            </switch>
+                            <{$st.result|getSceneResult=###}>
+                            </span>
+                        </td>
+                            <td>
+                                <div class="btn-group">
+                                    <a href="__URL__/add/funcid/<{$st.id}>/type/1" class="btn btn-success btn-xs" title="<{$owner}>">
+                                        <span class="glyphicon glyphicon-plus"> 分派</span>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    </volist>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -31,6 +31,7 @@
                         <div class="btn-group pull-right">
                             <button data-toggle="modal" href="#tianjscene" class=" btn btn-success btn-xs">
                                 <span class="glyphicon glyphicon-plus"> 添加</span></button>
+                            <a href="__URL__/assignment" class=" btn btn-primary btn-xs"><span class="glyphicon glyphicon-share"> 分派</span></a>
                             <a href="__APP__/<{$Think.config.PRODUCT}>" class=" btn btn-warning btn-xs"><span class="glyphicon glyphicon-chevron-left"> 返回</span></a>
                         </div>
                     </h3>
@@ -42,9 +43,10 @@
                             <span class="label label-danger">级别</span>
                             <span class="label label-default">角色</span>
                             <span class="label label-primary">节点</span>
-                            场景
-                            <span class="label label-warning">状态</span>
+                            场景<span class="badge">功能数</span>
+                            <span class="label label-warning pull-right">状态</span>
                         </th>
+
                         <th width=25% align="left" bgcolor="#ccc">操作</th>
                     </tr>
                     <form action="__URL__/order" method="post">
@@ -60,12 +62,10 @@
                                         <span class="label label-default"><{$st.swho}></span>
                                         <span class="label label-primary"><{$st.swhen}></span>
                                         <a href="__URL__/mustTestFunc/id/<{$st.id}>"><small><{$st.scene}></small></a>
-                                        <span class="label label-warning"><{$st.status}></span>
+                                        <span class="badge "><{$st.id|countId='tp_scene_func','scene',###}></span>
                                     </span>
-                                    <span class="badge pull-right">
-                                        <a href="__URL__/mustTestFunc/id/<{$st.id}>"><{$st.id}></a>
+                                    <span class="label label-warning pull-right"><{$st.status|getSceneStatus=###}></span>
 
-                                    </span>
                                 </td>
                                 <td>
                                     <div class="btn-group">

@@ -3,7 +3,7 @@
 namespace Record\Controller;
 class IndexController extends CommonController
 {
-
+    //迭代列表
     public function index()
     {
         $search = I('search');
@@ -17,8 +17,8 @@ class IndexController extends CommonController
 
         $this->display();
     }
-
-    public function func(){//迭代涉及的功能点
+    //迭代涉及的功能点
+    public function func(){
         $_SESSION['proid']=I('proid');
         $m = M("tp_func_range");
         $where=array("project"=>$_SESSION['proid'],"deleted"=>'0','type'=>'1');
@@ -32,7 +32,7 @@ class IndexController extends CommonController
 
         $this->display();
     }
-
+    //修改功能点
     public function modFunc(){
         if(I('branch')){
             $_SESSION['modFunc']['branch'] = I('branch');
@@ -71,7 +71,6 @@ class IndexController extends CommonController
 
         $this->display();
     }
-
     //场景功能点配置
     public function modTestFunc(){
         if(I('branch')){
@@ -103,14 +102,14 @@ class IndexController extends CommonController
         }
         $this->assign('branch', $branch);
 
-        $rr['branch']=$_SESSION['modFunc']['branch'];
+        $rr['branch']=$_SESSION['modTestFunc']['branch'];
         $rr['deleted']='0';
         $func=M('tp_func')->where($rr)->select();
         $this->assign('func', $func);
 
         $this->display();
     }
-
+    //单个添加功能点（或影响）
     function add(){
         $id=I('funcid');
         $arr=M("tp_func")->find($id);
@@ -137,10 +136,11 @@ class IndexController extends CommonController
             $this->error("添加失败");
         }
     }
-
+    //添加必测点功能
     function addTestFunc(){
         $id=I('funcid');
         $arr=M("tp_func")->find($id);
+
         $scene=I('scene');
         $m = D("tp_scene_func");
         $where=array("scene"=>$scene,"deleted"=>'0');
@@ -148,7 +148,7 @@ class IndexController extends CommonController
         if (!$m->create($_GET)) {
             $this->error($m->getError());
         }
-        $_GET['func']    = $id;
+        $_GET['func']    = $arr['id'];
         $_GET['sn']      = $c+1;
         $_GET['scene']    = $scene;
         $_GET['path']    = $arr['path'];
@@ -157,13 +157,14 @@ class IndexController extends CommonController
         $_GET['adder']   = $_SESSION['account'];
         $_GET['moder']   = $_SESSION['account'];
         $_GET['ctime']   = time();
+//        dump($_GET);
         if($m->add($_GET)){
             $this->success("添加成功！");
         }else {
             $this->error("添加失败");
         }
     }
-
+    //影响范围
     public function range(){//迭代测试（含影响范围）
         $_SESSION['proid']=I('proid');
         $m = D("tp_func_range");
@@ -195,7 +196,7 @@ class IndexController extends CommonController
 
         $this->display();
     }
-
+    //修改影响范围
     public function modRange(){
         if(I('branch')){
             $_SESSION['modFunc']['branch'] = I('branch');
@@ -297,6 +298,70 @@ class IndexController extends CommonController
 
         $this->display();
     }
+    //场景分派
+    public function assignment(){
+        $where=array("project"=>$_SESSION['proid'],"deleted"=>'0');
+        $data=M("tp_scene")->where($where)->order('sn')->select();
+        $this->assign("data",$data);
+
+        $where['owner']=I('user',$_SESSION['account']);
+        $this->assign("owner",$where['owner']);
+        $myScene=M("tp_my_scene")->where($where)->order('sn')->select();
+        $this->assign("myScene",$myScene);
+
+        $users=['yaolihui','fanqiao','wangchenzi','menghuihui','lixm','qinzx'];
+        $this->assign("users",$users);
+//        dump($myScene);
+        $this->display();
+    }
+    //我的必测任务
+    public function myMustTest(){
+        $map['testgp'] = 'YX';
+        $map['deleted'] = '0';
+        $map['status'] = array('in', array('wait', 'doing'));
+        $arr = M('project')->where($map)->select();
+        foreach ($arr as $k=>$ar){
+            $arr[$k]=$ar['id'];
+        }
+        $where['project']=array('in',$arr);
+        $where['owner']=$_SESSION['account'];
+        $where['deleted'] = '0';
+
+        $m = D("tp_my_scene");
+        $data=$m->where($where)->order('project,ctime')->select();
+        if($data){
+            $project=array();
+            foreach ($data as $k=>$da){
+                if(!in_array($da['project'],$project)){
+                    $project[$k]=$da['project'];
+                }
+            }
+            $this->assign("project",$project);
+            $pro=I('project',$project[0]);
+            $this->assign("pro",$pro);
+            $where['project']=$pro;
+            $data=$m->where($where)->order('ctime')->select();
+            $this->assign("data",$data);
+        }else{
+            $this->error('还没有给你分派必测点！');
+        }
+
+        $this->display();
+    }
+
+    //执行我的测试
+    public function runMyTest(){
+        $where=array('project'=>I('project'),'deleted'=>'0');
+        $myScene= D("tp_my_scene")->where($where)->order('project,ctime')->select();
+        $this->assign("myScene",$myScene);
+        $scene=I('myScene');
+        $this->assign("scene",$scene);
+        $where=array('myscene'=>$scene,'deleted'=>'0');
+        $data=M('tp_my_scene_func')->where($where)->order('ctime')->select();
+        $this->assign("data",$data);
+
+        $this->display();
+    }
 
     //场景复制
     function copy(){
@@ -382,6 +447,76 @@ class IndexController extends CommonController
         }else{
             $this->error("没有标记的功能点！");
         }
+
+    }
+    //标记成功
+    function pass(){
+        $_GET['result'] = 1;
+        $_GET['moder'] = $_SESSION['account'];
+        if (D('tp_my_scene_func')->save($_GET)) {
+            //todo
+            //查询功能点数和成功的功能点数
+            //成功数等于功能点数标记场景测试结果
+
+
+            $this->success("OK！");
+        } else {
+            $this->error("修改失败！");
+        }
+    }
+    //标记失败
+    function fail(){
+        $_POST['result'] = 2;
+        $_POST['moder'] = $_SESSION['account'];
+        $m=D('tp_my_scene_func');
+        $arr=$m->find(I('id'));
+        if ($m->save($_POST)) {
+            //更新我的场景
+            $_GET['id']=$arr['myscene'];
+            D('tp_my_scene')->save($_POST);
+            //更新场景
+            $_GET['id']=$arr['scene'];
+            D('tp_scene')->save($_POST);
+            //更新场景功能点
+            $_GET['id']=$arr['scenefunc'];
+            D('tp_scene_func')->save($_POST);
+            //更新功能点
+            $_GET['id']=$arr['func'];
+            $_GET['result'] = '失败';
+            D('tp_func')->save($_POST);
+            $this->success("OK！");
+        } else {
+            $this->error("修改失败！");
+        }
+
+    }
+    //标记阻塞
+    function block(){
+        $_GET['result'] = 3;
+        $_GET['moder'] = $_SESSION['account'];
+        $m=D('tp_my_scene_func');
+        $arr=$m->find(I('id'));
+        //更新我的功能点
+        if ($m->save($_GET)) {
+            //更新我的场景
+            $_GET['id']=$arr['myscene'];
+            D('tp_my_scene')->save($_GET);
+            //更新场景
+            $_GET['id']=$arr['scene'];
+            D('tp_scene')->save($_GET);
+            //更新场景功能点
+            $_GET['id']=$arr['scenefunc'];
+            D('tp_scene_func')->save($_GET);
+            //更新功能点
+            $_GET['id']=$arr['func'];
+            $_GET['result'] = '阻塞';
+            D('tp_func')->save($_GET);
+            $this->success("OK！");
+        } else {
+            $this->error("修改失败！");
+        }
+
+
 
     }
 

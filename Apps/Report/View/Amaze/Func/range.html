@@ -29,16 +29,16 @@
                             <span class="badge"><{$Think.session.proid|countProCase=###}></span></a></li>
                         <li role="presentation"><a
                                 href="__APP__/<{$Think.config.PRODUCT}>/Func/func/proid/<{$Think.session.proid}>">功能点
-                            <span class="badge"><{$Think.session.proid}></span></a>
+                            <span class="badge"><{$Think.session.proid|countFuncRangeId='tp_func_range','project',###}></span></a>
                         </li>
                         <li role="presentation" class="active">
                             <a href="__APP__/<{$Think.config.PRODUCT}>/Func/range/proid/<{$Think.session.proid}>">影响
-                            <span class="badge"><{$Think.session.proid}></span>
+                            <span class="badge"><{$Think.session.proid|countId='tp_func_range','project',###}></span>
                             </a>
                         </li>
                         <li role="presentation"><a
                                 href="__APP__/<{$Think.config.PRODUCT}>/Scene/index/proid/<{$Think.session.proid}>">必测点
-                            <span class="badge"><{$Think.session.proid}></span></a>
+                            <span class="badge"><{$Think.session.proid|countId='tp_scene','project',###}></span></a>
                         </li>
                         <li role="presentation"><a
                                 href="__APP__/<{$Think.config.PRODUCT}>/Bug/index/proid/<{$Think.session.proid}>">BUG
