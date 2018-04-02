@@ -6,6 +6,8 @@
     <title>保险及后服务中心-产品质量后台</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="renderer" content="webkit">
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="bookmark" href="/favicon.ico" />
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
     <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
     <link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
@@ -30,17 +32,18 @@
     </button>
 
     <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+
         <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
-            <li class="am-dropdown" data-am-dropdown>
-                <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
-                    <span class="am-icon-user"></span> <{$_SESSION['realname']}> <span
-                        class="am-icon-caret-down"></span>
+            <li >
+                <a href="__APP__/<{$Think.config.PRODUCT}>/Index/myMustTest"  target="_blank">
+                    <span class="am-icon-user"> <{$_SESSION['realname']}></span>
+                    <span class="badge"><{$_SESSION['account']|myMustTestNum=###}></span>
                 </a>
-                <ul class="am-dropdown-content">
-                    <li><a href="#"><span class="am-icon-user"></span> 资料</a></li>
-                </ul>
             </li>
-            <li><a href="__APP__/<{$Think.config.PRODUCT}>/Login/logout"><span class="am-icon-power-off"></span> 退出</a>
+            <li>
+                <a href="__APP__/<{$Think.config.PRODUCT}>/Login/logout">
+                    <span class="am-icon-power-off"> 退出</span>
+                </a>
             </li>
         </ul>
     </div>

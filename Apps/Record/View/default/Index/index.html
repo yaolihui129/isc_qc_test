@@ -21,12 +21,12 @@
         <tbody>
         <volist name='arr' id='pro' empty="没有数据">
             <tr>
-                <td width=75%>
+                <td width=70%>
                     <a href="__APP__/<{$Think.config.PRODUCT}>/Risk/index/proid/<{$pro.id}>">
                         <span class="badge"><{$pro.status|getProst=###}></span>【<{$pro.qd|getZTUserName=###}>】<{$pro.name}>(<{$pro.end}>)
                     </a>
                 </td>
-                <td width=25%>
+                <td width=30%>
                     <div class="btn-group am-btn-group-sm" role="group" aria-label="...">
                         <a href="__APP__/<{$Think.config.PRODUCT}>/Index/func/proid/<{$pro.id}>" class="btn btn-success btn-xs">
                             功能点 <span class="badge"> <{$pro.id|countFuncRangeId='tp_func_range','project',###}></span>

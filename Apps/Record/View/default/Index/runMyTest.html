@@ -1,0 +1,94 @@
+<layout name="layout"/>
+<!-- content start -->
+<div class="admin-content">
+    <div class="panel panel-default">
+        <div class="panel-heading">测试执行
+            <div class="btn-group pull-right">
+                <a href="__URL__/myMustTest/project/<{$scene|getName='tp_my_scene',###,'project'}>" class=" btn btn-warning btn-xs ">返回</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-7">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><small><{$scene|getSceneInfo=###}></small></h3>
+                    </div>
+                    <p>大致流程：<{$scene|getName='tp_my_scene',###,'flow'}> </p>
+                    <ul class="list-group">
+                        <volist name='data' id='st' empty="没有数据">
+                            <switch name="st.result">
+                                <case value="1">
+                                    <li class="list-group-item list-group-item-success">
+                                </case>
+                                <case value="2">
+                                    <li class="list-group-item list-group-item-danger">
+                                </case>
+                                <case value="3">
+                                    <li class="list-group-item list-group-item-warning">
+                                </case>
+                                <case value="4">
+                                    <li class="list-group-item list-group-item-info">
+                                </case>
+                                <default/>
+                                <li class="list-group-item ">
+                            </switch>
+                            <form action="__URL__/fail" method="post" class="form-horizontal" role="form">
+                                <input type="hidden" name="id" value="<{$st.id}>"/>
+                                <input type="hidden" name="func" value="<{$st.func}>"/>
+                                <input type="hidden" name="scene" value="<{$st.scene}>"/>
+                                <input type="hidden" name="scenefunc" value="<{$st.scenefunc}>"/>
+                                <input type="hidden" name="myscene" value="<{$st.myscene}>"/>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <{$st.func|getFuncInfo=###}>
+                                    </div>
+                                    <div class="col-md-2 ">
+                                        <input type="text" class="input120" name="remark" value="<{$st.remark}>"/>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="btn-group pull-right" role="group" aria-label="...">
+                                            <a href="__URL__/pass/id/<{$st.id}>/myscene/<{$st.myscene}>/sceneid/<{$st.scene}>" type="button" class="btn btn-success btn-sm">通过</a>
+                                            <button type="submit" class="btn btn-danger btn-sm">失败</button>
+                                            <a href="__URL__/block/id/<{$st.id}>" type="button" class="btn btn-warning btn-sm">阻塞</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </form>
+                            </li>
+                        </volist>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><h3 class="panel-title">选择测试场景：</h3></div>
+                    <ul class="list-group">
+                        <volist name='myScene' id='st' empty="没有数据">
+                            <switch name="st.id">
+                                <case value="$scene">
+                                    <li class="list-group-item list-group-item-warning">
+                                </case>
+                                <default/>
+                                <li class="list-group-item ">
+                            </switch>
+                            <a href="__URL__/runMyTest/myScene/<{$st.id}>/project/<{$st.project}>"><{$st.scene|getSceneInfo=###}></a>
+                            <switch name="st.result">
+                                <case value="1"><span class="label label-success pull-right"></case>
+                                <case value="2"><span class="label label-danger pull-right"></case>
+                                <case value="3"><span class="label label-warning pull-right"></case>
+                                <case value="4"><span class="label label-default pull-right"></case>
+                                <default/><span class="label label-info pull-right">
+                            </switch>
+                            <{$st.result|getSceneResult=###}>
+                            </li>
+                        </volist>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -65,7 +65,7 @@
     }
     //获取页面信息
     function getWebInfo($qz){
-        $data=M('product')->where(array('qz'=>$qz))->field('id,web,adress,desc,phone,tel,qq,qz,url,record')->find();
+        $data=M('xl_web')->where(array('qz'=>$qz))->field('id,web,adress,desc,phone,tel,qq,qz,url,record')->find();
         $_SESSION[$qz]=$data;
         $_SESSION['ip']=get_client_ip();
         $_SESSION['browser']=GetBrowser();
@@ -623,25 +623,27 @@
         }
     }
 
-function getApiVersionStatus($value){
+    function getApiVersionStatus($value){
         //1-规划，2-提测，3-驳回，4-通过，5-预发，6-上线
-    if($value==1){
-        return '1-规划';
-    }elseif ($value==2){
-        return '2-提测';
-    }elseif ($value==3){
-        return '3-驳回';
-    }elseif ($value==4){
-        return '4-通过';
-    }elseif ($value==5){
-        return '5-预发';
-    }elseif ($value==6){
-        return '6-上线';
-    }elseif ($value==7){
-        return '7-取消';
-    }else{
-        return ;
+        if($value==1){
+            return '1-规划';
+        }elseif ($value==2){
+            return '2-提测';
+        }elseif ($value==3){
+            return '3-驳回';
+        }elseif ($value==4){
+            return '4-通过';
+        }elseif ($value==5){
+            return '5-预发';
+        }elseif ($value==6){
+            return '6-上线';
+        }elseif ($value==7){
+            return '7-取消';
+        }else{
+            return ;
     }
+
+
 }
 
     function getBugStauts($value){
@@ -671,9 +673,6 @@ function getApiVersionStatus($value){
         return $count;
     }
 
-
-
-
     function countId($table,$name,$value){
         $where=array($name=>$value,"deleted"=>'0');
         $count=M($table)->where($where)->count();
@@ -694,7 +693,6 @@ function getApiVersionStatus($value){
         $count=M("case")->where($where)->count();
         return $count;
     }
-
     //状态选择控件,@param $name 控件name;@param $value 选中值
     function formselect($value="正常",$name="state",$type="state") {
         $where=array("type"=>$type,"state"=>"正常");
@@ -717,7 +715,6 @@ function getApiVersionStatus($value){
             $count =M('project')->where($where)->count();
             return $count;
         }
-
 
     //获取禅道用户名
     function getZTUserName($account){

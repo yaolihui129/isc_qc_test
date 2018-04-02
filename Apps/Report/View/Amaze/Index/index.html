@@ -50,10 +50,12 @@
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="__APP__/<{$Think.config.PRODUCT}>/Func/func/proid/<{$pro.id}>"><{$pro.id}>/<{$pro.id}></a>
+                                        <a href="__APP__/<{$Think.config.PRODUCT}>/Func/func/proid/<{$pro.id}>">
+                                            <{$pro.id|countFuncRangeId='tp_func_range','project',###}>/<{$pro.id|countId='tp_func_range','project',###}></a>
                                     </td>
                                     <td>
-                                        <a href="__APP__/<{$Think.config.PRODUCT}>/Scene/index/proid/<{$pro.id}>"><{$pro.id}></a>
+                                        <a href="__APP__/<{$Think.config.PRODUCT}>/Scene/index/proid/<{$pro.id}>">
+                                            <{$pro.id|countId='tp_scene','project',###}></a>
                                     </td>
                                     <td>
                                         <a href="__APP__/<{$Think.config.PRODUCT}>/Risk/index/proid/<{$pro.id}>"><{$pro.id|countRisk=###}></a>
