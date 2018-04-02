@@ -34,6 +34,10 @@
                             </switch>
                             <form action="__URL__/fail" method="post" class="form-horizontal" role="form">
                                 <input type="hidden" name="id" value="<{$st.id}>"/>
+                                <input type="hidden" name="func" value="<{$st.func}>"/>
+                                <input type="hidden" name="scene" value="<{$st.scene}>"/>
+                                <input type="hidden" name="scenefunc" value="<{$st.scenefunc}>"/>
+                                <input type="hidden" name="myscene" value="<{$st.myscene}>"/>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <{$st.func|getFuncInfo=###}>
@@ -43,7 +47,7 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="btn-group pull-right" role="group" aria-label="...">
-                                            <a href="__URL__/pass/id/<{$st.id}>" type="button" class="btn btn-success btn-sm">通过</a>
+                                            <a href="__URL__/pass/id/<{$st.id}>/myscene/<{$st.myscene}>/sceneid/<{$st.scene}>" type="button" class="btn btn-success btn-sm">通过</a>
                                             <button type="submit" class="btn btn-danger btn-sm">失败</button>
                                             <a href="__URL__/block/id/<{$st.id}>" type="button" class="btn btn-warning btn-sm">阻塞</a>
                                         </div>

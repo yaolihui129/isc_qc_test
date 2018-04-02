@@ -7,9 +7,7 @@ return array(
         '__UPLOAD__'=>__ROOT__.'/Upload'
     ),
 
-
-
-
+    'www_key'           =>  'Xd9BkqGeim',                           //https证书
     'DEFAULT_THEME'     =>  'default',                              //开启模板
     'PRODID'            =>   1,                                     //定义产品编号
     'PRODUCT'           =>  'Xiuli',                                //定义产品编号  

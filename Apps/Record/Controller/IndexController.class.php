@@ -311,8 +311,56 @@ class IndexController extends CommonController
 
         $users=['yaolihui','fanqiao','wangchenzi','menghuihui','lixm','qinzx'];
         $this->assign("users",$users);
-//        dump($myScene);
+
         $this->display();
+    }
+    //场景分派
+    public function assignTo(){
+        $scene=I('scene');
+        $flow=I('flow');
+        $user=I('user');
+        $project=$_SESSION['proid'];
+        //查询SN值
+        $where=array('owner'=>$user,'project'=>$project,"deleted"=>'0');
+        $m=D('tp_my_scene');
+        $c=$m->where($where)->count();
+        //插入myScene数据，得到myScene的ID
+        $_GET['sn']=$c+1;
+        $_GET['scene']=$scene;
+        $_GET['flow']=$flow;
+        $_GET['owner']=$user;
+        $_GET['project']=$project;
+        $_GET['adder'] = $_SESSION['account'];
+        $_GET['moder'] = $_SESSION['account'];
+        $_GET['ctime'] = time();
+        if (!$m->create($_GET)) {
+            $this->error($m->getError());
+        }
+        $mySceneid=$m->add($_GET);
+        //根据$scene，查询$sceneFunc
+        $map=array('scene'=>$scene,"deleted"=>'0');
+        $sceneFunc=M('tp_scene_func')->where($map)->select();
+        //把查询到的$sceneFunc插入tp_my_scene_func
+        $table=D('tp_my_scene_func');
+        foreach ($sceneFunc as $sf){
+            $var['sn']=$sf['sn'];
+            $var['func']=$sf['func'];
+            $var['scene']=$sf['scene'];
+            $var['scenefunc']=$sf['id'];
+            $var['myscene']=$mySceneid;
+            $var['adder'] = $_SESSION['account'];
+            $var['moder'] = $_SESSION['account'];
+            $var['ctime'] = time();
+            if (!$table->create($var)) {
+                $this->error($table->getError());
+            }
+            $mySceneFuncid=$table->add($var);
+        }
+        if ($mySceneFuncid){
+            $this->success("分派成功");
+        } else {
+            $this->error("分派失败");
+        }
     }
     //我的必测任务
     public function myMustTest(){
@@ -348,7 +396,6 @@ class IndexController extends CommonController
 
         $this->display();
     }
-
     //执行我的测试
     public function runMyTest(){
         $where=array('project'=>I('project'),'deleted'=>'0');
@@ -362,7 +409,6 @@ class IndexController extends CommonController
 
         $this->display();
     }
-
     //场景复制
     function copy(){
         if($_SESSION['copy']){
@@ -453,42 +499,51 @@ class IndexController extends CommonController
     function pass(){
         $_GET['result'] = 1;
         $_GET['moder'] = $_SESSION['account'];
-        if (D('tp_my_scene_func')->save($_GET)) {
-            //todo
+        $m=D('tp_my_scene_func');
+        if ($m->save($_GET)) {
             //查询功能点数和成功的功能点数
-            //成功数等于功能点数标记场景测试结果
-
-
+            $myScene=I('myscene');
+            $funNum=countId('tp_my_scene_func','myscene',$myScene);
+            $where=array('myscene'=>$myScene,'deleted'=>'0','result'=>'1');
+            $passNum=$m->where($where)->count();
+            //成功数等于功能点数
+            if($funNum==$passNum){
+                //标记我的场景测试结果
+                $_GET['id']=$myScene;
+                D('tp_my_scene')->save($_GET);
+                //标记场景测试结果
+                $_GET['id']=I('sceneid');
+                D('tp_scene')->save($_GET);
+            }
             $this->success("OK！");
         } else {
-            $this->error("修改失败！");
+            $this->error("标记失败！");
         }
     }
     //标记失败
     function fail(){
         $_POST['result'] = 2;
         $_POST['moder'] = $_SESSION['account'];
-        $m=D('tp_my_scene_func');
-        $arr=$m->find(I('id'));
-        if ($m->save($_POST)) {
+        if (D('tp_my_scene_func')->save($_POST)) {
             //更新我的场景
-            $_GET['id']=$arr['myscene'];
-            D('tp_my_scene')->save($_POST);
+            $_GET['id']=I('myscene');
+            $_GET['result'] = 2;
+            $_GET['moder'] = $_SESSION['account'];
+            D('tp_my_scene')->save($_GET);
             //更新场景
-            $_GET['id']=$arr['scene'];
-            D('tp_scene')->save($_POST);
+            $_GET['id']=I('scene');
+            D('tp_scene')->save($_GET);
             //更新场景功能点
-            $_GET['id']=$arr['scenefunc'];
-            D('tp_scene_func')->save($_POST);
+            $_GET['id']=I('scenefunc');
+            D('tp_scene_func')->save($_GET);
             //更新功能点
-            $_GET['id']=$arr['func'];
+            $_GET['id']=I('func');
             $_GET['result'] = '失败';
-            D('tp_func')->save($_POST);
+            D('tp_func')->save($_GET);
             $this->success("OK！");
         } else {
             $this->error("修改失败！");
         }
-
     }
     //标记阻塞
     function block(){
