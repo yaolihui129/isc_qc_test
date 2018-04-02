@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="caab6aa4-488f-492f-b4e0-fb0cc4ee5682" name="默认的" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Apps/Api/Common/function.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Apps/Api/Common/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Apps/Api/Conf/config.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Apps/Api/Conf/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Apps/Api/Controller/BasicController.class.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Apps/Api/Controller/IndexController.class.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Apps/Api/Controller/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Apps/Api/Model/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Apps/Api/index.html" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/zentao.sql" afterPath="" />
-    </list>
+    <list default="true" id="caab6aa4-488f-492f-b4e0-fb0cc4ee5682" name="默认的" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,76 +27,16 @@
   <component name="FileEditorManager">
     <leaf />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="HTML File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="PUSH_TAGS">
-      <GitPushTagMode />
-    </option>
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Apps/Record/Controller/ApiController.class.php" root0="SKIP_INSPECTION" root1="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Apps/Record/Conf/config.php" />
+        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/Apps/Report/Conf/config.php" />
-        <option value="$PROJECT_DIR$/Apps/Report/View/Amaze/Api/details.html" />
-        <option value="$PROJECT_DIR$/Apps/Record/View/default/Api/details.html" />
-        <option value="$PROJECT_DIR$/Apps/Report/View/Amaze/Index/assign.html" />
-        <option value="$PROJECT_DIR$/Apps/Report/View/Amaze/Index/history.html" />
-        <option value="$PROJECT_DIR$/Apps/Report/View/Amaze/Index/index.html" />
-        <option value="$PROJECT_DIR$/Apps/Report/Controller/IndexController.class.php" />
-        <option value="$PROJECT_DIR$/Apps/Report/View/Amaze/Index/owner.html" />
-        <option value="$PROJECT_DIR$/Apps/Common/Common/function.php" />
-        <option value="$PROJECT_DIR$/Apps/Report/View/Amaze/Api/scene.html" />
-        <option value="$PROJECT_DIR$/Apps/Report/View/Amaze/Api/parameter.html" />
-        <option value="$PROJECT_DIR$/Apps/Report/Controller/ApiController.class.php" />
-        <option value="$PROJECT_DIR$/Apps/Report/View/Amaze/Api/info.html" />
-        <option value="$PROJECT_DIR$/Apps/Record/View/default/Api/index.html" />
-        <option value="$PROJECT_DIR$/Apps/Record/View/default/Api/mod.html" />
-        <option value="$PROJECT_DIR$/Apps/Record/View/default/Api/modscene.html" />
-        <option value="$PROJECT_DIR$/Apps/Record/View/default/Api/modversion.html" />
-        <option value="$PROJECT_DIR$/Apps/Record/View/default/Api/info.html" />
-        <option value="$PROJECT_DIR$/Apps/Report/View/Amaze/Api/index.html" />
-        <option value="$PROJECT_DIR$/Apps/Report/View/Amaze/Index/link.html" />
-        <option value="$PROJECT_DIR$/Apps/Report/View/Amaze/Index/online.html" />
-        <option value="$PROJECT_DIR$/Apps/Report/View/Amaze/Index/release.html" />
-        <option value="$PROJECT_DIR$/Apps/Report/Controller/BugController.class.php" />
-        <option value="$PROJECT_DIR$/Apps/Report/View/Amaze/Standard/index.html" />
-        <option value="$PROJECT_DIR$/Apps/Report/Controller/StandardController.class.php" />
-        <option value="$PROJECT_DIR$/Apps/Api/Common/function.php" />
-        <option value="$PROJECT_DIR$/Apps/Api/Controller/WebInfoController.class.php" />
         <option value="$PROJECT_DIR$/Apps/Common/Conf/config.php" />
-        <option value="$PROJECT_DIR$/Apps/Api/Controller/IndexController.class.php" />
-        <option value="$PROJECT_DIR$/Apps/Record/View/default/Api/parameter.html" />
-        <option value="$PROJECT_DIR$/Apps/Record/View/default/Api/modparameter.html" />
-        <option value="$PROJECT_DIR$/Apps/Record/View/default/Api/scene.html" />
-        <option value="$PROJECT_DIR$/Apps/Api/Controller/SceneController.class.php" />
-        <option value="$PROJECT_DIR$/Apps/Api/Controller/BasicController.class.php" />
-        <option value="$PROJECT_DIR$/Apps/Api/Controller/InfoController.class.php" />
-        <option value="$PROJECT_DIR$/Apps/Record/View/default/Api/modShear.html" />
-        <option value="$PROJECT_DIR$/Apps/Record/View/default/Api/modSparam.html" />
-        <option value="$PROJECT_DIR$/Apps/Record/View/default/Api/Sparam.html" />
-        <option value="$PROJECT_DIR$/Apps/Record/Controller/FuncController.class.php" />
-        <option value="$PROJECT_DIR$/Apps/Record/View/default/Index/index.html" />
-        <option value="$PROJECT_DIR$/Apps/Record/Controller/RiskController.class.php" />
-        <option value="$PROJECT_DIR$/Apps/Record/View/default/Risk/index.html" />
-        <option value="$PROJECT_DIR$/Apps/Record/View/default/Index/musttest.html" />
-        <option value="$PROJECT_DIR$/Apps/Record/Controller/ApiController.class.php" />
-        <option value="$PROJECT_DIR$/Apps/Record/View/default/Index/range.html" />
-        <option value="$PROJECT_DIR$/Apps/Report/View/Amaze/Public/header.html" />
-        <option value="$PROJECT_DIR$/Apps/Record/View/default/Index/func.html" />
-        <option value="$PROJECT_DIR$/Apps/Record/Controller/IndexController.class.php" />
-        <option value="$PROJECT_DIR$/Apps/Record/View/default/Index/modRange.html" />
-        <option value="$PROJECT_DIR$/Apps/Record/View/default/Index/modFunc.html" />
+        <option value="$PROJECT_DIR$/Apps/Record/Conf/config.php" />
       </list>
     </option>
   </component>
@@ -119,6 +47,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="182" />
+    <option name="y" value="155" />
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="555" />
     <option name="y" value="111" />
@@ -159,6 +90,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -274,25 +206,13 @@
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
       <updated>1520244810696</updated>
+      <workItem from="1519695671121" duration="1369000" />
+      <workItem from="1521812952294" duration="17000" />
     </task>
-    <task id="LOCAL-00006" summary="接口API封装">
-      <created>1521013825609</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1521013825609</updated>
-    </task>
-    <task id="LOCAL-00007" summary="功能点记录">
-      <created>1521594890873</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1521594890873</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="2250000" />
     <option name="totallyTimeSpent" value="143273000" />
   </component>
   <component name="TodoView">
@@ -305,8 +225,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1296" height="776" extended-state="7" />
     <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24921875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1566618" sideWeight="0.49423394" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280757" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -319,11 +249,13 @@
       <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16641453" sideWeight="0.50576603" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -515,6 +447,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Apps/Common/Conf/config.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="28" column="33" lean-forward="true" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
         <state relative-caret-position="64">
           <caret line="4" column="47" lean-forward="true" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
         </state>
@@ -647,6 +581,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="88">
+            <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
     <entry file="file://$PROJECT_DIR$/Apps/Record/Controller/RiskController.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -676,88 +617,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Apps/Record/View/default/Index/musttest.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="2" lean-forward="true" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
         <state relative-caret-position="798">
           <caret line="42" column="31" lean-forward="false" selection-start-line="40" selection-start-column="28" selection-end-line="42" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Record/View/default/Func/module.html">
+    <entry file="file://$PROJECT_DIR$/Apps/Common/Conf/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Record/View/default/Index/range.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="31" column="53" lean-forward="false" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="53" />
-          <folding>
-            <element signature="n#ul#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Report/View/Amaze/Public/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-313">
-          <caret line="29" column="69" lean-forward="true" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
-          <folding>
-            <marker date="1521521058488" expanded="true" signature="718:841" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Record/Controller/ApiController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10507">
-          <caret line="627" column="30" lean-forward="true" selection-start-line="627" selection-start-column="30" selection-end-line="627" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Record/View/default/Index/func.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="58" column="75" lean-forward="false" selection-start-line="58" selection-start-column="50" selection-end-line="58" selection-end-column="75" />
-          <folding>
-            <element signature="n#ul#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Record/View/default/Index/modFunc.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-          <folding>
-            <element signature="n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Record/View/default/Index/modRange.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="78" lean-forward="false" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="78" />
-          <folding>
-            <element signature="n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Record/View/default/Api/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="32" lean-forward="false" selection-start-line="7" selection-start-column="24" selection-end-line="11" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Report/Controller/ApiController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="24" column="28" lean-forward="false" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
         <state relative-caret-position="209">
           <caret line="16" column="42" lean-forward="false" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="42" />
           <folding />
@@ -766,6 +637,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Apps/Record/Controller/IndexController.class.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="2" lean-forward="true" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
         <state relative-caret-position="903">
           <caret line="95" column="41" lean-forward="false" selection-start-line="95" selection-start-column="41" selection-end-line="95" selection-end-column="41" />
           <folding />
