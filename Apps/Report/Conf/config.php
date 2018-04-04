@@ -8,6 +8,14 @@ return array(
         '__IMG__' => __ROOT__ . '/Public/images',
         '__UPLOAD__' => __ROOT__ . '/Upload'
     ),
+    'QA_TESTER'=>array(
+        'yaolihui',
+        'fanqiao',
+        'menghuihui',
+        'wangchenzi',
+        'lixm',
+        'qinzx'
+    ),
     'DEFAULT_THEME' => 'Amaze',//开启模板
     'PRODUCT' => 'Report',//定义产品编号
     'DB_HOST' => '192.168.155.54',

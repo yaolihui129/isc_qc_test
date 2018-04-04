@@ -1,0 +1,36 @@
+<layout name="layout"/>
+<!-- content start -->
+<div class="admin-content">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-striped table-bordered table-hover table-condensed ">
+                        <tr>
+                            <th width=25% align="center" bgcolor="#ccc">姓名</th>
+                            <th width=25% align="center" bgcolor="#ccc">加班工时</th>
+                            <th width=25% align="center" bgcolor="#ccc">可调休工时</th>
+                            <th width=25% align="center" bgcolor="#ccc">已调休工时</th>
+                        </tr>
+                        <volist name='data' id='st'>
+                            <tr>
+                                <td ><{$st.realname}></td>
+                                <td ><a href="__URL__/xiangq/type/1/user/<{$st.id}>/name/<{$st.realname}>"><{$st.id|getJiabHour=###}>小时</a></td>
+                                <td ><{$st.id|getKeyHour=###}>小时</td>
+                                <td ><a href="__URL__/xiangq/type/2/user/<{$st.id}>/name/<{$st.realname}>"><{$st.id|getTiaoxHour=###}>小时</a></td>
+                            </tr>
+                        </volist>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+</div>
+
+
+ 
+ 

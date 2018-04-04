@@ -435,3 +435,38 @@ function getTaskfinish($user)
         return '无记录';
     }
 }
+
+
+function getJiabHour($user){
+    $where = array('userid' => $user,'type'=>'1');
+    $Num= M('tp_overtime')->where($where)->sum('hourlong');
+    if($Num){
+        return $Num;
+    }else{
+        return 0;
+    }
+}
+
+function getTiaoxHour($user){
+    $where = array('userid' => $user,'type'=>'2');
+    $Num= M('tp_overtime')->where($where)->sum('hourlong');
+    if($Num){
+        return $Num;
+    }else{
+        return 0;
+    }
+
+}
+
+function getKeyHour($user){
+    $where = array('userid' => $user,'type'=>'2');
+    $tiaox= M('tp_overtime')->where($where)->sum('hourlong');
+    $where = array('userid' => $user,'type'=>'1');
+    $jiab= M('tp_overtime')->where($where)->sum('hourlong');
+    $Num=$jiab-$tiaox;
+    if($Num){
+        return $Num;
+    }else{
+        return 0;
+    }
+}

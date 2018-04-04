@@ -16,8 +16,8 @@ class TaskestimateController extends WebInfoController
     {
         $info = $this->getInfo();
         $m = M($info['table']);
-        $user = array('yaolihui', 'fanqiao', 'menghuihui', 'wangchenzi');//只看这些人员
-        $map['account'] = array('in', $user);
+
+        $map['account'] = array('in', C(QA_TESTER));
         $data = $m->where($map)->select();
         $arr[] = $data[0]['account'];
         foreach ($data as $d) {
@@ -28,7 +28,7 @@ class TaskestimateController extends WebInfoController
         }
         $this->assign('arr', $arr);
 
-        $where['zt_taskestimate.account'] = array('in', $user);
+        $where['zt_taskestimate.account'] = array('in', C(QA_TESTER));
         $join = 'zt_task ON zt_taskestimate.task=zt_task.id';
         $var = $m->join($join)->where($where)->order('zt_task.project desc')->select();
         $project[] = $var[0]['project'];
@@ -72,8 +72,7 @@ class TaskestimateController extends WebInfoController
         $m = M($info['table']);
         $riqi = date("Y-m-d", time() - $day * 24 * 3600);
         $map['date'] = array('egt', $riqi);
-        $user = array('benjamin', 'loki', 'Wain', 'damon', 'abby');//不考虑这些离职的人员和领导
-        $map['account'] = array('not in', $user);
+        $map['account'] = array('in', C(QA_TESTER));
         $join = 'zt_task ON zt_taskestimate.task=zt_task.id';
         $data = $m->join($join)->where($map)->group('name')->order('date desc')->select();
         $this->assign('data', $data);
@@ -98,8 +97,7 @@ class TaskestimateController extends WebInfoController
         $m = M($info['table']);
         $riqi = date("Y-m-d", time() - $day * 24 * 3600);
         $map['date'] = array('egt', $riqi);
-        $user = array('benjamin', 'loki', 'Wain', 'damon', 'abby');//不考虑这些离职的人员和领导
-        $map['account'] = array('not in', $user);
+        $map['account'] = array('in', C(QA_TESTER));
         $data = $m->where($map)->field('account,date,sum(consumed) as consumed')->group('account,date')->order('date desc')->select();
         $var[] = $data[0]['account'];
         foreach ($data as $d) {

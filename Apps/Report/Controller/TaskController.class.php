@@ -5,7 +5,9 @@ class TaskController extends WebInfoController
 {
     public function index()
     {
-        $users = M('user')->where(array("deleted" => '0', "usergp" => 'YX'))->field("account,realname")->order('account desc')->select();
+
+        $var['account'] = array('in', C(QA_TESTER));
+        $users = M('user')->where($var)->field("account,realname")->order('account desc')->select();
         $this->assign('users', $users);
 
         $_SESSION['taskAccount'] = I('account', $users[0]['account']);
