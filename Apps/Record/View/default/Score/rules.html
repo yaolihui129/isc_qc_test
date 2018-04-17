@@ -1,0 +1,83 @@
+<layout name="layout"/>
+<!-- content start -->
+<div class="admin-content">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">考核积分规则</small>
+                <div class="btn-group pull-right">
+                    <switch name="Think.session.account">
+                        <case value="yaolihui">
+                            <a data-toggle="modal" href="#tianjrules" class=" btn btn-info btn-xs">添加</a>
+                        </case>
+                    </switch>
+                    <a  href="__URL__/index" class=" btn btn-warning btn-xs">返回</a>
+                </div>
+            </h3>
+        </div>
+        <ul class="list-group">
+            <volist name='data' id='da' empty="没有数据">
+                <li class="list-group-item">
+                    【<{$da.cate}>】<{$da.name}>
+                    <span class="badge">
+                        <switch name="da.type">
+                            <case value="1">+</case>
+                            <case value="2">-</case>
+                        </switch>
+                        <{$da.score}>分
+                    </span>
+                </li>
+            </volist>
+
+        </ul>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- 添加-模态框 -->
+<div class="modal fade " id="tianjrules" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">考核规则-添加</h4>
+            </div>
+            <div class="modal-body">
+                <form action="__URL__/insert" method="post" class="form-horizontal" role="form">
+                    <input type="hidden" name="table" value="tp_score_rules"/>
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label">分类:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="cate" value="" placeholder="分类">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label">类型:</label>
+                        <div class="col-sm-10"><{$type}></div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label">项目:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="name" value="<{$c}>" placeholder="项目">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label">分值:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="score" value="" placeholder="分值">
+                        </div>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="submit" class="btn btn-primary">提交</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

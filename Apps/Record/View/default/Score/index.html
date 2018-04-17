@@ -1,10 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<layout name="layout"/>
+<!-- content start -->
+<div class="admin-content">
+    <div class="panel panel-default">
+        <div class="jumbotron">
+            <h1 style="text-align:center">我的积分：<a href="__URL__/gengduo"><{$myScore}></a></h1>
+            <p><a class=" pull-right" href="__URL__/rules" >积分规则</a></p>
+        </div>
+        <div class="panel-heading"><{$Think.config.KH_QUARTER}></div>
+        <ul class="list-group">
+            <volist name='data' id='st' >
+                <li class="list-group-item" title="【<{$st.utime}>】申诉原因：<{$st.content}>">
+                    <switch name="st.status">
+                        <case value="0">
+                            <span class="label label-info">正常</span>
+                        </case>
+                        <case value="1">
+                            <span class="label label-danger">申诉中</span>
+                        </case>
+                        <case value="2">
+                            <span class="label label-success">申诉成功</span>
+                        </case>
+                        <case value="3">
+                            <span class="label label-warning">申诉驳回</span>
+                        </case>
+                    </switch>
+                    <small>
+                        <{$st.project|getPro=###}>--<{$st.rules|getName='tp_score_rules',###,'cate'}>--<{$st.rules|getName='tp_score_rules',###}>:
+                        <switch name="st.dissent">
+                            <case value="1">value1
+                                <a href="__URL__/appeal/id/<{$st.id}>" class=" btn btn-danger btn-xs"><span class="glyphicon glyphicon-exclamation-sign"> 申诉</span></a>
+                            </case>
+                            <case value="0">
+                                <a href="#" class=" btn btn-warning btn-xs" disabled="disabled"> 不允许申诉</a>
+                            </case>
+                        </switch>
 
-</body>
-</html>
+                        <{$st.remark}>
+                    </small>
+                    <switch name="st.type">
+                        <case value="1">
+                            <span class="label label-success pull-right"> +<{$st.score}></span>
+                        </case>
+                        <case value="2">
+                            <span class="label label-danger pull-right"> -<{$st.score}></span>
+                        </case>
+                    </switch>
+                </li>
+            </volist>
+        </ul>
+    </div>
+</div>
+
+
+

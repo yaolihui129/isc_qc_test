@@ -86,7 +86,6 @@ class IndexController extends CommonController
         $data=M('tp_scene_func')->where($map)->select();
         $this->assign("data",$data);
 
-
         $map=array("project"=>$_SESSION['proid']);
         $branch=M("projectproduct")->where($map)->select();
         if(!$branch[0]['branch']=='0'){//不为0

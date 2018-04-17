@@ -1,0 +1,20 @@
+<layout name="layout"/>
+<div class="admin-content">
+    <div class="panel panel-default">
+        <div class="panel-heading">测试迭代管理</div>
+        <div class="panel-body">
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="__URL__/manage">正常迭代</a></li>
+                <li role="presentation"><a href="__URL__/urgent">紧急迭代</a></li>
+            </ul>
+            <div class="starter-template">
+                <ul class="list-group">
+                    <volist name='var' id='st'>
+                        <li class="list-group-item"><{$st}></li>
+                    </volist>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>

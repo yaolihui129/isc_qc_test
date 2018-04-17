@@ -68,9 +68,9 @@ class CommonController extends Controller
                 $this->error($m->getError());
             }
             if ($m->add($_GET)) {
-                $this->success("添加成功");
+                $this->success("成功");
             } else {
-                $this->error("添加失败");
+                $this->error("失败");
             }
         } else {
             $_POST['adder'] = $_SESSION['account'];
@@ -80,9 +80,9 @@ class CommonController extends Controller
                 $this->error($m->getError());
             }
             if ($m->add()) {
-                $this->success("添加成功");
+                $this->success("成功");
             } else {
-                $this->error("添加失败");
+                $this->error("失败");
             }
         }
     }
@@ -93,16 +93,16 @@ class CommonController extends Controller
         if (IS_GET) {
             $_GET['moder'] = $_SESSION['account'];
             if (D(I('table'))->save($_GET)) {
-                $this->success("修改成功！");
+                $this->success("成功！");
             } else {
-                $this->error("修改失败！");
+                $this->error("失败！");
             }
         } else {
             $_POST['moder'] = $_SESSION['account'];
             if (D(I('table'))->save($_POST)) {
-                $this->success("修改成功！");
+                $this->success("成功！");
             } else {
-                $this->error("修改失败！");
+                $this->error("失败！");
             }
         }
     }
@@ -125,9 +125,9 @@ class CommonController extends Controller
     {
         $count = D(I('table'))->delete(I('id'));
         if ($count > 0) {
-            $this->success('删除成功');
+            $this->success('成功');
         } else {
-            $this->error('删除失败');
+            $this->error('失败');
         }
     }
 

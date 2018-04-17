@@ -30,7 +30,7 @@ class OvertimeController extends CommonController
         $begin = mktime(19, 00);//mktime(hour,minute,second,month,day,year)
         $begin = date('H:i', $begin);
         $this->assign('begin', $begin);
-        $end = mktime(21, 00);//mktime(hour,minute,second,month,day,year)
+        $end = mktime(21, 00);
         $end = date('H:i', $end);
         $this->assign('end', $end);
 

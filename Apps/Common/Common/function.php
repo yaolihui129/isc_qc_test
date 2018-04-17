@@ -491,7 +491,12 @@
     // 根据id获取项目信息
     function getPro($proid){
         $data=M('project')->find($proid);
-        return $data['name']."(".$data['end']."上线)";
+        if($data){
+            return $data['name']."(".$data['end']."上线)";
+        }else{
+            return '【未关联】迭代或项目';
+        }
+
     }
     // 根据id获取项目信息
     function getProname($proid){
@@ -645,7 +650,7 @@
 
 
 }
-
+    //获取BUG状态
     function getBugStauts($value){
         if($value=='active'){
             return '激活';
@@ -705,16 +710,25 @@
         $html .='</select>';
         return $html;
     }
+    //周期积分汇总
+    function sumScore($user,$quarter){
+        $m=M('tp_my_score');
+        $where=array('quarter'=>$quarter,'type'=>'1','user'=>$user,'deleted'=>'0');
+        $jiaf=$m->where($where)->sum('score');
+        $where=array('quarter'=>$quarter,'type'=>'2','user'=>$user,'deleted'=>'0');
+        $jianf=$m->where($where)->sum('score');
+        return $jiaf-$jianf;
+    }
 
     function countOwnerProject($user){
-            $where['testgp'] = 'YX';
-            $where['deleted']='0';
-            $status = array('wait', 'doing');
-            $where['status'] = array('in', $status);
-            $where['QD']=$user;
-            $count =M('project')->where($where)->count();
-            return $count;
-        }
+        $where['testgp'] = 'YX';
+        $where['deleted']='0';
+        $status = array('wait', 'doing');
+        $where['status'] = array('in', $status);
+        $where['QD']=$user;
+        $count =M('project')->where($where)->count();
+        return $count;
+    }
 
     //获取禅道用户名
     function getZTUserName($account){

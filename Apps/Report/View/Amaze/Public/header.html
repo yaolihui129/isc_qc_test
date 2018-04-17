@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>易鑫-保险及后服务中心-产品质量平台</title>
+    <title>智道-保险及后服务中心-产品质量平台</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
@@ -20,7 +20,7 @@
 <![endif]-->
 
 <header class="am-topbar admin-header">
-    <div class="am-topbar-brand"><strong>易鑫-保险及后服务中心</strong>
+    <div class="am-topbar-brand"><strong>智道-保险及后服务中心</strong>
         <small>产品质量平台</small>
     </div>
     <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only"
@@ -39,7 +39,6 @@
             </empty>
         </ul>
     </div>
-
 </header>
 <div class="am-cf admin-main">
     <!-- sidebar start -->
@@ -47,8 +46,9 @@
         <ul class="am-list admin-sidebar-list">
             <li><a href="__APP__/<{$Think.config.PRODUCT}>/Index"><span class="glyphicon glyphicon-home"> 测试迭代</span></a></li>
             <li><a href="__APP__/<{$Think.config.PRODUCT}>/Func" ><span class="glyphicon glyphicon-globe"> 功能地图</span></a></li>
-            <li><a href="__APP__/<{$Think.config.PRODUCT}>/Index/link"><span class="glyphicon glyphicon-link"> 常用链接</span></a></li>
             <li><a href="__APP__/<{$Think.config.PRODUCT}>/Api"><span class="glyphicon glyphicon-compressed"> 待测接口</span></a></li>
+            <li><a href="__APP__/<{$Think.config.PRODUCT}>/Score/index"><span class="glyphicon glyphicon-credit-card"> 考核排行</span></a></li>
+            <!--<li><a href="__APP__/<{$Think.config.PRODUCT}>/Index/link"><span class="glyphicon glyphicon-link"> 常用链接</span></a></li>-->
             <li><a href="__APP__/<{$Think.config.PRODUCT}>/Bug/unconfirmed"><span class="glyphicon glyphicon-bell"> 待处理BUG</span></a></li>
             <li><a href="__APP__/<{$Think.config.PRODUCT}>/Task/personLoad"><span class="glyphicon glyphicon-user"> 测试投入</span></a></li>
             <li><a href="__APP__/<{$Think.config.PRODUCT}>/Overtime"><span class="glyphicon glyphicon-time"> 加班调休</span></a></li>
@@ -58,45 +58,28 @@
                   <span class="am-icon-angle-right am-fr am-margin-right"></span>
               </a>
               <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
-                    <li><a href="__APP__/<{$Think.config.PRODUCT}>/Standard">测试迭代评估</a></li>
+                  <li><a href="__APP__/<{$Think.config.PRODUCT}>/Standard">测试迭代评估</a></li>
+                  <li><a href="__APP__/<{$Think.config.PRODUCT}>/Standard/manage">测试迭代管理</a></li>
+                  <li><a href="__APP__/<{$Think.config.PRODUCT}>/Standard/bug">测试BUG管理</a></li>
+                  <li><a href="__APP__/<{$Think.config.PRODUCT}>/Standard/admittance">测试准入制度</a></li>
+                  <li><a href="__APP__/<{$Think.config.PRODUCT}>/Standard/score">考核积分计划</a></li>
+                  <li><a href="__APP__/<{$Think.config.PRODUCT}>/Standard/warning">预警邮件模板</a></li>
+                  <li><a href="__APP__/<{$Think.config.PRODUCT}>/Standard/pass">测试通过邮件</a></li>
               </ul>
             </li>
 
-            <!-- <li class="admin-parent">
-              <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}">
-                  <span class="am-icon-file"> 项目</span>
-                  <span class="am-icon-angle-right am-fr am-margin-right"></span>
-              </a>
-              <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
-                <volist name='pros' id='pro' empty="">
-                    <li><a href="__APP__/<{$Think.config.PRODUCT}>/Index/index/proid/<{$pro.id}>"> <{$pro.code}>
-                        <span class="am-badge"><{$pro.status|getProst=###}></span>
-                    </a></li>
-                </volist>
-              </ul>
-            </li> -->
-            <!-- <li><a href="__APP__/<{$Think.config.PRODUCT}>/Testcase"><span class="am-icon-pencil-square-o"> 测试用例</span></a></li>
-            <li><a href="__APP__/<{$Think.config.PRODUCT}>/Overtime"><span class="am-icon-pencil-square-o"> 加班调休</span></a></li> -->
+
         </ul>
         <div class="am-panel am-panel-default admin-sidebar-panel">
             <div class="am-panel-bd">
-                <p><span class="am-icon-bookmark"></span> 公告</p>
-                <p>时光静好，与君语；细水流年，与君同。—— Amaze</p>
+                <p><span class="am-icon-bookmark"></span> 习惯</p>
+                <p>
+                    好的习惯也不是一蹴而就的，需要的是反复的积累。<br>
+                    --果农
+                </p>
             </div>
         </div>
 
-        <notempty name="arr.desc">
-            <div class="am-panel am-panel-default admin-sidebar-panel">
-                <div class="am-panel-bd">
-                    <p><span class="am-icon-tag"></span> 项目详情</p>
-                    <b> 产品：</b><{$arr.po|getZTUserName=###}>
-                    <b> 项目：</b><{$arr.pm|getZTUserName=###}><br>
-                    <b> 研发：</b><{$arr.rd|getZTUserName=###}>
-                    <b> 测试：</b><{$arr.qd|getZTUserName=###}><br>
-                    <p><{$arr.desc}></p>
-                </div>
-            </div>
-        </notempty>
 
     </div>
     <!-- sidebar end -->

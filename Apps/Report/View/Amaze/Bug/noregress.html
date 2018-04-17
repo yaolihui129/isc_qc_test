@@ -34,8 +34,11 @@
                                     <tr>
                                         <td><{$st.project|getPro=###}></td>
                                         <td>
-                                            <{$st.id}>.<{$st.branch|getBranchName=###}><{$st.title}>-<{$st.module|getModuleName=###}>
-                                            【<{$st.status|getBugStauts=###}>:<{$st.resolveddate}>】
+                                            <a href="http://qc.zhidaoauto.com/zentao/bug-view-<{$st.id}>.html" target="_blank">
+                                                <{$st.id}>.<{$st.branch|getBranchName=###}><{$st.title}>-<{$st.module|getModuleName=###}>
+                                                【<{$st.status|getBugStauts=###}>:<{$st.resolveddate}>】
+                                            </a>
+
                                             <span class="badge pull-right"><{$st.assignedto|getZTUserName=###}></span>
                                         </td>
 
