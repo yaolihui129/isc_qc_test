@@ -47,5 +47,19 @@ class RiskController extends CommonController
 
         $this->display();
     }
+    function make(){
 
+        $this->display();
+    }
+
+    function add(){
+        //ajaxReturn(数据,'提示信息',状态)
+        dump($_GET);
+        $m=D('tp_risk');
+        if($m->add($_GET)){
+            $this->ajaxReturn($_GET,'添加信息成功',1);
+        }else{
+            $this->ajaxReturn(0,'添加信息失败',0);
+        }
+    }
 }

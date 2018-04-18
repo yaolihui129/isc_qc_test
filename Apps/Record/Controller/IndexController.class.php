@@ -76,14 +76,13 @@ class IndexController extends CommonController
         if(I('branch')){
             $_SESSION['modTestFunc']['branch'] = I('branch');
         }
-
         $id=I('scene');
         $m = D("tp_scene");
         $arr=$m->find($id);
         $this->assign("arr",$arr);
 
         $map=array('scene'=>$id,"deleted"=>'0');
-        $data=M('tp_scene_func')->where($map)->select();
+        $data=M('tp_scene_func')->where($map)->order('sn')->select();
         $this->assign("data",$data);
 
         $map=array("project"=>$_SESSION['proid']);
@@ -103,7 +102,7 @@ class IndexController extends CommonController
 
         $rr['branch']=$_SESSION['modTestFunc']['branch'];
         $rr['deleted']='0';
-        $func=M('tp_func')->where($rr)->select();
+        $func=M('tp_func')->where($rr)->order('path')->select();
         $this->assign('func', $func);
 
         $this->display();
@@ -292,7 +291,7 @@ class IndexController extends CommonController
         $this->assign("arr",$arr);
 
         $map=array('scene'=>$id,"deleted"=>'0');
-        $func=M('tp_scene_func')->where($map)->select();
+        $func=M('tp_scene_func')->where($map)->order('sn')->select();
         $this->assign("func",$func);
 
         $this->display();
