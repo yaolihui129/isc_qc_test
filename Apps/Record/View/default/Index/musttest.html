@@ -61,7 +61,7 @@
                                         <span class="label label-danger"><{$st.level}></span>
                                         <span class="label label-default"><{$st.swho}></span>
                                         <span class="label label-primary"><{$st.swhen}></span>
-                                        <a href="__URL__/mustTestFunc/id/<{$st.id}>"><small><{$st.scene}></small></a>
+                                        <a href="__URL__/must_test_func/id/<{$st.id}>"><small><{$st.scene}></small></a>
                                         <span class="badge "><{$st.id|countId='tp_scene_func','scene',###}></span>
                                     </span>
                                     <span class="label label-warning pull-right"><{$st.status|getSceneStatus=###}></span>
@@ -72,7 +72,7 @@
                                         <a href="__URL__/copy/scene/<{$st.id}>" class=" btn btn-warning btn-xs" onclick="return confirm('你确定要把场景:<{$st.scene}>，复制到迭代<{$_SESSION[\'copy\']|getProname=###}>吗？')">
                                             <span class="glyphicon glyphicon-tags"> 复制 </span>
                                         </a>
-                                        <a href="__URL__/modMust/id/<{$st.id}>" class=" btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"> 编辑 </span></a>
+                                        <a href="__URL__/mod_must/id/<{$st.id}>" class=" btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"> 编辑 </span></a>
                                         <a href="__URL__/del/id/<{$st.id}>/table/tp_scene" class="btn btn-danger btn-xs" onclick="return confirm('你确定要移除场景：<{$st.scene}>？')">
                                             <span class="glyphicon glyphicon-trash"> 删除 </span>
                                         </a>

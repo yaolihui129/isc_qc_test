@@ -63,11 +63,11 @@
                                             <span class="label label-danger"><{$st.level}></span>
                                             <span class="label label-default"><{$st.swho}></span>
                                             <span class="label label-primary"><{$st.swhen}></span>
-                                            <a href="#"><small><{$st.scene}></small></a>
+                                            <a href="__URL__/func/scene/<{$st.id}>"><small><{$st.scene}></small></a>
                                             <span class="label label-warning"><{$st.status}></span>
                                         </span>
                                         <span class="badge pull-right">
-                                            <a href="#"><{$st.id}></a>
+                                            <{$st.id|countId='tp_scene_func','scene',###}>
                                         </span>
                                     </td>
                                 </tr>

@@ -21,35 +21,30 @@
                             <br>
                             <h3>研发人员的素质良好,木有A类的BUG，继续保持哈！</h3>
                             <else/>
-                            <table class="am-table am-table-striped am-table-hover table-main table-bordered">
-                                <thead>
-                                <tr>
-                                    <th class="table-type" bgcolor="#ccc">迭代</th>
-                                    <th class="table-title" bgcolor="#ccc">BUG【提交时间】</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <volist name='data' id='st' empty="没有数据">
-                                    <tr>
-                                        <td><{$st.project|getPro=###}></td>
-                                        <td>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><small>BUGID.标题</small><span class="badge pull-right">责任人</span></h3>
+                                </div>
+                                <ul class="list-group">
+                                    <volist name='data' id='st' empty="没有数据">
+                                        <li class="list-group-item">
                                             <a href="http://qc.zhidaoauto.com/zentao/bug-view-<{$st.id}>.html" target="_blank">
-                                                <{$st.id}>.<{$st.branch|getBranchName=###}>
-                                                <{$st.title}>-<{$st.module|getModuleName=###}>【A】【<{$st.openeddate}>】
+                                                <small>
+                                                    <{$st.id}>.<{$st.branch|getBranchName=###}>
+                                                    <{$st.title}>-<{$st.module|getModuleName=###}>
+                                                </small>
                                             </a>
-                                            <span class="badge pull-right">
-						              	<empty name="st.resolvedby">
-											<{$st.assignedto|getZTUserName=###}>
-										<else/>
-											<{$st.resolvedby|getZTUserName=###}>
-										</empty> 
-						              </span>
-                                        </td>
-
-                                    </tr>
-                                </volist>
-                                </tbody>
-                            </table>
+                                            <span class="badge">
+                                                <empty name="st.resolvedby">
+                                                    <{$st.assignedto|getZTUserName=###}>
+                                                <else/>
+                                                    <{$st.resolvedby|getZTUserName=###}>
+                                                </empty>
+						                    </span>
+                                        </li>
+                                    </volist>
+                                </ul>
+                            </div>
                         </empty>
 
 

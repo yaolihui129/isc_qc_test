@@ -52,9 +52,7 @@
                                 <th class="table-type" bgcolor="#ccc">平台</th>
                                 <th class="table-type" bgcolor="#ccc">模块</th>
                                 <th class="table-title" bgcolor="#ccc">需求<span class="badge pull-right">任务</span></th>
-                                <th class="table-type" bgcolor="#ccc">阶段</th>
-                                <th class="table-type" bgcolor="#ccc">预计工时</th>
-                                <th class="table-type" bgcolor="#ccc">实际工时</th>
+
                             </tr>
                             </thead>
                             <tbody>
@@ -63,11 +61,11 @@
                                     <td><{$st.id}></td>
                                     <td><{$st.branch|getBranchName=###}></td>
                                     <td><{$st.module|getModuleName=###}></td>
-                                    <td><a href="#"><{$st.title}><span
-                                            class="badge pull-right"><{$st.id|countTask=###}></span></a></td>
-                                    <td><{$st.stage|getStoryStage=###}></td>
-                                    <td><{$st.id|sumTaskEstimate=###}></td>
-                                    <td><{$st.id|sumTaskConsumed=###}></td>
+                                    <td><a href="#"><{$st.title}>
+                                        <span class="badge pull-right"><{$st.id|countTask=###}></span>
+                                        </a>
+                                    </td>
+
                                 </tr>
                             </volist>
                             </tbody>

@@ -20,7 +20,7 @@ class ScoreController extends CommonController
     //规则
     public function rules(){
         $where=array('deleted'=>'0');
-        $data=M('tp_score_rules')->where($where)->select();
+        $data=M('tp_score_rules')->where($where)->order('cate desc')->select();
         $this->assign("data",$data);
         $type = array(
             array('key'=>1,'value'=>'加分项'),

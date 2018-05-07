@@ -16,12 +16,21 @@ class BasicController extends Controller
         if (!is_numeric($code)){
             return '错误';
         }
-        $result = array(
-            'code' => $code,
-            'message' => $message,
-            'data' => $data
-        );
-        echo json_encode($result);
+        if($data){
+            $result = array(
+                'code' => $code,
+                'message' => $message,
+                'data' => $data
+            );
+        }else{
+            $result = array(
+                'code' => $code,
+                'message' => $message,
+            );
+        }
+        $arr=json_encode($result);
+        header('Content-type:text/json');
+        echo $arr;
         exit;
     }
 
@@ -45,18 +54,19 @@ class BasicController extends Controller
         if (!$m->create($var)) {
             echo $m->getError();
         }
-        if ($m->add($var)) {
-            echo 1;
+        $id=$m->add($var);
+        if ($id) {
+            return $id;
         } else {
-            echo 0;
+            return 0;
         }
     }
     //更新数据
     function update($var,$table){
         if (D($table)->save($var)) {
-            echo 1;
+            return 1;
         } else {
-            echo 0;
+            return 0;
         }
     }
     //逻辑删除
@@ -64,9 +74,9 @@ class BasicController extends Controller
         $var[id] = $var;
         $var['deleted'] = 1;
         if (D($table)->save($var)) {
-            echo 1;
+            return 1;
         } else {
-            echo 0;
+            return 0;
         }
     }
     //物理删除
@@ -74,9 +84,9 @@ class BasicController extends Controller
     {
         $count = D($table)->delete($var);
         if ($count > 0) {
-            echo 1;
+            return 1;
         } else {
-            echo 0;
+            return 0;
         }
     }
 

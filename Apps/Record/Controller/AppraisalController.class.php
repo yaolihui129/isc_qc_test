@@ -12,7 +12,7 @@ class AppraisalController extends CommonController
             array('key'=>'1','value'=>'允许申诉'),
             array('key'=>'0','value'=>'不允许申诉'),
         );
-        $tester= array('fanqiao','wangchenzi','menghuihui', 'lixm','qinzx',);
+        $tester= array('fanqiao','wangchenzi','menghuihui', 'lixm');
         if(in_array($_SESSION['id'],$user)){
             $project=$this->projectDict();
             foreach ($project as $pro){
@@ -49,7 +49,7 @@ class AppraisalController extends CommonController
             }
             //人员积分明细
             $m=M('tp_my_score');
-            $data=$m->where($var)->order('ctime')->select();
+            $data=$m->where($var)->order('ctime desc')->select();
             $this->assign("data", $data);
 
             $count=$m->where(array('status'=>'1','deleted'=>'0')) ->count();

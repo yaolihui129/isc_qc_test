@@ -18,12 +18,12 @@ class CommonController extends Controller
         $this->redirect('public/404');
     }
 
-    function projectDict($limit = 10)
+    function projectDict($limit = 20)
     {
         /*项目迭代*/
         $map['testgp'] = 'YX';
         $map['deleted'] = '0';
-        $pros = M('project')->where($map)->order("status,end desc")->limit($limit)->select();
+        $pros = M('project')->where($map)->order("status desc,end desc")->limit($limit)->select();
         foreach ($pros as $k => $v) {
             $project[0]['key'] = 0;
             $project[0]['value'] = '【待定】未关联';
@@ -68,7 +68,11 @@ class CommonController extends Controller
                 $this->error($m->getError());
             }
             if ($m->add($_GET)) {
-                $this->success("成功");
+                if ($_GET['url']){
+                    $this->success("成功",U($_GET['url']));
+                }else{
+                    $this->success("成功");
+                }
             } else {
                 $this->error("失败");
             }
@@ -80,7 +84,11 @@ class CommonController extends Controller
                 $this->error($m->getError());
             }
             if ($m->add()) {
-                $this->success("成功");
+                if ($_POST['url']){
+                    $this->success("成功",U($_POST['url']));
+                }else{
+                    $this->success("成功");
+                }
             } else {
                 $this->error("失败");
             }
@@ -93,14 +101,22 @@ class CommonController extends Controller
         if (IS_GET) {
             $_GET['moder'] = $_SESSION['account'];
             if (D(I('table'))->save($_GET)) {
-                $this->success("成功！");
+                if ($_GET['url']){
+                    $this->success("成功",U($_GET['url']));
+                }else{
+                    $this->success("成功");
+                }
             } else {
                 $this->error("失败！");
             }
         } else {
             $_POST['moder'] = $_SESSION['account'];
             if (D(I('table'))->save($_POST)) {
-                $this->success("成功！");
+                if ($_POST['url']){
+                    $this->success("成功",U($_POST['url']));
+                }else{
+                    $this->success("成功");
+                }
             } else {
                 $this->error("失败！");
             }

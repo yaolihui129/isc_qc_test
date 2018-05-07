@@ -42,7 +42,7 @@ class TaskestimateController extends WebInfoController
         $this->display();
     }
 
-    public function dailyTaskAssignment()
+    public function daily()
     {//项目人员投入表
         $project = I('project');
         $this->assign("project", $project);
@@ -64,7 +64,7 @@ class TaskestimateController extends WebInfoController
         $this->display();
     }
 
-    public function personnelDailyTask()
+    public function task()
     {//人员每日任务投入分布表
         $day = I('day', 7);
         $this->assign('day', $day);
@@ -76,7 +76,7 @@ class TaskestimateController extends WebInfoController
         $join = 'zt_task ON zt_taskestimate.task=zt_task.id';
         $data = $m->join($join)->where($map)->group('name')->order('date desc')->select();
         $this->assign('data', $data);
-        $data = $m->join($join)->where($map)->group('name')->order('date desc')->select();
+
         $arr[] = $data[0]['date'];
         foreach ($data as $d) {
             if (in_array($d['date'], $arr)) {
@@ -89,7 +89,7 @@ class TaskestimateController extends WebInfoController
 
     }
 
-    public function personnelStageInput()
+    public function input()
     {//人员阶段投入分布表
         $day = I('day', 7);
         $this->assign('day', $day);

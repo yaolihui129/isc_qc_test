@@ -13,8 +13,23 @@ return array(
         'fanqiao',
         'menghuihui',
         'wangchenzi',
-        'lixm',
-        'qinzx'
+        'lixm'
+    ),
+    'DEV_USER'=>array(
+        'cfei',
+        'gongzy',
+        'jiajh',
+        'linyp',
+        'sunbo',
+        'xiemn',
+        'xucheng',
+        'yangyanju',
+        'yinjw',
+        'zhuhongda',
+        'liunian',
+        'chengang',
+        'libin',
+        'litao'
     ),
     'DEFAULT_THEME' => 'Amaze',//开启模板
     'PRODUCT' => 'Report',//定义产品编号

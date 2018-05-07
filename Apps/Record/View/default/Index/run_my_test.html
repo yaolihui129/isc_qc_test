@@ -4,7 +4,7 @@
     <div class="panel panel-default">
         <div class="panel-heading">测试执行
             <div class="btn-group pull-right">
-                <a href="__URL__/myMustTest/project/<{$scene|getName='tp_my_scene',###,'project'}>" class=" btn btn-warning btn-xs ">返回</a>
+                <a href="__URL__/my_must_test/project/<{$scene|getName='tp_my_scene',###,'project'}>" class=" btn btn-warning btn-xs ">返回</a>
             </div>
         </div>
         <div class="row">
@@ -75,7 +75,7 @@
                                 <default/>
                                 <li class="list-group-item ">
                             </switch>
-                            <a href="__URL__/runMyTest/myScene/<{$st.id}>/project/<{$st.project}>"><{$st.scene|getSceneInfo=###}></a>
+                            <a href="__URL__/run_my_test/myScene/<{$st.id}>/project/<{$st.project}>"><{$st.scene|getSceneInfo=###}></a>
                             <switch name="st.result">
                                 <case value="1"><span class="label label-success pull-right"></case>
                                 <case value="2"><span class="label label-danger pull-right"></case>

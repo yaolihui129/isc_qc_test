@@ -14,4 +14,16 @@ class SceneController extends WebInfoController
         $this->display();
     }
 
+
+    public function func(){
+        $scene=I('scene');
+        $arr=D("tp_scene")->find($scene);
+        $this->assign("arr",$arr);
+
+        $map=array('scene'=>$scene,"deleted"=>'0');
+        $func=M('tp_scene_func')->where($map)->order('sn')->select();
+        $this->assign("func",$func);
+
+        $this->display();
+    }
 }

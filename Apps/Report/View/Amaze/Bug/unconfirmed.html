@@ -22,33 +22,25 @@
                             <br>
                             <h3>研发人员的习惯良好,昨天17:30之前提交的BUG都已确认完毕。而这仅仅只是第一步哦，我们会在第一时间修复的！</h3>
                             <else/>
-                            <table class="am-table am-table-striped am-table-hover table-main table-bordered">
-                                <thead>
-                                <tr>
-                                    <th class="table-type" bgcolor="#ccc">迭代</th>
-                                    <th class="table-title" bgcolor="#ccc">BUG【提交时间】</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <volist name='data' id='st' empty="没有数据">
-                                    <tr>
-                                        <td><{$st.project|getPro=###}></td>
-                                        <td>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><small>BUGID.标题【状态：提交时间】</small><span class="badge pull-right">责任人</span></h3>
+                                </div>
+                                <ul class="list-group">
+                                    <volist name='data' id='st' empty="没有数据">
+                                        <li class="list-group-item">
                                             <a href="http://qc.zhidaoauto.com/zentao/bug-view-<{$st.id}>.html" target="_blank">
-                                                <{$st.id}>.<{$st.branch|getBranchName=###}><{$st.title}>-<{$st.module|getModuleName=###}>
-                                                【<{$st.status|getBugStauts=###}>:<{$st.openeddate}>】
+                                                <small>
+                                                    <{$st.id}>.<{$st.branch|getBranchName=###}><{$st.title}>-<{$st.module|getModuleName=###}>
+                                                    【<{$st.status|getBugStauts=###}>:<{$st.openeddate}>】
+                                                </small>
                                             </a>
-
-                                            <span class="badge pull-right"><{$st.assignedto|getZTUserName=###}></span>
-                                        </td>
-
-                                    </tr>
-                                </volist>
-                                </tbody>
-                            </table>
+                                            <span class="badge"><{$st.assignedto|getZTUserName=###}></span>
+                                        </li>
+                                    </volist>
+                                </ul>
+                            </div>
                         </empty>
-
-
                     </div>
                 </div>
             </div>

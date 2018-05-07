@@ -143,7 +143,9 @@ class StandardController extends WebInfoController
             '2.提供详细用例 <span class="badge">1-3分</span>',
             '3.有详细测试用例执行记录 <span class="badge">1-5分</span>',
 	        '4.提供详细任务工时<span class="badge">1-3分</span>',
-	        '5.半年里没有扣分记录<span class="badge">50分</span>.'
+	        '5.提供完善的必测点执行记录<span class="badge">5-10分</span>',
+	        '6.每个自然月里有扣分记录<span class="badge">10分</span>.',
+            '7.将学到的技能应用于实际项目并显著提高工作效率或质量<span class="badge">5-10分</span>'
         );
         $this->assign('var5', $var5);
 
@@ -167,9 +169,8 @@ class StandardController extends WebInfoController
             '2.未及时更新禅道和Tower任务和里程碑检查项<span class="badge">-1分</span>',
             '3.迭代中未整理和关联需求<span class="badge">-1分</span>',
             '4.未按时提供冒烟用例<span class="badge">-3分</span>',
-            '5.无迭代必测点测试记录（场景功能点序列执行记录）<span class="badge">-3分</span>',
-            '6.项目风险未及时披露或未在QC平台记录<span class="badge">-3分</span>',
-            '7.BUG记录描述不明确（迭代、影响版本、模块，指派人等信息）<span class="badge">-1分</span>',
+            '5.项目风险未及时披露或未在QC平台记录<span class="badge">-3分</span>',
+            '6.BUG记录描述不明确（迭代、影响版本、模块，指派人等信息）<span class="badge">-1分</span>',
         );
         $this->assign('var8', $var8);
 

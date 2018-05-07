@@ -20,7 +20,7 @@ class ScoreController extends WebInfoController
         $this->assign("quarter",$quarter);
 
         $where=array('quarter'=>$quarter,'deleted'=>'0');
-        $tester= array('fanqiao','wangchenzi','menghuihui', 'lixm','qinzx',);
+        $tester= array('fanqiao','wangchenzi','menghuihui', 'lixm');
         $where['user']  = array('in',$tester);
         $data=M('tp_score_list')->where($where)->order('score desc')->select();
         $this->assign("data",$data);

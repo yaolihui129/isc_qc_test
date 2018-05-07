@@ -5,7 +5,9 @@ class OvertimeController extends WebInfoController
 {
     public function index()
     {
-        $where=array('role'=>'qa','deleted'=>'0');
+        $where['role']='qa';
+        $where['deleted']='0';
+        $where['account'] = array('in', C(QA_TESTER));
         $data=M('user')->where($where)->select();
         $this->assign('data', $data);
 

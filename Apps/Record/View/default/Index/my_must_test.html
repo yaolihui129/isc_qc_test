@@ -33,7 +33,7 @@
                                 <tr class="info">
                             </switch>
                             <td>
-                                <a href="__URL__/runMyTest/myScene/<{$st.id}>/project/<{$st.project}>"><{$st.scene|getSceneInfo=###}></a>
+                                <a href="__URL__/run_my_test/myScene/<{$st.id}>/project/<{$st.project}>"><{$st.scene|getSceneInfo=###}></a>
                                 <switch name="st.result">
                                     <case value="1"><span class="label label-success pull-right"></case>
                                     <case value="2"><span class="label label-danger pull-right"></case>
@@ -61,7 +61,7 @@
                                 <default/>
                                 <li class="list-group-item ">
                             </switch>
-                            <a href="__URL__/myMustTest/project/<{$p}>"><small><{$p|getProname=###}></small></a>
+                            <a href="__URL__/my_must_test/project/<{$p}>"><small><{$p|getProname=###}></small></a>
                             <span class="badge"><{$p|countMyProjectScene=###}></span>
                             </li>
                         </volist>

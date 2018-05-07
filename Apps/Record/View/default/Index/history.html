@@ -1,0 +1,50 @@
+<layout name="layout"/>
+<!-- content start -->
+<div class="admin-content container">
+
+    <ul class="nav nav-pills" role="tablist">
+        <li role="presentation" >
+            <a href="__URL__/index">进行中<span class="badge"><{$count}></span></a>
+        </li>
+        <li role="presentation">
+            <a href="__URL__/mine">我负责<span class="badge"><{$mine}></span></a>
+        </li>
+        <li role="presentation" class="active">
+            <a href="__URL__/history">历史迭代</a>
+        </li>
+    </ul>
+
+
+    <div class="am-g">
+        <div class="am-u-md-9 ">
+            <a class="navbar-brand" href="#"></a>
+        </div>
+        <div class="am-u-md-3 ">
+            <form action="__URL__/history " method="post" class="navbar-form navbar-left" role="search">
+                <div class="form-group input-group pull-right">
+                    <input type="text" class="form-control" name="search" value="<{$search}>" placeholder="迭代、上线月份">
+                    <span class="input-group-btn">
+	         	 <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+	          </span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <table class="am-table am-table-striped am-table-hover table-main">
+        <tbody>
+        <volist name='arr' id='pro' empty="没有数据">
+            <tr>
+                <td width=90%>
+                    <a href="__APP__/<{$Think.config.PRODUCT}>/Risk/index/proid/<{$pro.id}>">
+                        <small><span class="badge"><{$pro.qd|getZTUserName=###}></span><{$pro.name}></small>
+                    </a>
+                </td>
+                <td width=10%><{$pro.end}></td>
+            </tr>
+        </volist>
+        </tbody>
+    </table>
+
+</div>
+<!-- content end -->

@@ -23,6 +23,7 @@ return array(
     'DB_PORT'               =>'5503',
     'DB_PREFIX'             =>'zt_',
     'DB_CHARSET'            => 'utf8', // 字符集
+    'URL_ROUTER_ON'   => true,
 
 
     //错误设置

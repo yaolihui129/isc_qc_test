@@ -3,38 +3,42 @@
 <div class="admin-content">
     <div class="panel panel-info">
         <div class="panel-body">
-            <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation"><a href="__APP__/<{$Think.config.PRODUCT}>//Task/personLoad">人员负荷
+            <ul class="nav nav-pills" role="tablist">
+                <li role="presentation"><a href="__APP__/<{$Think.config.PRODUCT}>/Task/person">人员负荷
                     <span class="badge"><{$arr.id}></span></a></li>
                 <li role="presentation"><a href="__APP__/<{$Think.config.PRODUCT}>/Taskestimate">迭代投入
                     <span class="badge"><{$arr.id}></span></a></li>
-                <li role="presentation"><a href="__APP__/<{$Think.config.PRODUCT}>/Taskestimate/personnelDailyTask">任务分布
+                <li role="presentation"><a href="__APP__/<{$Think.config.PRODUCT}>/Taskestimate/task">任务分布
                     <span class="badge"><{$arr.id}></span></a></li>
                 <li role="presentation" class="active"><a
-                        href="__APP__/<{$Think.config.PRODUCT}>/Taskestimate/personnelStageInput">人员分布
+                        href="__APP__/<{$Think.config.PRODUCT}>/Taskestimate/input">人员分布
                     <span class="badge"><{$arr.id}></span></a></li>
                 <li role="presentation"><a href="__APP__/<{$Think.config.PRODUCT}>/Task">任务详情
                     <span class="badge"><{$arr.id}></span></a></li>
             </ul>
-            <h3>人员投入分布
-                <form class="form-inline pull-right" action="__URL__/personnelStageInput" method="post">
-                    <div class="form-group"><input type="text" class="form-control" name="day" value="<{$day}>"
-                                                   placeholder="查询"></div>
-                    <button type="submit" class="btn btn-info "><i class="icon-search"> 查询</i></button>
-                </form>
-                <ul class="nav navbar-nav pull-right">
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#"><{$day}>天以内 <i
-                                class="icon-retweet"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="__URL__/personnelStageInput/day/7">一周内</a></li>
-                            <li><a href="__URL__/personnelStageInput/day/14">两周内</a></li>
-                            <li><a href="__URL__/personnelStageInput/day/30">一个月内</a></li>
-                            <li><a href="__URL__/personnelStageInput/day/90">一个季度内</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </h3>
+
+            <nav class="navbar">
+                <div class="container-fluid">
+                    <div class="navbar-header"><div class="navbar-brand"><h3>人员投入分布</h3></div></div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <form class="navbar-form navbar-right" action="__URL__/input" method="post">
+                            <div class="form-group">
+                                <input type="text" class="input80" name="day" value="<{$day}>" placeholder="查询">
+                            </div>
+                            <button type="submit" class="btn btn-default"> 查询</button>
+                        </form>
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" role="button"><{$day}>天以内<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="__URL__/input/day/7">一周内</a></li>
+                                <li><a href="__URL__/input/day/14">两周内</a></li>
+                                <li><a href="__URL__/input/day/30">一个月内</a></li>
+                                <li><a href="__URL__/input/day/90">一个季度内</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
 
             <div class="starter-template">
                 <table class="am-table am-table-striped am-table-hover table-main table-bordered">

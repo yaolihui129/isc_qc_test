@@ -9,9 +9,9 @@ class FuncController extends CommonController
         //平台信息
         $where['product'] = 6;
         $where['deleted'] = '0';
-        $branch = array(32, 33, 37, 38, 40);
+        $branch = array(32, 38, 37,39);
         $where['id'] = array('in', $branch);
-        $data = M('branch')->where($where)->order('`order`')->select();
+        $data = M('branch')->where($where)->order('`order` desc')->select();
         $this->assign("data", $data);
 
         //模块信息

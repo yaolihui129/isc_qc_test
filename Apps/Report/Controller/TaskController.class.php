@@ -30,9 +30,9 @@ class TaskController extends WebInfoController
         $this->display();
     }
 
-    public function personLoad()
+    public function person()
     {
-        $where['assignedTo'] = array('neq', 'closed');
+        $where['assignedTo'] = array('in', C(QA_TESTER));
         $where['status'] = array('neq', 'closed');
         $where['status'] = array('neq', 'cancel');
         $where['status'] = array('neq', 'done');

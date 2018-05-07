@@ -524,8 +524,7 @@
 
     function countPRules($proid){
         $where=array("zt_projectstory.project"=>$proid, 'zt_story.deleted'=>'0');
-        $count=D('module')->where($where)->join('zt_story ON zt_story.module =zt_module.id')
-        ->join('zt_projectstory ON zt_projectstory.story =zt_story.id')->count();
+        $count=M('story')->where($where)->join('zt_projectstory ON zt_projectstory.story =zt_story.id')->count();
         return $count;
     }
 
@@ -723,7 +722,7 @@
     function countOwnerProject($user){
         $where['testgp'] = 'YX';
         $where['deleted']='0';
-        $status = array('wait', 'doing');
+        $status = array('wait', 'doing','suspended');
         $where['status'] = array('in', $status);
         $where['QD']=$user;
         $count =M('project')->where($where)->count();

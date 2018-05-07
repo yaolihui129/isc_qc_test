@@ -27,8 +27,9 @@
                     <small>
                         <{$st.project|getPro=###}>--<{$st.rules|getName='tp_score_rules',###,'cate'}>--<{$st.rules|getName='tp_score_rules',###}>:
                         <switch name="st.dissent">
-                            <case value="1">value1
-                                <a href="__URL__/appeal/id/<{$st.id}>" class=" btn btn-danger btn-xs"><span class="glyphicon glyphicon-exclamation-sign"> 申诉</span></a>
+                            <case value="1">
+                                <a href="__URL__/appeal/id/<{$st.id}>" class=" btn btn-danger btn-xs">
+                                    <span class="glyphicon glyphicon-exclamation-sign"> 申诉</span></a>
                             </case>
                             <case value="0">
                                 <a href="#" class=" btn btn-warning btn-xs" disabled="disabled"> 不允许申诉</a>
@@ -48,6 +49,59 @@
                 </li>
             </volist>
         </ul>
+    </div>
+</div>
+
+
+<!-- 申诉-模态框 -->
+<div class="modal fade " id="shensu" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">考核-申诉</h4>
+            </div>
+            <div class="modal-body">
+                <form action="__URL__/update" method="post" class="form-horizontal" role="form">
+                    <input type="hidden" name="id" value="<{$arr.id}>"/>
+                    <input type="hidden" name="status" value="1"/>
+                    <input type="hidden" name="dissent" value="0"/>
+                    <input type="hidden" name="table" value="tp_my_score"/>
+                    <div class="form-group">
+                        <div class="col-sm-2 control-label"></div>
+                        <div class="col-sm-10"> 申述时效:<{$shix}></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">考核明细:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control"
+                                   value="<{$arr.project|getPro=###}>--<{$arr.rules|getName='tp_score_rules',###,'cate'}>--<{$arr.rules|getName='tp_score_rules',###}>" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">申诉原因:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="content"  value="<{$arr.content}>" placeholder="填写申诉原因">
+                        </div>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <switch name="arr.dissent">
+                    <case value="1">
+                        <button type="submit" class="btn btn-primary  ">提 交</button>
+                    </case>
+                    <case value="0">
+                        <button  class="btn btn-primary  " disabled="disabled">已提交</button>
+                    </case>
+                </switch>
+
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 

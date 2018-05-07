@@ -22,13 +22,13 @@ class BugController extends WebInfoController {
         $this->assign('var5',$var);
         $this->display();
     }
-    
-    
+
     function unconfirmed(){
 
         $where['status']="active";
         $where['confirmed']=0;
         $where['deleted']='0';
+        $where['assignedTo']=array('in',C(DEV_USER));//只看这些人员
         $datum=date("Y-m-d",time()-24*3600);
         $datum=strtotime($datum);
         $datum=date("Y-m-d H:i",$datum+17.5*3600);
@@ -58,8 +58,7 @@ class BugController extends WebInfoController {
         $datum=strtotime($datum);
         $datum=date("Y-m-d H:i",$datum+17.5*3600);
         $where['resolvedDate']  = array('lt',$datum);
-        $user=array('yaolihui','fanqiao','menghuihui');//只看这些人员
-        $where['assignedTo']=array('in',$user);
+        $where['assignedTo']=array('in',C(QA_TESTER));//只看这些人员
         $data=M("bug")->where($where)->order('resolvedDate')->select();
         $this->assign('data',$data);
         
@@ -68,8 +67,9 @@ class BugController extends WebInfoController {
     
     function activated(){
         $where['deleted']='0';
+        $where['resolvedBy']=array('in',C(DEV_USER));//只看这些人员
         $where['activatedCount']  = array('gt',0);
-        $where['openedDate']  = array('gt','2018-2-22 00:00:00');
+        $where['openedDate']  = array('gt',C(BUG_DATE));
         
         $data=M("bug")->where($where)->order('openedDate desc,activatedDate desc')->select();
         $this->assign('data',$data);
@@ -79,8 +79,9 @@ class BugController extends WebInfoController {
     
     function fault(){
         $where['deleted']='0';
-        $where['severity']  =1;  
-        $where['openedDate']  = array('gt','2018-2-22 00:00:00');
+        $where['severity']  =1;
+        $where['assignedTo']=array('in',C(DEV_USER));//只看这些人员
+        $where['openedDate']  = array('gt',C(BUG_DATE));
         $data=M("bug")->where($where)->order('openedDate')->select();
         $this->assign('data',$data);
         

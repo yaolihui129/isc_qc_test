@@ -3,20 +3,80 @@
 namespace Record\Controller;
 class IndexController extends CommonController
 {
-    //迭代列表
+    //进行中迭代列表
     public function index()
     {
-        $search = I('search');
-        $this->assign('search', $search);
-        $map['testgp'] = 'YX';
-
-        $map['name|code'] = array('like', '%' . $search . '%');
+        $status = array('wait', 'doing','suspended');//只看这些
+        $map['status'] = array('in', $status);
         $map['deleted'] = '0';
-        $arr = M('project')->where($map)->order("status,end desc")->select();
+        $m=M('project');
+        $arr = M('project')->where($map)->order("status desc,end desc")->select();
         $this->assign('arr', $arr);
+        //进行中的迭代数量
+        $count=$m->where($map)->count();
+        $this->assign('count', $count);
+        //我负责的迭代数量
+        $where=array('testgp'=>'YX','QD'=>$_SESSION['account'],'deleted'=>'0');
+        $mine=$m->where($where)->count();
+        $this->assign('mine', $mine);
 
         $this->display();
     }
+    //我负责
+    public function mine(){
+
+        $where['testgp'] = 'YX';
+        $where['deleted']='0';
+        $where['QD']=$_SESSION['account'];
+        $m=M('project');
+        $count=$m->where($where)->count();
+        $this->assign('mine', $count);
+
+        $search = I('search');
+        $this->assign('search', $search);
+        $where['name|code'] = array('like', '%' . $search . '%');
+        $arr = $m->where($where)->field("id,name,code,begin,end,status,QD,order")->order("end desc,id")->select();
+        $this->assign('arr', $arr);
+
+        $status = array('wait', 'doing','suspended');//只看这些
+        $map['status'] = array('in', $status);
+        $map['deleted'] = '0';
+        //进行中的迭代数量
+        $count=$m->where($map)->count();
+        $this->assign('count', $count);
+
+        $this->theme('')->display();
+    }
+    //历史迭代
+    public function history(){
+        $search = I('search');
+        $this->assign('search', $search);
+        $map['testgp'] = 'YX';
+        $status = array('done', 'cancel','closed');
+        $map['status'] = array('in', $status);
+        $map['name|code'] = array('like', '%' . $search . '%');
+        $map['deleted'] = '0';
+        $m=M('project');
+        $arr = $m->where($map)->order("status desc,end desc")->select();
+        $this->assign('arr', $arr);
+
+        //我负责的迭代数量
+        $where=array('testgp'=>'YX','QD'=>$_SESSION['account'],'deleted'=>'0');
+        $mine=$m->where($where)->count();
+        $this->assign('mine', $mine);
+
+        $status = array('wait', 'doing','suspended');//只看这些
+        $var['status'] = array('in', $status);
+        $var['deleted'] = '0';
+        //进行中的迭代数量
+        $count=$m->where($var)->count();
+        $this->assign('count', $count);
+
+
+        $this->display();
+    }
+
+
     //迭代涉及的功能点
     public function func(){
         $_SESSION['proid']=I('proid');
@@ -33,7 +93,7 @@ class IndexController extends CommonController
         $this->display();
     }
     //修改功能点
-    public function modFunc(){
+    public function mod_func(){
         if(I('branch')){
             $_SESSION['modFunc']['branch'] = I('branch');
         }
@@ -72,7 +132,7 @@ class IndexController extends CommonController
         $this->display();
     }
     //场景功能点配置
-    public function modTestFunc(){
+    public function mod_test_func(){
         if(I('branch')){
             $_SESSION['modTestFunc']['branch'] = I('branch');
         }
@@ -195,7 +255,7 @@ class IndexController extends CommonController
         $this->display();
     }
     //修改影响范围
-    public function modRange(){
+    public function mod_range(){
         if(I('branch')){
             $_SESSION['modFunc']['branch'] = I('branch');
         }
@@ -248,7 +308,7 @@ class IndexController extends CommonController
         $this->assign("data",$data);
 
         $map = array("testgp" => 'YX', "deleted" => '0');
-        $pros = M('project')->where($map)->order("status,end desc")->select();
+        $pros = M('project')->where($map)->order("status desc,end desc")->select();
         $this->assign('pros', $pros);
 
          if($_SESSION['proid']==$_SESSION['copy']){
@@ -269,7 +329,7 @@ class IndexController extends CommonController
         $this->display();
     }
     //修改场景
-    public function modMust(){
+    public function mod_must(){
         $m = D("tp_scene");
         $where=array("project"=>$_SESSION['proid'],"deleted"=>'0');
         $data=$m->where($where)->order('sn')->select();
@@ -281,7 +341,7 @@ class IndexController extends CommonController
         $this->display();
     }
     //场景功能点
-    public function mustTestFunc(){
+    public function must_test_func(){
         $m = D("tp_scene");
         $where=array("project"=>$_SESSION['proid'],"deleted"=>'0');
         $data=$m->where($where)->order('sn')->select();
@@ -313,7 +373,7 @@ class IndexController extends CommonController
         $this->display();
     }
     //场景分派
-    public function assignTo(){
+    public function assignto(){
         $scene=I('scene');
         $flow=I('flow');
         $user=I('user');
@@ -361,7 +421,7 @@ class IndexController extends CommonController
         }
     }
     //我的必测任务
-    public function myMustTest(){
+    public function my_must_test(){
         $map['testgp'] = 'YX';
         $map['deleted'] = '0';
         $map['status'] = array('in', array('wait', 'doing'));
@@ -395,7 +455,7 @@ class IndexController extends CommonController
         $this->display();
     }
     //执行我的测试
-    public function runMyTest(){
+    public function run_my_test(){
         $where=array('project'=>I('project'),'deleted'=>'0');
         $myScene= D("tp_my_scene")->where($where)->order('project,ctime')->select();
         $this->assign("myScene",$myScene);

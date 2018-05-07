@@ -9,9 +9,10 @@
                             <span class="badge"><{$arr.id}></span></a></li>
                         <li role="presentation"><a href="__APP__/<{$Think.config.PRODUCT}>/Bug/fault">A类BUG
                             <span class="badge"><{$arr.id}></span></a></li>
-                        <li role="presentation" class="active"><a
-                                href="__APP__/<{$Think.config.PRODUCT}>/Bug/noregress">未回归BUG
-                            <span class="badge"><{$arr.id}></span></a></li>
+                        <li role="presentation" class="active">
+                            <a href="__APP__/<{$Think.config.PRODUCT}>/Bug/noregress">未回归BUG
+                            <span class="badge"><{$arr.id}></span></a>
+                        </li>
                         <li role="presentation"><a href="__APP__/<{$Think.config.PRODUCT}>/Bug/activated">被激活BUG
                             <span class="badge"><{$arr.id}></span></a></li>
                         <li role="presentation"><a href="__APP__/<{$Think.config.PRODUCT}>/Bug/punish">待处罚清单
@@ -22,32 +23,26 @@
                             <br>
                             <h3>测试人员的习惯良好,昨天17:30之前解决的BUG都已回归完毕。而这仅仅只是刚刚开始，在上线前有限的时间内，尽可能的排除软件的风险才是我们的目标！</h3>
                             <else/>
-                            <table class="am-table am-table-striped am-table-hover table-main table-bordered">
-                                <thead>
-                                <tr>
-                                    <th class="table-type" bgcolor="#ccc">迭代</th>
-                                    <th class="table-title" bgcolor="#ccc">BUG【解决时间】</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <volist name='data' id='st' empty="没有数据">
-                                    <tr>
-                                        <td><{$st.project|getPro=###}></td>
-                                        <td>
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><small>BUGID.标题【状态：解决时间】</small><span class="badge pull-right">责任人</span></h3>
+                                </div>
+                                <ul class="list-group">
+                                    <volist name='data' id='st' empty="没有数据">
+                                        <li class="list-group-item">
                                             <a href="http://qc.zhidaoauto.com/zentao/bug-view-<{$st.id}>.html" target="_blank">
-                                                <{$st.id}>.<{$st.branch|getBranchName=###}><{$st.title}>-<{$st.module|getModuleName=###}>
-                                                【<{$st.status|getBugStauts=###}>:<{$st.resolveddate}>】
+                                                <small>
+                                                    <{$st.id}>.<{$st.branch|getBranchName=###}><{$st.title}>-<{$st.module|getModuleName=###}>
+                                                    【<{$st.status|getBugStauts=###}>:<{$st.resolveddate}>】
+                                                </small>
                                             </a>
-
-                                            <span class="badge pull-right"><{$st.assignedto|getZTUserName=###}></span>
-                                        </td>
-
-                                    </tr>
-                                </volist>
-                                </tbody>
-                            </table>
+                                            <span class="badge"><{$st.assignedto|getZTUserName=###}></span>
+                                        </li>
+                                    </volist>
+                                </ul>
+                            </div>
                         </empty>
-
                     </div>
                 </div>
             </div>
