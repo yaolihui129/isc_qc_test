@@ -8,14 +8,15 @@
         <li role="presentation">
             <a href="__URL__/books">图书<span class="badge"><{$arr.id}></span></a>
         </li>
-        <li role="presentation" >
-            <a href="__URL__/rules">借用公约<span class="badge"><{$arr.id}></span></a>
-        </li>
+
     </ul>
 
     <div class="am-g">
-        <div class="am-u-md-9 ">
+        <div class="am-u-md-7 ">
             <a class="navbar-brand" href="#"></a>
+        </div>
+        <div class="am-u-md-2 ">
+            <a class="navbar-brand" href="__URL__/rules"><small>移动设备管理规范</small></a>
         </div>
         <div class="am-u-md-3 ">
             <form action="__URL__/index " method="post" class="navbar-form navbar-left" role="search">
@@ -36,14 +37,21 @@
                     <empty name="da.img">
                         <img src="__IMG__/moren.jpg" alt="__IMG__/moren.jpg">
                         <else />
-                        <img src="<{$da.path}>/<{$da.img}>" alt="<{$da.path}>/<{$da.img}>">
+                        <img src="__UPLOAD__/<{$da.path}>/<{$da.img}>" alt="<{$da.path}>/<{$da.img}>">
                     </empty>
 
                     <div class="caption">
-                        <h3 title="<{$da.remark}>"><small><{$da.brand}>-<{$da.ts}></small></h3>
+                        <h3 title="<{$da.remark}>">
+                            <small>【<{$da.manager|getZTUserName=###}>】<{$da.brand}>-<{$da.ts}></small>
+                            <span class="badge pull-right"><{$da.loaning|book_status=###}></span>
+                        </h3>
                         <p>
-                            <a href="__APP__/<{$Think.config.PRODUCT}>/Borrow/yuding/id/<{$da.id}>/source/index/search/<{$search}>" class="btn btn-primary btn-xs" role="button">预订</a>
-                            <a href="__URL__/history/id/<{$da.id}>/source/index/search/<{$search}>" class="btn btn-default btn-xs" role="button">借用历史</a>
+                            <small> &nbsp;&nbsp;系统版本：<{$da.sys_version}></small >
+                            <span class="badge pull-right">预约：<{$da.id|count_yd=###}></span>
+                        </p>
+                        <p>
+                            <a href="__APP__/<{$Think.config.PRODUCT}>/Borrow/yuding/id/<{$da.id}>/source/index/search/<{$search}>" class="btn btn-primary btn-sm" role="button">预订</a>
+                            <a href="__URL__/history/id/<{$da.id}>/source/index/search/<{$search}>" class="btn btn-default btn-sm" role="button">借用历史</a>
                         </p>
                     </div>
                 </div>

@@ -107,7 +107,7 @@ class BasicController extends Controller
             if (D($table)->save($_POST)){
                 $image = new \Think\Image();
                 $image->open('./Upload/Books/'.$info[$img]['savepath'].$info[$img]['savename']);
-                $image->thumb(800, 400)->save('./Upload/Books/'.$info[$img]['savepath'].$info[$img]['savename']);
+                $image->thumb(600, 400)->save('./Upload/Books/'.$info[$img]['savepath'].$info[$img]['savename']);
                 $this->success("修改成功！",U('index',$_POST['url']));
             }else{
                 $this->error("修改失败！");

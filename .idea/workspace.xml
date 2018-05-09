@@ -2,27 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="caab6aa4-488f-492f-b4e0-fb0cc4ee5682" name="默认的" comment="API接口自动化接口信息">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Apps/Api/Controller/OauthController.class.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Apps/Books/Controller/BorrowController.class.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Apps/Books/Controller/LoginController.class.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Apps/Books/Controller/ManagerController.class.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Apps/Books/Controller/MineController.class.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Apps/Books/Controller/PublicController.class.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Apps/Books/View/Amaze/Borrow/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Apps/Books/View/Amaze/Borrow/yuding.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Apps/Books/View/Amaze/Index/books.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Apps/Books/View/Amaze/Index/history.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Apps/Books/View/Amaze/Index/rules.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Apps/Books/View/Amaze/Login/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Apps/Books/View/Amaze/Manager/add.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Apps/Books/View/Amaze/Manager/img.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Apps/Books/View/Amaze/Manager/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Apps/Books/View/Amaze/Manager/mod.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Apps/Books/View/Amaze/Mine/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Index/history.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Index/mine.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Scene/func.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Taskestimate/task.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Apps/Books/View/Amaze/Manager/books.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Apps/Books/View/Amaze/Manager/guihuan.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Apps/Books/View/Amaze/Manager/yuding.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Runtime/Cache/Record/1d2fc57439731d129c74f9b7f885861c.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Runtime/Cache/Record/bdfbb96ce846822905a753a24cd39919.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Runtime/Cache/Record/fa70672d67d1229f806a04f966ba67a8.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Runtime/Cache/Report/3ca46c6dc847272a3f0d2824d08e66d6.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Runtime/Cache/Report/d7f49862f9c2926b4d4fcb081a2f2402.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Runtime/Cache/Report/f3c47b2a935b263f31b04ca77323c11f.php" />
       <change beforePath="" afterPath="$PROJECT_DIR$/Upload/Anshun/Product/2017-02-18/58a8273db1425.jpg" />
       <change beforePath="" afterPath="$PROJECT_DIR$/Upload/Anshun/Product/2017-02-18/58a82774636a6.jpg" />
       <change beforePath="" afterPath="$PROJECT_DIR$/Upload/Anshun/Product/2017-02-18/58a8277e76fc7.jpg" />
@@ -234,66 +222,26 @@
       <change beforePath="" afterPath="$PROJECT_DIR$/Upload/Xiuli/Product/2017-02-11/589f289c4a77f.png" />
       <change beforePath="" afterPath="$PROJECT_DIR$/Upload/moren.jpg" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Apps/Api/Conf/config.php" afterPath="$PROJECT_DIR$/Apps/Api/Conf/config.php" />
-      <change beforePath="$PROJECT_DIR$/Apps/Api/Controller/AdminController.class.php" afterPath="$PROJECT_DIR$/Apps/Api/Controller/AdminController.class.php" />
-      <change beforePath="$PROJECT_DIR$/Apps/Api/Controller/BasicController.class.php" afterPath="$PROJECT_DIR$/Apps/Api/Controller/BasicController.class.php" />
-      <change beforePath="$PROJECT_DIR$/Apps/Books/Conf/config.php" afterPath="$PROJECT_DIR$/Apps/Books/Conf/config.php" />
+      <change beforePath="$PROJECT_DIR$/Apps/Books/Common/function.php" afterPath="$PROJECT_DIR$/Apps/Books/Common/function.php" />
       <change beforePath="$PROJECT_DIR$/Apps/Books/Controller/BasicController.class.php" afterPath="$PROJECT_DIR$/Apps/Books/Controller/BasicController.class.php" />
+      <change beforePath="$PROJECT_DIR$/Apps/Books/Controller/BorrowController.class.php" afterPath="$PROJECT_DIR$/Apps/Books/Controller/BorrowController.class.php" />
       <change beforePath="$PROJECT_DIR$/Apps/Books/Controller/IndexController.class.php" afterPath="$PROJECT_DIR$/Apps/Books/Controller/IndexController.class.php" />
+      <change beforePath="$PROJECT_DIR$/Apps/Books/Controller/ManagerController.class.php" afterPath="$PROJECT_DIR$/Apps/Books/Controller/ManagerController.class.php" />
+      <change beforePath="$PROJECT_DIR$/Apps/Books/Controller/MineController.class.php" afterPath="$PROJECT_DIR$/Apps/Books/Controller/MineController.class.php" />
+      <change beforePath="$PROJECT_DIR$/Apps/Books/View/Amaze/Borrow/yuding.html" afterPath="$PROJECT_DIR$/Apps/Books/View/Amaze/Borrow/yuding.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Books/View/Amaze/Index/books.html" afterPath="$PROJECT_DIR$/Apps/Books/View/Amaze/Index/books.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Books/View/Amaze/Index/history.html" afterPath="$PROJECT_DIR$/Apps/Books/View/Amaze/Index/history.html" />
       <change beforePath="$PROJECT_DIR$/Apps/Books/View/Amaze/Index/index.html" afterPath="$PROJECT_DIR$/Apps/Books/View/Amaze/Index/index.html" />
-      <change beforePath="$PROJECT_DIR$/Apps/Books/View/Amaze/Public/footer.html" afterPath="$PROJECT_DIR$/Apps/Books/View/Amaze/Public/footer.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Books/View/Amaze/Index/rules.html" afterPath="$PROJECT_DIR$/Apps/Books/View/Amaze/Index/rules.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Books/View/Amaze/Manager/add.html" afterPath="$PROJECT_DIR$/Apps/Books/View/Amaze/Manager/add.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Books/View/Amaze/Manager/img.html" afterPath="$PROJECT_DIR$/Apps/Books/View/Amaze/Manager/img.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Books/View/Amaze/Manager/index.html" afterPath="$PROJECT_DIR$/Apps/Books/View/Amaze/Manager/index.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Books/View/Amaze/Mine/index.html" afterPath="$PROJECT_DIR$/Apps/Books/View/Amaze/Mine/index.html" />
       <change beforePath="$PROJECT_DIR$/Apps/Books/View/Amaze/Public/header.html" afterPath="$PROJECT_DIR$/Apps/Books/View/Amaze/Public/header.html" />
-      <change beforePath="$PROJECT_DIR$/Apps/Books/View/Amaze/index.html" afterPath="$PROJECT_DIR$/Apps/Books/View/Amaze/index.html" />
-      <change beforePath="$PROJECT_DIR$/Apps/Common/Common/function.php" afterPath="$PROJECT_DIR$/Apps/Common/Common/function.php" />
-      <change beforePath="$PROJECT_DIR$/Apps/Common/Conf/config.php" afterPath="$PROJECT_DIR$/Apps/Common/Conf/config.php" />
-      <change beforePath="$PROJECT_DIR$/Apps/Record/Controller/AppraisalController.class.php" afterPath="$PROJECT_DIR$/Apps/Record/Controller/AppraisalController.class.php" />
-      <change beforePath="$PROJECT_DIR$/Apps/Record/Controller/CommonController.class.php" afterPath="$PROJECT_DIR$/Apps/Record/Controller/CommonController.class.php" />
-      <change beforePath="$PROJECT_DIR$/Apps/Record/Controller/FuncController.class.php" afterPath="$PROJECT_DIR$/Apps/Record/Controller/FuncController.class.php" />
-      <change beforePath="$PROJECT_DIR$/Apps/Record/Controller/IndexController.class.php" afterPath="$PROJECT_DIR$/Apps/Record/Controller/IndexController.class.php" />
-      <change beforePath="$PROJECT_DIR$/Apps/Record/Controller/ScoreController.class.php" afterPath="$PROJECT_DIR$/Apps/Record/Controller/ScoreController.class.php" />
-      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Index/assignment.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Index/assignment.html" />
-      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Index/func.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Index/func.html" />
-      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Index/index.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Index/index.html" />
-      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Index/modFunc.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Index/mod_func.html" />
-      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Index/modMust.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Index/mod_must.html" />
-      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Index/modRange.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Index/mod_range.html" />
-      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Index/modTestFunc.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Index/mod_test_func.html" />
-      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Index/mustTestFunc.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Index/must_test_func.html" />
-      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Index/musttest.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Index/musttest.html" />
-      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Index/myMustTest.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Index/my_must_test.html" />
-      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Index/range.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Index/range.html" />
-      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Index/runMyTest.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Index/run_my_test.html" />
-      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Public/footer.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Public/footer.html" />
-      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Public/header.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Public/header.html" />
-      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Score/appeal.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Score/appeal.html" />
-      <change beforePath="$PROJECT_DIR$/Apps/Record/View/default/Score/index.html" afterPath="$PROJECT_DIR$/Apps/Record/View/default/Score/index.html" />
-      <change beforePath="$PROJECT_DIR$/Apps/Report/Conf/config.php" afterPath="$PROJECT_DIR$/Apps/Report/Conf/config.php" />
-      <change beforePath="$PROJECT_DIR$/Apps/Report/Controller/BugController.class.php" afterPath="$PROJECT_DIR$/Apps/Report/Controller/BugController.class.php" />
-      <change beforePath="$PROJECT_DIR$/Apps/Report/Controller/FuncController.class.php" afterPath="$PROJECT_DIR$/Apps/Report/Controller/FuncController.class.php" />
-      <change beforePath="$PROJECT_DIR$/Apps/Report/Controller/IndexController.class.php" afterPath="$PROJECT_DIR$/Apps/Report/Controller/IndexController.class.php" />
-      <change beforePath="$PROJECT_DIR$/Apps/Report/Controller/OvertimeController.class.php" afterPath="$PROJECT_DIR$/Apps/Report/Controller/OvertimeController.class.php" />
-      <change beforePath="$PROJECT_DIR$/Apps/Report/Controller/RulesController.class.php" afterPath="$PROJECT_DIR$/Apps/Report/Controller/RulesController.class.php" />
-      <change beforePath="$PROJECT_DIR$/Apps/Report/Controller/SceneController.class.php" afterPath="$PROJECT_DIR$/Apps/Report/Controller/SceneController.class.php" />
-      <change beforePath="$PROJECT_DIR$/Apps/Report/Controller/ScoreController.class.php" afterPath="$PROJECT_DIR$/Apps/Report/Controller/ScoreController.class.php" />
-      <change beforePath="$PROJECT_DIR$/Apps/Report/Controller/StandardController.class.php" afterPath="$PROJECT_DIR$/Apps/Report/Controller/StandardController.class.php" />
       <change beforePath="$PROJECT_DIR$/Apps/Report/Controller/TaskController.class.php" afterPath="$PROJECT_DIR$/Apps/Report/Controller/TaskController.class.php" />
-      <change beforePath="$PROJECT_DIR$/Apps/Report/Controller/TaskestimateController.class.php" afterPath="$PROJECT_DIR$/Apps/Report/Controller/TaskestimateController.class.php" />
-      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Bug/activated.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Bug/activated.html" />
-      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Bug/fault.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Bug/fault.html" />
-      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Bug/noregress.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Bug/noregress.html" />
-      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Bug/unconfirmed.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Bug/unconfirmed.html" />
-      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Func/index.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Func/index.html" />
-      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Public/footer.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Public/footer.html" />
-      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Public/header.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Public/header.html" />
-      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Risk/make.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Risk/make.html" />
-      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Rules/prorules.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Rules/prorules.html" />
-      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Scene/index.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Scene/index.html" />
-      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Task/index.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Task/index.html" />
-      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Task/personLoad.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Task/person.html" />
-      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Taskestimate/dailyTaskAssignment.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Taskestimate/daily.html" />
-      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Taskestimate/index.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Taskestimate/index.html" />
-      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Taskestimate/personnelDailyTask.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Taskestimate/personnelStageInput.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Taskestimate/input.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Bug/index.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Bug/index.html" />
+      <change beforePath="$PROJECT_DIR$/Apps/Report/View/Amaze/Risk/index.html" afterPath="$PROJECT_DIR$/Apps/Report/View/Amaze/Risk/index.html" />
+      <change beforePath="$PROJECT_DIR$/Public/images/moren.jpg" afterPath="$PROJECT_DIR$/Public/images/moren.jpg" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -340,20 +288,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Apps/Report/Controller/OvertimeController.class.php" />
-        <option value="$PROJECT_DIR$/Apps/Report/Controller/ScoreController.class.php" />
-        <option value="$PROJECT_DIR$/Apps/Record/Controller/AppraisalController.class.php" />
-        <option value="$PROJECT_DIR$/Apps/Record/Controller/FuncController.class.php" />
-        <option value="$PROJECT_DIR$/Apps/Report/Controller/FuncController.class.php" />
-        <option value="$PROJECT_DIR$/Apps/Report/View/Amaze/Func/index.html" />
-        <option value="$PROJECT_DIR$/Apps/Books/Conf/config.php" />
-        <option value="$PROJECT_DIR$/Apps/Books/View/Amaze/Index/books.html" />
-        <option value="$PROJECT_DIR$/Apps/Books/View/Amaze/Index/rules.html" />
         <option value="$PROJECT_DIR$/Apps/Books/Controller/LoginController.class.php" />
         <option value="$PROJECT_DIR$/Apps/Books/View/Amaze/index.html" />
         <option value="$PROJECT_DIR$/Apps/Books/View/Amaze/Borrow/index.html" />
         <option value="$PROJECT_DIR$/Apps/Books/Controller/PublicController.class.php" />
-        <option value="$PROJECT_DIR$/Apps/Books/Controller/IndexController.class.php" />
         <option value="$PROJECT_DIR$/Apps/Report/View/Amaze/Bug/unconfirmed.html" />
         <option value="$PROJECT_DIR$/Apps/Report/View/Amaze/Bug/fault.html" />
         <option value="$PROJECT_DIR$/Apps/Report/View/Amaze/Bug/noregress.html" />
@@ -376,21 +314,31 @@
         <option value="$PROJECT_DIR$/Apps/Record/View/default/Public/footer.html" />
         <option value="$PROJECT_DIR$/Apps/Books/View/Amaze/Public/footer.html" />
         <option value="$PROJECT_DIR$/Apps/Report/View/Amaze/Public/header.html" />
-        <option value="$PROJECT_DIR$/Apps/Books/Controller/BorrowController.class.php" />
+        <option value="$PROJECT_DIR$/Apps/Books/Controller/ManaherController.class.php" />
+        <option value="$PROJECT_DIR$/Apps/Books/View/Amaze/Manager/mod.html" />
+        <option value="$PROJECT_DIR$/Apps/Record/View/default/Public/header.html" />
+        <option value="$PROJECT_DIR$/Apps/Books/View/Amaze/Manager/img.html" />
+        <option value="$PROJECT_DIR$/Apps/Books/Controller/BasicController.class.php" />
         <option value="$PROJECT_DIR$/Apps/Books/View/Amaze/Index/history.html" />
         <option value="$PROJECT_DIR$/Apps/Books/View/Amaze/Public/header.html" />
-        <option value="$PROJECT_DIR$/Apps/Books/Controller/MineController.class.php" />
-        <option value="$PROJECT_DIR$/Apps/Books/Controller/ManaherController.class.php" />
-        <option value="$PROJECT_DIR$/Apps/Books/View/Amaze/Mine/index.html" />
+        <option value="$PROJECT_DIR$/Apps/Report/View/Amaze/Bug/index.html" />
+        <option value="$PROJECT_DIR$/Apps/Report/View/Amaze/Risk/index.html" />
+        <option value="$PROJECT_DIR$/Apps/Books/Controller/BorrowController.class.php" />
         <option value="$PROJECT_DIR$/Apps/Books/View/Amaze/Borrow/yuding.html" />
+        <option value="$PROJECT_DIR$/Apps/Books/View/Amaze/Mine/index.html" />
+        <option value="$PROJECT_DIR$/Apps/Books/Controller/MineController.class.php" />
+        <option value="$PROJECT_DIR$/Apps/Books/View/Amaze/Manager/books.html" />
+        <option value="$PROJECT_DIR$/Apps/Books/View/Amaze/Index/books.html" />
         <option value="$PROJECT_DIR$/Apps/Books/View/Amaze/Index/index.html" />
+        <option value="$PROJECT_DIR$/Apps/Books/View/Amaze/Index/rules.html" />
+        <option value="$PROJECT_DIR$/Apps/Report/Controller/TaskController.class.php" />
+        <option value="$PROJECT_DIR$/Apps/Books/Common/function.php" />
+        <option value="$PROJECT_DIR$/Apps/Books/Controller/IndexController.class.php" />
         <option value="$PROJECT_DIR$/Apps/Books/View/Amaze/Manager/add.html" />
-        <option value="$PROJECT_DIR$/Apps/Books/View/Amaze/Manager/mod.html" />
-        <option value="$PROJECT_DIR$/Apps/Books/View/Amaze/Manager/index.html" />
-        <option value="$PROJECT_DIR$/Apps/Books/View/Amaze/Manager/img.html" />
+        <option value="$PROJECT_DIR$/Apps/Books/View/Amaze/Manager/yuding.html" />
+        <option value="$PROJECT_DIR$/Apps/Books/View/Amaze/Manager/guihuan.html" />
         <option value="$PROJECT_DIR$/Apps/Books/Controller/ManagerController.class.php" />
-        <option value="$PROJECT_DIR$/Apps/Books/Controller/BasicController.class.php" />
-        <option value="$PROJECT_DIR$/Apps/Record/View/default/Public/header.html" />
+        <option value="$PROJECT_DIR$/Apps/Books/View/Amaze/Manager/index.html" />
       </list>
     </option>
   </component>
@@ -528,7 +476,7 @@
       <workItem from="1523152463010" duration="52834000" />
       <workItem from="1523270559049" duration="36741000" />
       <workItem from="1524011777299" duration="598000" />
-      <workItem from="1524446616011" duration="85541000" />
+      <workItem from="1524446616011" duration="123686000" />
     </task>
     <task id="LOCAL-00001" summary="更新配置信息">
       <created>1519697162306</created>
@@ -607,11 +555,18 @@
       <option name="project" value="LOCAL" />
       <updated>1522663634814</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="系统优化">
+      <created>1525689640365</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1525689640365</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="424899000" />
+    <option name="totallyTimeSpent" value="463044000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -625,7 +580,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14934114" sideWeight="0.49423394" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20424597" sideWeight="0.49423394" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280757" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.3284553" sideWeight="0.49707174" order="12" side_tool="false" content_ui="tabs" />
@@ -725,170 +680,16 @@
     <MESSAGE value="整理其他项目" />
     <MESSAGE value="被测点分派及执行" />
     <MESSAGE value="修改场景测试点标记" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改场景测试点标记" />
+    <MESSAGE value="系统优化" />
+    <option name="LAST_COMMIT_MESSAGE" value="系统优化" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="11" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Apps/Books/View/Amaze/Borrow/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Books/View/Amaze/Index/books.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Books/View/Amaze/Index/rules.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="39" column="21" lean-forward="false" selection-start-line="35" selection-start-column="16" selection-end-line="39" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Record/Controller/PublicController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Books/Controller/LoginController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="15" lean-forward="false" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Books/Controller/PublicController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Report/View/Amaze/Bug/fault.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="33" column="98" lean-forward="false" selection-start-line="33" selection-start-column="98" selection-end-line="33" selection-end-column="98" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Report/View/Amaze/Bug/unconfirmed.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="41" column="34" lean-forward="true" selection-start-line="24" selection-start-column="28" selection-end-line="41" selection-end-column="34" />
-          <folding>
-            <element signature="n#div#0;n#empty#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Report/View/Amaze/Bug/noregress.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Report/View/Amaze/Bug/activated.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="44" column="30" lean-forward="false" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Report/Common/function.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7210">
-          <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-          <folding>
-            <marker date="1524013289349" expanded="true" signature="9896:9902" ph=" " />
-            <marker date="1524013289349" expanded="true" signature="9936:9942" ph=" " />
-            <marker date="1524013289349" expanded="true" signature="9942:9948" ph=" " />
-            <marker date="1524013289349" expanded="true" signature="9986:9992" ph=" " />
-            <marker date="1524013289349" expanded="true" signature="9992:9998" ph=" " />
-            <marker date="1524013289349" expanded="true" signature="10617:10623" ph=" " />
-            <marker date="1524013289349" expanded="true" signature="10732:10738" ph=" " />
-            <marker date="1524013289349" expanded="true" signature="10772:10778" ph=" " />
-            <marker date="1524013289349" expanded="true" signature="10778:10784" ph=" " />
-            <marker date="1524013289349" expanded="true" signature="10810:10816" ph=" " />
-            <marker date="1524013289349" expanded="true" signature="10816:10822" ph=" " />
-            <marker date="1524013289349" expanded="true" signature="11545:11551" ph=" " />
-            <marker date="1524013289349" expanded="true" signature="11627:11633" ph=" " />
-            <marker date="1524013289349" expanded="true" signature="11633:11639" ph=" " />
-            <marker date="1524013289349" expanded="true" signature="11679:11685" ph=" " />
-            <marker date="1524013289349" expanded="true" signature="11685:11691" ph=" " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Report/View/Amaze/Rules/prorules.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="65" column="40" lean-forward="false" selection-start-line="65" selection-start-column="40" selection-end-line="65" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Report/Controller/RulesController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="42" lean-forward="false" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Report/Conf/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="32" column="6" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="32" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Report/Controller/BugController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="35" lean-forward="true" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Report/View/Amaze/Taskestimate/daily.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Report/View/Amaze/Task/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="36" lean-forward="false" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Apps/Report/View/Amaze/Task/person.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -925,16 +726,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Record/View/default/Func/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="90" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="17" selection-end-column="90" />
-          <folding>
-            <element signature="n#div#1;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Apps/Record/Controller/CommonController.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="354">
@@ -957,26 +748,6 @@
             <element signature="n#div#3;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Record/Controller/ScoreController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="53" column="5" lean-forward="true" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
-          <folding>
-            <element signature="e#102#471#0#PHP" expanded="false" />
-            <element signature="e#485#1132#0#PHP" expanded="false" />
-            <element signature="e#1146#1515#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Record/View/default/Score/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="28" column="50" lean-forward="false" selection-start-line="28" selection-start-column="50" selection-end-line="28" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1017,121 +788,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Common/Common/function.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="732" column="26" lean-forward="false" selection-start-line="732" selection-start-column="13" selection-end-line="732" selection-end-column="26" />
-          <folding>
-            <marker date="1525659211710" expanded="true" signature="6943:7178" ph="..." />
-            <marker date="1525659211710" expanded="true" signature="7410:7684" ph="..." />
-            <marker date="1525659211710" expanded="true" signature="7763:8058" ph="..." />
-            <marker date="1525659211710" expanded="true" signature="8378:8648" ph="..." />
-            <marker date="1525659211710" expanded="true" signature="8891:9161" ph="..." />
-            <marker date="1525659211710" expanded="true" signature="9423:9843" ph="..." />
-            <marker date="1525659211710" expanded="true" signature="9637:9812" ph="..." />
-            <marker date="1525659211710" expanded="true" signature="10161:10683" ph="..." />
-            <marker date="1525659211710" expanded="true" signature="10375:10668" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Books/View/Amaze/Index/history.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="133" lean-forward="false" selection-start-line="4" selection-start-column="115" selection-end-line="4" selection-end-column="133" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Books/View/Amaze/Public/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="45" column="13" lean-forward="true" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
-          <folding>
-            <marker date="1525683166538" expanded="true" signature="714:837" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Books/Controller/IndexController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="37" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="13" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Books/View/Amaze/Mine/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="6" lean-forward="true" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Books/Controller/MineController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="6" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Books/View/Amaze/Borrow/yuding.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="90" column="6" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="90" selection-end-column="6" />
-          <folding>
-            <element signature="n#div#5;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Books/View/Amaze/Index/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="33" column="43" lean-forward="true" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Books/Controller/BorrowController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="26" column="35" lean-forward="true" selection-start-line="24" selection-start-column="8" selection-end-line="26" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Books/View/Amaze/Manager/add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="74" lean-forward="false" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Books/View/Amaze/Manager/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="36" column="28" lean-forward="true" selection-start-line="32" selection-start-column="20" selection-end-line="36" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Apps/Books/View/Amaze/Manager/mod.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="466">
           <caret line="86" column="6" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="86" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Admin/View/mac/Ad/add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="33" column="88" lean-forward="false" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="88" />
           <folding />
         </state>
       </provider>
@@ -1160,30 +820,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Books/Controller/BasicController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="107" column="44" lean-forward="true" selection-start-line="107" selection-start-column="44" selection-end-line="107" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Books/View/Amaze/Manager/img.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-114">
-          <caret line="15" column="74" lean-forward="false" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apps/Books/Controller/ManagerController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="67" column="51" lean-forward="false" selection-start-line="67" selection-start-column="51" selection-end-line="67" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Apps/Record/View/default/Public/header.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -1201,6 +837,369 @@
           <folding>
             <marker date="1525679416652" expanded="true" signature="714:837" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Admin/View/mac/Ad/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="38" column="49" lean-forward="false" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Admin/View/mac/Ad/add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="17" column="105" lean-forward="false" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="105" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Books/View/Amaze/Manager/img.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="23" column="56" lean-forward="false" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Books/View/Amaze/Public/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="37" column="30" lean-forward="true" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
+          <folding>
+            <marker date="1525744523701" expanded="true" signature="714:837" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Books/View/Amaze/Index/history.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="135" lean-forward="true" selection-start-line="4" selection-start-column="101" selection-end-line="4" selection-end-column="135" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Report/View/Amaze/Bug/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="119" lean-forward="true" selection-start-line="20" selection-start-column="119" selection-end-line="20" selection-end-column="119" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Report/View/Amaze/Risk/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="17" column="104" lean-forward="true" selection-start-line="17" selection-start-column="104" selection-end-line="17" selection-end-column="104" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Record/Controller/OvertimeController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="28" column="37" lean-forward="true" selection-start-line="27" selection-start-column="8" selection-end-line="28" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Record/View/default/Score/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="52" column="6" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="52" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Books/Controller/BorrowController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Record/View/default/Func/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="48" column="98" lean-forward="false" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="98" />
+          <folding>
+            <element signature="n#div#1;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Books/View/Amaze/Manager/books.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="47" lean-forward="true" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Books/View/Amaze/Mine/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="56" column="25" lean-forward="true" selection-start-line="40" selection-start-column="20" selection-end-line="56" selection-end-column="25" />
+          <folding>
+            <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Record/View/default/Risk/make.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Record/Controller/ScoreController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="53" column="5" lean-forward="true" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+          <folding>
+            <element signature="e#102#471#0#PHP" expanded="false" />
+            <element signature="e#485#1132#0#PHP" expanded="false" />
+            <element signature="e#1146#1515#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Record/Controller/AppraisalController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-627">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Record/View/default/Appraisal/appeal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Books/View/Amaze/Index/rules.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="9" lean-forward="true" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Record/View/default/Appraisal/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2280">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Books/View/Amaze/Index/books.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Books/View/Amaze/Index/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+          <folding>
+            <element signature="e#2043#2049#0" expanded="true" />
+            <element signature="e#2049#2055#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Report/Controller/TaskController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="63" column="3" lean-forward="true" selection-start-line="63" selection-start-column="3" selection-end-line="63" selection-end-column="3" />
+          <folding>
+            <element signature="e#89#1054#0#PHP" expanded="false" />
+            <element signature="e#1060#1802#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Report/View/Amaze/Task/protask.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-798">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Books/View/Amaze/Borrow/yuding.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="97" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="97" />
+          <folding>
+            <element signature="n#div#5;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Books/Controller/IndexController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="82" column="50" lean-forward="true" selection-start-line="82" selection-start-column="50" selection-end-line="82" selection-end-column="50" />
+          <folding>
+            <marker date="1525846757165" expanded="false" signature="1355:1568" ph="..." />
+            <marker date="1525846757165" expanded="true" signature="1569:4803" ph="..." />
+            <marker date="1525846757165" expanded="false" signature="1618:1817" ph="..." />
+            <marker date="1525846757165" expanded="true" signature="1818:1846" ph="..." />
+            <marker date="1525846757165" expanded="false" signature="1870:1972" ph="..." />
+            <marker date="1525846757165" expanded="true" signature="1973:2059" ph="..." />
+            <marker date="1525846757165" expanded="false" signature="2083:2185" ph="..." />
+            <marker date="1525846757165" expanded="true" signature="2186:2236" ph="..." />
+            <marker date="1525846757165" expanded="false" signature="2260:2362" ph="..." />
+            <marker date="1525846757165" expanded="true" signature="2363:2438" ph="..." />
+            <marker date="1525846757165" expanded="false" signature="2487:2686" ph="..." />
+            <marker date="1525846757165" expanded="true" signature="2687:2715" ph="..." />
+            <marker date="1525846757165" expanded="false" signature="2766:2890" ph="..." />
+            <marker date="1525846757165" expanded="true" signature="2891:2921" ph="..." />
+            <marker date="1525846757165" expanded="true" signature="2939:3071" ph="..." />
+            <marker date="1525846757165" expanded="false" signature="2968:2996" ph="..." />
+            <marker date="1525846757165" expanded="true" signature="2997:3052" ph="..." />
+            <marker date="1525846757165" expanded="false" signature="3121:3245" ph="..." />
+            <marker date="1525846757165" expanded="true" signature="3246:3276" ph="..." />
+            <marker date="1525846757165" expanded="true" signature="3294:3678" ph="..." />
+            <marker date="1525846757165" expanded="true" signature="3323:3351" ph="..." />
+            <marker date="1525846757165" expanded="true" signature="3352:3659" ph="..." />
+            <marker date="1525846757165" expanded="false" signature="3732:3856" ph="..." />
+            <marker date="1525846757165" expanded="true" signature="3857:3891" ph="..." />
+            <marker date="1525846757165" expanded="true" signature="3909:4575" ph="..." />
+            <marker date="1525846757165" expanded="false" signature="3938:3966" ph="..." />
+            <marker date="1525846757165" expanded="true" signature="3967:4556" ph="..." />
+            <marker date="1525846757165" expanded="true" signature="3992:4018" ph="..." />
+            <marker date="1525846757165" expanded="true" signature="4043:4074" ph="..." />
+            <marker date="1525846757165" expanded="true" signature="4099:4158" ph="..." />
+            <marker date="1525846757165" expanded="true" signature="4183:4229" ph="..." />
+            <marker date="1525846757165" expanded="true" signature="4254:4309" ph="..." />
+            <marker date="1525846757165" expanded="true" signature="4334:4395" ph="..." />
+            <marker date="1525846757165" expanded="true" signature="4420:4464" ph="..." />
+            <marker date="1525846757165" expanded="false" signature="4629:4753" ph="..." />
+            <marker date="1525846757165" expanded="true" signature="4754:4788" ph="..." />
+            <marker date="1525846757165" expanded="false" signature="4825:5038" ph="..." />
+            <marker date="1525846757165" expanded="true" signature="5039:5176" ph="..." />
+            <marker date="1525846757165" expanded="false" signature="5064:5092" ph="..." />
+            <marker date="1525846757165" expanded="true" signature="5093:5161" ph="..." />
+            <marker date="1525846757165" expanded="true" signature="5114:5143" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Books/View/Amaze/Manager/add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="59" column="30" lean-forward="false" selection-start-line="59" selection-start-column="30" selection-end-line="59" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Books/Common/function.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/superglobals/_superglobals.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Books/Controller/MineController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="15" column="38" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="15" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Books/View/Amaze/Manager/yuding.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="38" column="115" lean-forward="false" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="115" />
+          <folding>
+            <element signature="e#1431#1437#0" expanded="true" />
+            <element signature="e#3211#3217#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Books/View/Amaze/Manager/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="50" column="72" lean-forward="false" selection-start-line="50" selection-start-column="53" selection-end-line="50" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Books/Controller/ManagerController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="179" column="21" lean-forward="false" selection-start-line="179" selection-start-column="13" selection-end-line="179" selection-end-column="21" />
+          <folding>
+            <element signature="e#89#492#0#PHP" expanded="false" />
+            <element signature="e#498#868#0#PHP" expanded="false" />
+            <element signature="e#874#1280#0#PHP" expanded="false" />
+            <element signature="e#1286#1692#0#PHP" expanded="false" />
+            <element signature="e#1698#1788#0#PHP" expanded="false" />
+            <element signature="e#1794#1856#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Common/Common/function.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="732" column="26" lean-forward="false" selection-start-line="732" selection-start-column="13" selection-end-line="732" selection-end-column="26" />
+          <folding>
+            <marker date="1525659211710" expanded="true" signature="6943:7178" ph="..." />
+            <marker date="1525659211710" expanded="true" signature="7410:7684" ph="..." />
+            <marker date="1525659211710" expanded="true" signature="7763:8058" ph="..." />
+            <marker date="1525659211710" expanded="true" signature="8378:8648" ph="..." />
+            <marker date="1525659211710" expanded="true" signature="8891:9161" ph="..." />
+            <marker date="1525659211710" expanded="true" signature="9423:9843" ph="..." />
+            <marker date="1525659211710" expanded="true" signature="9637:9812" ph="..." />
+            <marker date="1525659211710" expanded="true" signature="10161:10683" ph="..." />
+            <marker date="1525659211710" expanded="true" signature="10375:10668" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Books/Controller/BasicController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="72" column="36" lean-forward="true" selection-start-line="72" selection-start-column="16" selection-end-line="72" selection-end-column="36" />
+          <folding>
+            <element signature="e#2374#3634#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apps/Books/View/Amaze/Manager/guihuan.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="27" column="59" lean-forward="false" selection-start-line="27" selection-start-column="59" selection-end-line="27" selection-end-column="59" />
+          <folding />
         </state>
       </provider>
     </entry>

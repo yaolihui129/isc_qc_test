@@ -10,7 +10,7 @@
                     </h3>
                 </div>
                 <div class="panel-body">
-                    <form action="__URL__/img_update" method="post" class="form-horizontal" role="form">
+                    <form action="__URL__/img_update" method="post" enctype='multipart/form-data'class="form-horizontal" role="form"   >
                         <input type="hidden" name="id" value="<{$arr.id}>"/>
                         <input type="hidden" name="url" value="<{$url}>"/>
                         <input type="hidden" name="table" value="tp_device"/>
@@ -21,7 +21,7 @@
                                 <empty name="arr.img">
                                     <img src="__IMG__/moren.jpg" alt="__IMG__/moren.jpg">
                                     <else />
-                                    <img src="<{$arr.path}>/<{$arr.img}>" alt="<{$arr.path}>/<{$arr.img}>">
+                                    <img src="__UPLOAD__/<{$arr.path}>/<{$arr.img}>" alt="<{$arr.path}>/<{$arr.img}>">
                                 </empty>
 
                             </div>

@@ -3,7 +3,7 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title"><{$arr.brand}>-<{$arr.ts}><{$arr.name}>-<{$arr.sys_version}>【管理员：<{$arr.manager|getZTUserName=###}>】
-                <a class="btn btn-xs btn-primary pull-right" href="__URL__/<{$source}>/search/<{$search}>" role="button">返回</a>
+                <a class="btn  btn-primary btn-xs pull-right" href="__URL__/<{$source}>/search/<{$search}>">返回</a>
             </h3>
         </div>
 
@@ -13,7 +13,7 @@
                         <empty name="arr.img">
                             <img src="__IMG__/moren.jpg" alt="__IMG__/moren.jpg">
                             <else />
-                            <img src="<{$arr.path}>/<{$arr.img}>" alt="<{$arr.path}>/<{$arr.img}>">
+                            <img src="__UPLOAD__/<{$arr.path}>/<{$arr.img}>" alt="<{$arr.path}>/<{$arr.img}>">
                         </empty>
                     </div>
                     <div class="col-xs-8 col-md-9">

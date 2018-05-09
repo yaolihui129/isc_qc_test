@@ -26,6 +26,9 @@ class BorrowController extends BasicController
 
         $this->assign('url', $url);
 
+        $riqi = date("Y-m-d", time()+24*60*60);
+        $this->assign('riqi', $riqi);
+
         $this->display();
     }
 }

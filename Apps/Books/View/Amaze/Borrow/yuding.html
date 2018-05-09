@@ -13,6 +13,7 @@
                     <form action="__URL__/insert" method="post" class="form-horizontal" role="form">
                         <input type="hidden" name="device" value="<{$arr.id}>"/>
                         <input type="hidden" name="serial" value="<{$arr.serial}>"/>
+                        <input type="hidden" name="manager" value="<{$arr.manager}>"/>
                         <input type="hidden" name="borrower" value="<{$Think.session.account}>"/>
                         <input type="hidden" name="url" value="<{$url}>"/>
                         <input type="hidden" name="table" value="tp_device_loaning_record"/>
@@ -25,7 +26,7 @@
                         <div class="form-group">
                             <label class="col-sm-4 control-label">预定:</label>
                             <div class="col-sm-8">
-                                <input type="date" class="form-control"  name="start_time" value="" placeholder="时间" >
+                                <input type="date" class="form-control"  name="start_time" value="<{$riqi}>" placeholder="时间" >
                             </div>
                         </div>
                         <div class="form-group">

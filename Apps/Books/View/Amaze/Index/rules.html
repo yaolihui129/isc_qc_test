@@ -4,41 +4,13 @@
         <li role="presentation" >
             <a href="__URL__/index">测试手机<span class="badge"><{$arr.id}></span></a>
         </li>
-        <li role="presentation" >
-            <a href="__URL__/books">图书<span class="badge"><{$arr.id}></span></a>
-        </li>
         <li role="presentation" class="active">
-            <a href="__URL__/rules">借用公约<span class="badge"><{$arr.id}></span></a>
+            <a href="__URL__/rules">移动设备管理规范<span class="badge"><{$arr.id}></span></a>
         </li>
     </ul>
     <div class="panel panel-default">
         <div class="panel-body">
-            <div class="starter-template">
-                <h3>目的</h3>
-                <ul class="list-group">
-                    <volist name='data' id='st'>
-                        <li class="list-group-item"><{$st}></li>
-                    </volist>
-                </ul>
-            </div>
-
-            <div class="starter-template">
-                <h3>测试设备借用约定</h3>
-                <ul class="list-group">
-                    <volist name='data' id='st'>
-                        <li class="list-group-item"><{$st}></li>
-                    </volist>
-                </ul>
-            </div>
-
-            <div class="starter-template">
-                <h3>图书资料借用约定</h3>
-                <ul class="list-group">
-                    <volist name='data' id='st'>
-                        <li class="list-group-item"><{$st}></li>
-                    </volist>
-                </ul>
-            </div>
+            <p><{$data}></p>
         </div>
     </div>
 
