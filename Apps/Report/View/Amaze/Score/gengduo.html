@@ -2,8 +2,7 @@
 <!-- content start -->
 <div class="admin-content">
     <div class="panel panel-default">
-        <div class="panel-heading">
-            <{$quarter}>
+        <div class="panel-heading"><{$quarter}>
             <div class="btn-group pull-right">
                 <a  href="__URL__/index" class=" btn btn-warning btn-xs">返回</a>
             </div>
@@ -13,7 +12,7 @@
         </div>
         <ul class="list-group">
             <volist name='data' id='st' >
-                <li class="list-group-item" title="【<{$st.utime}>】<{$st.content}>">
+                <li class="list-group-item" title="<{$st.id}>.【<{$st.utime}>】<{$st.content}>">
                     <switch name="st.status">
                         <case value="0">
                             <span class="label label-info">正常</span>

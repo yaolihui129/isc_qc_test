@@ -10,22 +10,18 @@
                         <li role="presentation" class="active"><a href="__URL__/history">历史迭代</a></li>
                     </ul>
                     <div class="starter-template">
-                        <table class="am-table am-table-striped am-table-hover table-main table-bordered">
-                            <thead>
-                            <tr>
-                                <th class="table-title" bgcolor="#ccc">测试迭代信息<span class="badge pull-right">状态</span></th>
-                            </tr>
-                            </thead>
-                            <tbody>
+                        <ul class="list-group">
                             <volist name='data' id='pro' empty="没有数据">
-                                <tr>
-                                    <td><a href="__APP__/<{$Think.config.PRODUCT}>/Rules/prorules/proid/<{$pro.id}>">
-                                        【<{$pro.qd|getZTUserName=###}>】<{$pro.id|getPro=###}>
-                                        <span class="badge pull-right"><{$pro.status|getProst=###}></span></a></td>
-                                </tr>
+                                <li class="list-group-item">
+                                    <a href="__APP__/<{$Think.config.PRODUCT}>/Rules/prorules/proid/<{$pro.id}>">
+                                        <span class="label label-default"><{$pro.qd|getZTUserName=###}></span>
+                                        <span class="label label-info">功能点：<{$pro.id||countFuncRangeId='tp_func_range','project',###}></span>
+                                        <small><{$pro.name}></small>
+                                        <span class="badge pull-right" title="上线日期"><{$pro.end}></span>
+                                    </a>
+                                </li>
                             </volist>
-                            </tbody>
-                        </table>
+                        </ul>
                     </div>
                 </div>
             </div>

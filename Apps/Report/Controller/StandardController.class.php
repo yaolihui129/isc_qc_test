@@ -7,7 +7,6 @@ class StandardController extends WebInfoController
     public function index()
     {
         $var='
-        <h1>测试迭代评估</h1>
         <h3>方案一：需求迭代</h3>
 
             &nbsp;&nbsp;<b>标准评估里程碑：</b><br />

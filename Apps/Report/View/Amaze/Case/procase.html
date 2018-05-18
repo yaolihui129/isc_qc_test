@@ -6,7 +6,8 @@
             <div class="panel panel-info">
                 <div class="panel-heading">
                     <h3 class="panel-title"><{$Think.session.proid|getPro=###}>
-                        <div class="btn-group pull-right"><a href="__APP__/Report" class="btn btn-warning btn-xs">返回</a>
+                        <div class="btn-group pull-right">
+                            <a href="__APP__/Report" class="btn btn-warning btn-xs">返回</a>
                         </div>
                     </h3>
                 </div>
@@ -44,7 +45,6 @@
                                 href="__APP__/<{$Think.config.PRODUCT}>/Bug/index/proid/<{$Think.session.proid}>">BUG
                             <span class="badge"><{$Think.session.proid|countBug=###}></span></a></li>
                     </ul>
-
                     <ul class="list-group">
                         <volist name='data' id='vo' empty="没有数据">
                             <li class="list-group-item">
@@ -59,13 +59,8 @@
                     </ul>
                 </div>
             </div>
-
-
         </div>
-
     </div>
-
-
 </div>
 
 

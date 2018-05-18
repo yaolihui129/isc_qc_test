@@ -20,6 +20,7 @@ class BugController extends WebInfoController {
         $this->assign('var4',$var);
         $var=$m->where($where)->field("openedBuild,count(id)")->group('openedBuild')->order('id desc')->select();
         $this->assign('var5',$var);
+
         $this->display();
     }
 
@@ -30,22 +31,18 @@ class BugController extends WebInfoController {
         $where['deleted']='0';
         $where['assignedTo']=array('in',C(DEV_USER));//只看这些人员
         $datum=date("Y-m-d",time()-24*3600);
-        $datum=strtotime($datum);
+        $datum=strtotime($datum);//将日期转化为时间戳
         $datum=date("Y-m-d H:i",$datum+17.5*3600);
         $where['openedDate']  = array('lt',$datum);
-        $m=M("bug");
-        $data=$m->where($where)->order('openedDate')->select();
+        $data=M("bug")->where($where)->order('openedDate')->select();
         $this->assign('data',$data);
-       
-        
         
         $this->display();
     }
     
     function punish(){
-        $where=array("state"=>"待处理");
-        $m=M("tp_punish");
-        $data=$m->where($where)->order('status,id')->select();
+        $where=array("state"=>"0");
+        $data=M("tp_punish")->where($where)->order('status,id')->select();
         $this->assign('data',$data);
         
         $this->display();

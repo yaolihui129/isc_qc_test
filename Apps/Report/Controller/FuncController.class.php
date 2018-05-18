@@ -26,24 +26,21 @@ class FuncController extends WebInfoController
 
     public function func(){
         $_SESSION['proid'] = I('proid');
-        $m = M("tp_func_range");
         $where=array("project"=>I('proid'),"deleted"=>'0','type'=>'1');
-        $data=$m->where($where)->order('sn')->select();
+        $data= M("tp_func_range")->where($where)->order('sn')->select();
         $this->assign("data",$data);
-
 
         $this->display();
     }
+
     public function range()
     {
         $_SESSION['proid'] = I('proid');
-        $m = D("tp_func_range");
         $where=array("project"=>I('proid'),"deleted"=>'0');
-        $data=$m->where($where)->order('sn')->select();
+        $data=M("tp_func_range")->where($where)->order('sn')->select();
         $this->assign("data",$data);
 
         $this->display();
     }
-
 
 }

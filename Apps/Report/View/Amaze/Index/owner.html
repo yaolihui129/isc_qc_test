@@ -10,24 +10,18 @@
                         <li role="presentation"><a href="__URL__/history">历史迭代</a></li>
                     </ul>
                     <div class="starter-template">
-                        <table class="am-table am-table-striped am-table-hover table-main table-bordered">
-                            <thead>
-                            <tr>
-                                <th class="table-title" bgcolor="#ccc">【<{$owner|getZTUserName=###}>】负责的迭代<span class="badge pull-right">状态</span></th>
-                            </tr>
-                            </thead>
-                            <tbody>
+                        <ul class="list-group">
                             <volist name='data' id='pro' empty="没有数据">
-                                <tr>
-                                    <td><a href="__APP__/<{$Think.config.PRODUCT}>/Rules/prorules/proid/<{$pro.id}>">
-                                        【<{$pro.qd|getZTUserName=###}>】<{$pro.id|getPro=###}>
-                                        <span class="badge pull-right"><{$pro.status|getProst=###}></span></a>
-                                    </td>
-
-                                </tr>
+                                <li class="list-group-item">
+                                    <a href="__APP__/<{$Think.config.PRODUCT}>/Rules/prorules/proid/<{$pro.id}>">
+                                        <small>
+                                            【<{$pro.qd|getZTUserName=###}>】<{$pro.id|getPro=###}>
+                                        </small>
+                                        <span class="badge pull-right"><{$pro.status|getProst=###}></span>
+                                    </a>
+                                </li>
                             </volist>
-                            </tbody>
-                        </table>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -37,8 +31,8 @@
                 <div class="panel-heading"><h3 class="panel-title">测试负责人</h3></div>
                 <ul class="list-group">
                     <volist name='user' id='vo' empty="没有数据">
-                        <switch name="vo.id">
-                            <case value="$arr.id">
+                        <switch name="vo">
+                            <case value="$owner">
                                 <li class="list-group-item list-group-item-warning">
                             </case>
                             <default/>

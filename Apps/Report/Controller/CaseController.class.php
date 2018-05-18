@@ -18,6 +18,7 @@ class CaseController extends WebInfoController
         $data = M('projectstory')->where($where)->join('zt_story ON zt_story.id =zt_projectstory.story')->select();
         $this->assign('data', $data);
 
+
         $this->display();
 
     }

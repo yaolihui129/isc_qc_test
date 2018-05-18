@@ -9,10 +9,19 @@ class RiskController extends WebInfoController
         $where = array("proid" => I('proid'));
         $data = M("tp_risk")->where($where)->select();
         $this->assign("data", $data);
-        $this->assign('w', $where);
 
         $this->display();
     }
+
+    public function pro_risk(){
+        $where=array('deleted'=>'0');
+        $data = M("tp_risk")->where($where)->order('ctime desc')->select();
+        $this->assign("data", $data);
+
+        $this->display();
+    }
+
+
     function make(){
 
         $this->display();

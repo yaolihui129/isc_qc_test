@@ -14,9 +14,9 @@ class ApiController extends CommonController
         $dict = array(
             'name' => ['Api', 'tp_apitest', 'tp_apiversion', 'tp_api_parameter',
                 'tp_api_scene','tp_api_scene_parameter','tp_api_test_result','tp_api_shear_parameter'],
-            'branch' => ['全部', '保险服务', '安鑫保', '车险APP', '易鑫车服', '微信', '第三方'],
+            'branch' => ['全部', '保险服务','订单中心', '安鑫保', '车险','CRM', '车服','其他'],
             'agreement' => ['http', 'https'],
-            'domain' => ['127.0.0.1', 'service.axb.chexian.com', 'cfw.taoche.com', 'axb.chexian.com','open.chexian.com/bxfw'],
+            'domain' => ['127.0.0.1', 'service.axb.chexian.com','api.order.chexian.com', 'cfw.taoche.com', 'axb.chexian.com','open.chexian.com/bxfw'],
             'way' => ['GET', 'POST', 'HEAD','MQ'],
             'ways'=>['request','response'],
             'authority' => ['无', 'Auth', '签名'],

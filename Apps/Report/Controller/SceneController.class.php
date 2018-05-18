@@ -6,9 +6,8 @@ class SceneController extends WebInfoController
     public function index()
     {
         $_SESSION['proid'] = I('proid');
-        $m = D("tp_scene");
         $where=array("project"=>$_SESSION['proid'],"deleted"=>'0');
-        $data=$m->where($where)->order('sn')->select();
+        $data= M("tp_scene")->where($where)->order('sn')->select();
         $this->assign("data",$data);
 
         $this->display();
@@ -17,7 +16,7 @@ class SceneController extends WebInfoController
 
     public function func(){
         $scene=I('scene');
-        $arr=D("tp_scene")->find($scene);
+        $arr=M("tp_scene")->find($scene);
         $this->assign("arr",$arr);
 
         $map=array('scene'=>$scene,"deleted"=>'0');

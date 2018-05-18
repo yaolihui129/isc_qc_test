@@ -1,0 +1,67 @@
+<layout name="layout"/>
+<!-- content start -->
+<div class="admin-content">
+    <div class="row">
+        <div class="col-md-7">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <{$risk.proid|getPro=###}>
+                        <div class="btn-group pull-right">
+                            <a href="__URL__/index/proid/<{$_SESSION['proid']}>" class=" btn btn-warning btn-xs">
+                                <span class="glyphicon glyphicon-chevron-left"> 返回</span>
+                            </a>
+                        </div>
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <form action="__URL__/update" method="post" class="form-horizontal" role="form">
+                        <input type="hidden" name="id" value="<{$risk.id}>"/>
+                        <input type="hidden" name="proid" value="<{$risk.proid}>"/>
+                        <input type="hidden" name="table" value="tp_risk"/>
+                        <div class="form-group">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-10"><{$risk.moder|getZTUserName=###}> 更新于:<{$risk.utime}></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="short" class="col-sm-2 control-label">顺序:</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" name="sn" value="<{$risk.sn}>"
+                                                         placeholder="sn"></div>
+                            <label for="state" class="col-sm-2 control-label">状态:</label>
+                            <div class="col-sm-2"><{$level}></div>
+                            <label for="state" class="col-sm-2 control-label">状态:</label>
+                            <div class="col-sm-2"><{$state}></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="product" class="col-sm-2 control-label">风险:</label>
+                            <div class="col-sm-10"><input type="text" class="form-control" name="stage"
+                                                          value="<{$risk.risk}>" placeholder="里程碑"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="state" class="col-sm-2 control-label">方案:</label>
+                            <div class="col-sm-10"><{$tamethod}></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label"></label>
+                            <div class="col-sm-10">
+                                <button type="submit" class="btn btn-info btn-block ">提 交</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4 hidden-xs hidden-sm">
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-info">风险</li>
+                <volist name='data' id='vo' empty="没有数据">
+                    <li class="list-group-item">
+                        <a href="__URL__/mod/id/<{$vo.id}>"><{$vo.sn}>.<{$vo.risk}>【<{$vo.level}>】</a><span
+                            class="badge"><{$vo.state}></span>
+                    </li>
+                </volist>
+            </ul>
+        </div>
+    </div>
+</div>

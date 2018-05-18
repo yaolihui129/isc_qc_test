@@ -9,9 +9,15 @@ class IndexController extends WebInfoController
         $where['deleted']='0';
         $status = array('wait', 'doing','suspended');//只看这些
         $where['status'] = array('in', $status);
-        $data = M('project')->where($where)
-            ->order("end desc,id")->select();
+        $data = M('project')->where($where)->order("end desc,id")->select();
         $this->assign('data', $data);
+
+        //检查逾期未归还的设备
+        $this->overdue();
+        //检查逾期未确认的BUG
+        $this->bug_unconfirmed();
+        //检查逾期未复测的BUG
+        $this->bug_noregress();
 
         $this->theme('')->display();
     }
@@ -34,23 +40,20 @@ class IndexController extends WebInfoController
         }
         $this->assign('user', $user);
         $where['QD']=I('QD',$user[0]);
-        $owner=$where['QD'];
-        $this->assign('owner', $owner);
+        $this->assign('owner', $where['QD']);
         $data = $m->where($where)->field("id,name,code,begin,end,status,QD,order")->order("end desc,id")->select();
         $this->assign('data', $data);
+
 
         $this->theme('')->display();
     }
 
     public function history(){
-
         $where['testgp'] = 'YX';
         $where['deleted']='0';
         $status = array('done', 'cancel','closed');
         $where['status'] = array('in', $status);
-        $data = M('project')->where($where)
-            ->field("id,name,code,begin,end,status,QD,order")
-            ->order("end desc,id")->select();
+        $data = M('project')->where($where)->order("end desc,id")->select();
         $this->assign('data', $data);
 
         $this->theme('')->display();
@@ -139,5 +142,7 @@ class IndexController extends WebInfoController
 
         $this->theme('')->display();
     }
+
+
 
 }

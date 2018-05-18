@@ -1,90 +1,81 @@
 <layout name="layout"/>
 <div class="admin-content">
-    <div class="am-g">
-        <div class="am-u-md-4">
-            <ul class="nav navbar-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">平台：
-                        <empty name="_SESSION['branch']">
-                            全部
-                            <else/>
-                            <{$_SESSION['branch']}>
-                        </empty>
-
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" role="menu">
-                        <volist name='branch' id='bra'>
-                            <li><a href="__URL__/index/branch/<{$bra}>"><{$bra}></a></li>
-                        </volist>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <div class="am-u-md-3">
-            <ul class="nav navbar-nav">
-                <li class="dropdown"><a href="#">接口数：<{$count}></a></li>
-            </ul>
-        </div>
-        <div class="am-u-md-5">
-            <form action="__URL__/index " method="post" class="navbar-form navbar-left" role="search">
-                <div class="form-group input-group pull-right">
-                    <input type="text" class="form-control" name="search" value="<{$search}>" placeholder="业务端、名称、作者">
-                    <input type="hidden" class="form-control" name="branch" value="<{$_SESSION['branch']}>">
-                    <span class="input-group-btn">
-	         	 <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
-	          </span>
-                </div>
-            </form>
-            <ul class="nav navbar-nav">
-                <li>
-                    <button data-toggle="modal" href="#tianjApi" class=" btn btn-info">
-                        <span class="glyphicon glyphicon-plus"> 添加</span>
-                    </button>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="starter-template">
-        <table class="am-table am-table-striped am-table-hover table-main table-bordered">
-            <thead>
-            <tr>
-                <th class="table-type" bgcolor="#ccc">平台-业务端</th>
-                <th class="table-title" bgcolor="#ccc">
-                    <span class="badge">参数/场景</span>
-                    <span class="badge pull-right">作者</span>接口
-                </th>
-                <th class="table-type" bgcolor="#ccc">线上</th>
-                <th class="table-type" bgcolor="#ccc">预发</th>
-                <th class="table-type" bgcolor="#ccc">测试</th>
-                <th class="table-type" bgcolor="#ccc">操作</th>
-            </tr>
-            </thead>
-            <tbody>
-            <volist name='data' id='da' empty="没有数据">
-                <tr>
-                    <td><{$da.branch}>-<{$da.client}></td>
-                    <td>
-                        <a href="__URL__/info/id/<{$da.id}>" >
-                            <span class="badge"><{$da.id|countApiParameter=###}>/<{$da.id|countApiScene=###}></span>
-                            <{$da.apiname}>【<{$da.way}>】<{$da.adress}>
-                            <span class="badge pull-right"><{$da.author}></span>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            平台：
+                            <empty name="_SESSION['branch']">
+                                全部
+                                <else/>
+                                <{$_SESSION['branch']}>
+                            </empty>
+                            <span class="caret"></span>
                         </a>
-                    </td>
-                    <td><{$da.online}></td>
-                    <td><{$da.release}></td>
-                    <td><{$da.develop}></td>
-                    <td>
-                        <a class="cke_button" href="__URL__/mod/id/<{$da.id}>">编辑</a>
-                        <a class="cke_button" href="__URL__/del/id/<{$da.id}>/table/tp_apitest"
-                           onclick="return confirm('你确定要删除API：<{$da.apiname}>？')">删除</a>
-                    </td>
+                        <ul class="dropdown-menu">
+                            <volist name='branch' id='bra'>
+                                <li><a href="__URL__/index/branch/<{$bra}>"><{$bra}></a></li>
+                            </volist>
+                        </ul>
+                    </li>
+                    <li><a href="#">接口数：<{$count}></a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <form action="__URL__/index " method="post" class="navbar-form navbar-left" role="search">
+                        <div class="form-group input-group">
+                            <input type="text" class="form-control" name="search" value="<{$search}>" placeholder="业务端、名称、作者">
+                            <input type="hidden" class="form-control" name="branch" value="<{$_SESSION['branch']}>">
+                            <span class="input-group-btn">
+                                 <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                            </span>
+                        </div>
+                    </form>
+                    <li><a data-toggle="modal" href="#tianjApi" ><span class="glyphicon glyphicon-plus"></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-                </tr>
-            </volist>
-            </tbody>
-        </table>
-    </div>
+    <table class="am-table am-table-striped am-table-hover table-main table-bordered">
+        <thead>
+        <tr>
+            <th class="table-type" bgcolor="#ccc">平台-业务端</th>
+            <th class="table-title" bgcolor="#ccc">
+                <span class="badge">参数/场景</span>
+                <span class="badge pull-right">作者</span>接口
+            </th>
+            <th class="table-type" bgcolor="#ccc">线上</th>
+            <th class="table-type" bgcolor="#ccc">预发</th>
+            <th class="table-type" bgcolor="#ccc">测试</th>
+            <th class="table-type" bgcolor="#ccc">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <volist name='data' id='da' empty="没有数据">
+            <tr>
+                <td><{$da.branch}>-<{$da.client}></td>
+                <td>
+                    <a href="__URL__/info/id/<{$da.id}>" >
+                        <span class="badge"><{$da.id|countApiParameter=###}>/<{$da.id|countApiScene=###}></span>
+                        <{$da.apiname}>【<{$da.way}>】<{$da.adress}>
+                        <span class="badge pull-right"><{$da.author}></span>
+                    </a>
+                </td>
+                <td><{$da.online}></td>
+                <td><{$da.release}></td>
+                <td><{$da.develop}></td>
+                <td>
+                    <a class="cke_button" href="__URL__/mod/id/<{$da.id}>"><span class="glyphicon glyphicon-pencil"></span></a>
+                    <a class="cke_button" href="__URL__/del/id/<{$da.id}>/table/tp_apitest"
+                       onclick="return confirm('你确定要删除API：<{$da.apiname}>？')"><span class="glyphicon glyphicon-trash"></span></a>
+                </td>
+
+            </tr>
+        </volist>
+        </tbody>
+    </table>
 </div>
 
 

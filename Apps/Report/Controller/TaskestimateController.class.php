@@ -16,13 +16,11 @@ class TaskestimateController extends WebInfoController
     {
         $info = $this->getInfo();
         $m = M($info['table']);
-
         $map['account'] = array('in', C(QA_TESTER));
         $data = $m->where($map)->select();
         $arr[] = $data[0]['account'];
         foreach ($data as $d) {
-            if (in_array($d['account'], $arr)) {
-            } else {
+            if (!in_array($d['account'], $arr)) {
                 $arr[] = $d['account'];
             }
         }
@@ -33,8 +31,7 @@ class TaskestimateController extends WebInfoController
         $var = $m->join($join)->where($where)->order('zt_task.project desc')->select();
         $project[] = $var[0]['project'];
         foreach ($var as $v) {
-            if (in_array($v['project'], $project)) {
-            } else {
+            if (!in_array($v['project'], $project)) {
                 $project[] = $v['project'];
             }
         }
@@ -55,8 +52,7 @@ class TaskestimateController extends WebInfoController
         $data = $m->join($join)->where($where)->group('name')->order('date desc')->select();
         $arr[] = $data[0]['date'];
         foreach ($data as $d) {
-            if (in_array($d['date'], $arr)) {
-            } else {
+            if (!in_array($d['date'], $arr)) {
                 $arr[] = $d['date'];
             }
         }
@@ -79,8 +75,7 @@ class TaskestimateController extends WebInfoController
 
         $arr[] = $data[0]['date'];
         foreach ($data as $d) {
-            if (in_array($d['date'], $arr)) {
-            } else {
+            if (!in_array($d['date'], $arr)) {
                 $arr[] = $d['date'];
             }
         }
@@ -101,16 +96,14 @@ class TaskestimateController extends WebInfoController
         $data = $m->where($map)->field('account,date,sum(consumed) as consumed')->group('account,date')->order('date desc')->select();
         $var[] = $data[0]['account'];
         foreach ($data as $d) {
-            if (in_array($d['account'], $var)) {
-            } else {
+            if (!in_array($d['account'], $var)) {
                 $var[] = $d['account'];
             }
         }
         $this->assign('var', $var);
         $arr[] = $data[0]['date'];
         foreach ($data as $d) {
-            if (in_array($d['date'], $arr)) {
-            } else {
+            if (!in_array($d['date'], $arr)) {
                 $arr[] = $d['date'];
             }
         }

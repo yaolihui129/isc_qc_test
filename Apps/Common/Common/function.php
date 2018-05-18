@@ -341,7 +341,6 @@
         return $str;
     }
 
-
     //换取微信短链接
     function getShortUrl($token,$long_url){
     $url='https://api.weixin.qq.com/cgi-bin/shorturl?access_token='.$token;
@@ -381,7 +380,6 @@
         $long_url='https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket='.$res['ticket']; //3.使用$ticket换去二维码图片
         return getShortUrl($token,$long_url);
     }
-
 
     //群发接口
     function wxSendMsgAll($token,$array,$type='preview'){
@@ -682,10 +680,12 @@
         $count=M($table)->where($where)->count();
         return $count;
     }
+
     function getName($table,$id,$name='name'){
         $data=M($table)->find($id);
         return $data[$name];
     }
+
     function countBug($proid){
         $where=array("project"=>$proid,"deleted"=>'0');
         $count=M("bug")->where($where)->count();

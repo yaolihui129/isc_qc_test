@@ -42,16 +42,14 @@
                 <ul class="list-group">
                     <volist name='branch' id='st'>
                         <switch name="st">
-                            <case value="w">
+                            <case value="$w">
                                 <li class="list-group-item list-group-item-warning">
                             </case>
                             <default/>
                             <li class="list-group-item ">
                         </switch>
-                            <a href="__URL__/index/branch/<{$st}>">
-                                <{$st|getName=branch,###}>
-                            </a>
-                            <span class="badge"><{$st}></span>
+                            <a href="__URL__/index/branch/<{$st}>"><{$st|getName=branch,###}></a>
+                            <span class="badge"><{$st|countId='tp_func','branch',###}></span>
                         </li>
                     </volist>
 

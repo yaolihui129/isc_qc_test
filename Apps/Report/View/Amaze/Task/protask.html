@@ -53,7 +53,12 @@
                                 <div class="panel-heading" role="tab" id="heading<{$st.id}>">
                                     <h4 class="panel-title">
                                         <{$st.id}>.<span class="badge"><{$st.status||getProst=###}></span>
-                                        <{$st.name}>【<{$st.deadline}>】 <span class="pull-right">【预计:<{$st.estimate}>实际:<{$st.consumed}>剩余:<{$st.left}>】</span>
+                                        <a href="http://qc.zhidaoauto.com/zentao/task-view-<{$st.id}>.html" target="_blank">
+                                            <{$st.name}>【<{$st.deadline}>】
+                                        </a>
+                                        <span class="pull-right">
+                                            【预计:<{$st.estimate}>实际:<{$st.consumed}>剩余:<{$st.left}>】
+                                        </span>
                                     </h4>
                                 </div>
                             </div>

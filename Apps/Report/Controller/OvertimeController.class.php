@@ -18,16 +18,25 @@ class OvertimeController extends WebInfoController
     {
         $type=I('type');
         $this->assign('type', $type);
-        $name=I('name');
-        $this->assign('name', $name);
+        $this->assign('name', I('name'));
 
-        $where = array('userid' => I('user'),'type'=>I('type'));
+        $where = array('userid' => I('user'),'type'=>$type);
         $data= M('tp_overtime')->where($where)->order('riqi desc')->select();
         $this->assign('data', $data);
 
         $this->display();
     }
 
+
+    public function detailed(){
+        $where = array('userid' => I('user'));
+        $where['riqi']  = array('gt','2018-4-10');
+        $data= M('tp_overtime')->where($where)->order('riqi')->select();
+        $this->assign('data', $data);
+        $this->assign('name', I('name'));
+
+        $this->display();
+    }
 
 
 }
